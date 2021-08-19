@@ -13,6 +13,9 @@ plataforma [SIN-ANA](https://www.ana.gov.br/sar0/MedicaoSin).
 
 Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
+Se utilizar em algum trabalho, cite ou me avise\! Gostaria de saber como
+este pacote pode ajudar\!
+
 ## Instalação
 
 Este pacote apenas está disponível para a instalação pelo github usando
@@ -69,13 +72,14 @@ As variáveis retornadas são:
   - `data_medicao` - Data da medição realizada
   - `codigo_reservatorio` - Código do reservatório segundo o SIN-ANA
   - `reservatorio` - Nome do reservatório
-  - `cota_m` - Cota (m³)
+  - `cota_m` - Cota, o nível do reservatório (m)
   - `afluencia_m3_s` - Afluência (m³/s)
   - `defluencia_m3_s` - Defluência (m³/s)
   - `vazao_vertida_m3_s` - Vazão vertida (m³/s)
   - `vazao_turbinada_m3_s` - Vazão turbinada (m³/s)
   - `vazao_natural_m3_s` - Vazão natural (m³/s)
-  - `volume_util_percent` - Volume útil (%) - Retorna apenas NA
+  - `volume_util_percent` - Volume útil (%) - Alguns reservatórios
+    retornam apenas NA
   - `vazao_incremental_m3_s` - Vazão incremental (m³/s) - Retorna apenas
     NA
 
