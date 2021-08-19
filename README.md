@@ -1,3 +1,5 @@
+# **reservatoriosBR** <img src="man/figures/logo.png" align="right" width="25%" min-width="120px"/>
+
 # reservatoriosBR
 Pacote R para obtenção de dados de reservatórios brasileiros a partir da plataforma [SIN-ANA](https://www.ana.gov.br/sar0/MedicaoSin).
 
