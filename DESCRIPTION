@@ -14,7 +14,8 @@ Imports:
 	glue,
 	rvest,
 	janitor,
-	dplyr
+	dplyr,
+	magrittr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
