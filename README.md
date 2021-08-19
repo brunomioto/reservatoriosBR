@@ -1,6 +1,13 @@
 
 # **reservatoriosBR** <img src="man/figures/logo.png" align="right" width="25%" min-width="120px"/>
 
+<!-- badges: start -->
+
+[![Twitter
+Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](https://twitter.com/BrunoHMioto)
+
+<!-- badges: end -->
+
 Pacote R para obtenção de dados de reservatórios brasileiros a partir da
 plataforma [SIN-ANA](https://www.ana.gov.br/sar0/MedicaoSin).
 
