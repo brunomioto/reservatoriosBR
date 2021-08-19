@@ -21,7 +21,7 @@ Utilize a função para obter os dados históricos dos reservatórios brasileiro
 
 - `codigo_reservatorio` O código do reservatório de acordo com o SIN (tabela a ser implementada futuramente).
 - `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
-- `data_final` Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente.
 
 ```r
 > dados_reservatorio(19058, "2000-01-01", "2019-12-31")
