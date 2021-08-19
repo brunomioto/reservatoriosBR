@@ -9,6 +9,7 @@ Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 Este pacote apenas está disponível para a instalação pelo github usando o devtools: 
 
 ```r
+#install.packages("devtools")
 devtools::install_github('brunomioto/reservatoriosBR')
 ```
 
