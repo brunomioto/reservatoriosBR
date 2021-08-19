@@ -92,6 +92,40 @@ represas.
 
 <img src="man/figures/plot1.png" align="center" width="100%" min-width="120px"/>
 
+### A função `dados_reservatorio_cantareira()`
+
+Utilize a função para obter os dados históricos dos reservatórios
+brasileiros do **sistema Cantareira**.
+
+`dados_reservatorio_cantareira(codigo_reservatorio, data_inicial,
+data_final)`
+
+  - `codigo_reservatorio` O código do reservatório de acordo com o SIN
+    (são apenas 4 reservatórios).
+
+| Reservatorio    | Codigo |
+| :-------------- | -----: |
+| Jaguari-Jacareí |  29001 |
+| Cachoeira       |  29002 |
+| Atibainha       |  29003 |
+| Paiva Castro    |  29004 |
+
+  - `data_inicial` Data inicial do registro. Se for anterior à data de
+    funcionamento, retorna a data de registro mais antiga.
+  - `data_final` Data final do registro. Pode ser usado `Sys.Date()`
+    para retornar a data de registro mais recente.
+
+As variáveis retornadas são:
+
+  - `data_medicao` - Data da medição realizada
+  - `codigo_reservatorio` - Código do reservatório segundo o SIN-ANA
+  - `reservatorio` - Nome do reservatório
+  - `cota_m` - Cota, o nível do reservatório (m)
+  - `volume_util_hm3` - Volume útil (hm³)
+  - `volume_util_percent` - Volume útil (%)
+  - `afluencia_m3_s` - Afluência (m³/s)
+  - `defluencia_m3_s` - Defluência (m³/s)
+
 ## To-do
 
   - Buscar outras bases de dados de reservatórios brasileiros

@@ -2,4 +2,5 @@
 
 export("%>%")
 export(dados_reservatorio)
+export(dados_reservatorio_cantareira)
 importFrom(magrittr,"%>%")
