@@ -59,17 +59,17 @@ dados_reservatorio(19058, "2000-01-01", "2019-12-31")
 
 As variáveis retornadas são:
 
-  - `data_medicao` Data da medição realizada
-  - `codigo_reservatorio` Código do reservatório segundo o SIN-ANA
-  - `reservatorio` Nome do reservatório
-  - `cota_m` Cota (m³)
-  - `afluencia_m3_s` Afluência (m³/s)
-  - `defluencia_m3_s` Defluência (m³/s)
-  - `vazao_vertida_m3_s` Vazão vertida (m³/s)
-  - `vazao_turbinada_m3_s` Vazão turbinada (m³/s)
-  - `vazao_natural_m3_s` Vazão natural (m³/s)
-  - `volume_util_percent` Volume útil (%) - Retorna apenas NA
-  - `vazao_incremental_m3_s` Vazão incremental (m³/s) - Retorna apenas
+  - `data_medicao` - Data da medição realizada
+  - `codigo_reservatorio` - Código do reservatório segundo o SIN-ANA
+  - `reservatorio` - Nome do reservatório
+  - `cota_m` - Cota (m³)
+  - `afluencia_m3_s` - Afluência (m³/s)
+  - `defluencia_m3_s` - Defluência (m³/s)
+  - `vazao_vertida_m3_s` - Vazão vertida (m³/s)
+  - `vazao_turbinada_m3_s` - Vazão turbinada (m³/s)
+  - `vazao_natural_m3_s` - Vazão natural (m³/s)
+  - `volume_util_percent` - Volume útil (%) - Retorna apenas NA
+  - `vazao_incremental_m3_s` - Vazão incremental (m³/s) - Retorna apenas
     NA
 
 As unidades de medida foram mantidas no nome das variáveis para não
@@ -79,7 +79,7 @@ Podemos utilizar estes dados históricos para fazer análises e gráficos.
 A Afluência(m³/s), por exemplo, mede a quantidade de água que chega nas
 represas.
 
-<img src="https://github.com/brunomioto/reservatoriosBR/man/figures/plot1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/plot1.png" align="center" width="100%" min-width="120px"/>
 
 ## To-do
 
