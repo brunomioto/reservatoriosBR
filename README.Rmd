@@ -27,6 +27,12 @@ devtools::install_github('brunomioto/reservatoriosBR')
 
 ## Uso
 
+Atualmente o pacote possui 3 funções:
+
+- `dados_reservatorio()`
+- `dados_reservatorio_cantareira()`
+- `ultima_medicao()`
+
 ### A função `dados_reservatorio()`
 
 Utilize a função para obter os dados históricos dos reservatórios brasileiros.
@@ -108,6 +114,25 @@ As variáveis retornadas são:
 - `volume_util_percent` - Volume útil (%)
 - `afluencia_m3_s` - Afluência (m³/s)
 - `defluencia_m3_s` - Defluência (m³/s)
+
+### A função `ultima_medicao()`
+
+Essa função retorna a última medição (e somente ela) dos dados de um reservatório.
+
+Fiz essa função pois ela fornece o **Volume útil** de alguns reservatórios que não estão inclusos no dataset criado pela função `dados_reservatorio()`, como é o exemplo de **Itaipu**.
+
+`ultima_medicao(codigo_reservatorio)`
+
+As variáveis retornadas são:
+
+- `data_medicao` - Data da medição realizada
+- `reservatorio` - Nome do reservatório
+- `afluencia_m3_s` - Afluência (m³/s)
+- `defluencia_m3_s` - Defluência (m³/s)
+- `cota_m` - Cota, o nível do reservatório (m)
+- `vazao_transferida` - Vazão transferida - Acho que sempre retorna `NA`
+- `volume_util_percent` - Volume útil (%)
+- `tipo` - Tipo? Ainda preciso descobrir o que isso significa
 
 ## To-do
 
