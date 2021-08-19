@@ -1,7 +1,7 @@
 # reservatoriosBR
 Pacote R para obtenção de dados de reservatórios brasileiros a partir da plataforma [SIN-ANA](https://www.ana.gov.br/sar0/MedicaoSin).
 
-Este pacote busca baixar e organizar os dados em uma estrutura para uso no R.
+Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
 ## Instalação
 
