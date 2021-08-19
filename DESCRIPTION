@@ -1,15 +1,13 @@
 Package: reservatoriosBR
-Title: What the Package Does (One Line, Title Case)
+Title: Get brazilian reservoirs data
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Bruno",
+           family = "Mioto",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "brunomioto97@gmail.com")
+Description: Download all the historic data from brazilian reservoir.
+License: MIT + file LICENSE
 Imports:
 	glue,
 	rvest,
