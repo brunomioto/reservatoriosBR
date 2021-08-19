@@ -4,16 +4,22 @@
 \alias{dados_reservatorio}
 \title{Dados dos reservatorios brasileiros}
 \usage{
-dados_reservatorio(codigo_reservatorio, data_inicial, data_final)
+dados_reservatorio(
+  codigo_reservatorio,
+  data_inicial = "1980-01-01",
+  data_final = Sys.Date()
+)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{codigo_reservatorio}{Codigo do reservatorio a ser buscado.}
+
+\item{data_inicial}{Data inicial do registro. Se for anterior a data de funcionamento, retorna a data de registro mais antiga.}
+
+\item{data_final}{Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.}
 }
 \description{
-This function allows you to express your love of cats.
+Dados dos reservatorios brasileiros
 }
 \examples{
-dados_reservatorio()
+dados_reservatorio(19058, "2000-01-01", Sys.Date())
 }
-\keyword{resevoir}
-\keyword{water}
