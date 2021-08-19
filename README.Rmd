@@ -12,7 +12,7 @@ Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
 Este pacote apenas está disponível para a instalação pelo github usando o devtools: 
 
-```{r, message=FALSE, warning=FALSE}
+```{r, results='hide', message=FALSE, warning=FALSE}
 #install.packages("devtools")
 devtools::install_github('brunomioto/reservatoriosBR')
 ```
@@ -34,3 +34,46 @@ Utilize a função para obter os dados históricos dos reservatórios brasileiro
 library(reservatoriosBR)
 dados_reservatorio(19058, "2000-01-01", "2019-12-31")
 ```
+
+As variáveis retornadas são:
+
+- `data_medicao` Data da medição realizada
+- `codigo_reservatorio` Código do reservatório segundo o SIN-ANA
+- `reservatorio` Nome do reservatório
+- `cota_m` Cota (m³)
+- `afluencia_m3_s` Afluência (m³/s)
+- `defluencia_m3_s` Defluência (m³/s)
+- `vazao_vertida_m3_s` Vazão vertida (m³/s)
+- `vazao_turbinada_m3_s` Vazão turbinada (m³/s)
+- `vazao_natural_m3_s` Vazão natural (m³/s)
+- `volume_util_percent` Volume útil (%) - Retorna apenas NA
+- `vazao_incremental_m3_s` Vazão incremental (m³/s) - Retorna apenas NA
+
+As unidades de medida foram mantidas no nome das variáveis para não haver problemas de interpretação.
+
+
+Podemos utilizar estes dados históricos para fazer análises e gráficos. A Afluência(m³/s), por exemplo, mede a quantidade de água que chega nas represas.
+
+```{r, warning = FALSE, message = FALSE, results = 'hide', fig.keep = 'all', dpi = 600, echo=FALSE, eval = FALSE}
+library(ggplot2)
+
+itaipu <- dados_reservatorio(19058, "1980-01-01", Sys.Date())
+
+ggplot(itaipu, aes(x=data_medicao, y=afluencia_m3_s))+
+  geom_line(color = "#377eb8")+
+  scale_x_date(date_breaks = "years", date_labels = "%Y")+
+  theme_bw()+
+  labs(x="Data da medição",
+       y = "Afluência (m³/s)")+
+  coord_cartesian(xlim = c(as.Date("1994-01-01"), as.Date("2021-01-01")))
+```
+
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/man/figures/plot1.png')
+```
+
+## To-do
+
+- Buscar outras bases de dados de reservatórios brasileiros
+
+- Confirmar a confiabilidade dos dados extraídos
