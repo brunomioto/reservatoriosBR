@@ -1,0 +1,36 @@
+---
+output: github_document
+---
+
+# **reservatoriosBR** <img src="man/figures/logo.png" align="right" width="25%" min-width="120px"/>
+
+Pacote R para obtenção de dados de reservatórios brasileiros a partir da plataforma [SIN-ANA](https://www.ana.gov.br/sar0/MedicaoSin).
+
+Este pacote baixa e organiza os dados em uma estrutura para uso no R.
+
+## Instalação
+
+Este pacote apenas está disponível para a instalação pelo github usando o devtools: 
+
+```{r, message=FALSE, warning=FALSE}
+#install.packages("devtools")
+devtools::install_github('brunomioto/reservatoriosBR')
+```
+
+## Uso
+
+### A função `dados_reservatorio()`
+
+Utilize a função para obter os dados históricos dos reservatórios brasileiros.
+
+`dados_reservatorio(codigo_reservatorio, data_inicial, data_final)`
+
+- `codigo_reservatorio` O código do reservatório de acordo com o SIN (tabela a ser implementada futuramente).
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente.
+
+
+```{r, message=FALSE, warning=FALSE}
+library(reservatoriosBR)
+dados_reservatorio(19058, "2000-01-01", "2019-12-31")
+```
