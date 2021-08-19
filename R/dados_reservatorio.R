@@ -36,8 +36,8 @@ dados_reservatorio <- function(codigo_reservatorio, data_inicial = "1980-01-01",
   table_reservoir$vazao_vertida_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_vertida_m3_s))
   table_reservoir$vazao_turbinada_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_turbinada_m3_s))
   table_reservoir$vazao_natural_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_natural_m3_s))
-  table_reservoir$volume_util_percent <- as.numeric(table_reservoir$volume_util_percent)
-  table_reservoir$vazao_incremental_m3_s <- as.numeric(table_reservoir$vazao_incremental_m3_s)
+  table_reservoir$volume_util_percent <- as.numeric(sub(",",".",table_reservoir$volume_util_percent))
+  table_reservoir$vazao_incremental_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_incremental_m3_s))
 
   if(nrow(table_reservoir) == 0){
     print("Nao foi possivel obter os dados. Verifique se as variaveis estao corretas ou entre em contato!")
