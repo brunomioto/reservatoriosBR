@@ -8,10 +8,13 @@ Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](htt
 
 <!-- badges: end -->
 
-Pacote R para obtenção de dados de reservatórios brasileiros a partir da
-plataforma [SIN-ANA](https://www.ana.gov.br/sar0/MedicaoSin).
+Pacote R para obtenção de dados dos principais reservatórios brasileiros
+a partir da plataforma [SAR-ANA](https://www.ana.gov.br/sar/).
 
 Este pacote baixa e organiza os dados em uma estrutura para uso no R.
+
+Atualmente estou buscando voluntários para testar as funções e dados. Se
+puder, entre em contato\!
 
 Se utilizar em algum trabalho, cite ou me avise\! Gostaria de saber como
 este pacote pode ajudar\!
@@ -30,19 +33,26 @@ devtools::install_github('brunomioto/reservatoriosBR')
 
 Atualmente o pacote possui 3 funções:
 
-  - `dados_reservatorio()`
-  - `dados_reservatorio_cantareira()`
+  - `reservatorio_sin()`
+  - `reservatorio_cantareira()`
+  - `reservatorio_nordeste_semiarido()`
   - `ultima_medicao()`
 
-### A função `dados_reservatorio()`
+### A função `reservatorio_sin()`
 
-Utilize a função para obter os dados históricos dos reservatórios
-brasileiros.
+Utilize a função para obter os dados históricos dos principais
+reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado
+Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as
+bacias dos reservatórios contidos no SIN.
 
-`dados_reservatorio(codigo_reservatorio, data_inicial, data_final)`
+![Sistema Interligado
+Nacional](man/figures/modelo-principal-mapa-sin.png)
+
+`reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
   - `codigo_reservatorio` O código do reservatório de acordo com o SIN
-    (tabela a ser implementada futuramente).
+    (você pode consultar a tabela com os códigos chamando
+    `tabela_reservatorios`).
   - `data_inicial` Data inicial do registro. Se for anterior à data de
     funcionamento, retorna a data de registro mais antiga.
   - `data_final` Data final do registro. Pode ser usado `Sys.Date()`
@@ -98,10 +108,16 @@ represas.
 
 <img src="man/figures/plot1.png" align="center" width="100%" min-width="120px"/>
 
-### A função `dados_reservatorio_cantareira()`
+### A função `reservatorio_cantareira()`
 
 Utilize a função para obter os dados históricos dos reservatórios
-brasileiros do **sistema Cantareira**.
+brasileiros que pertencem ao [**sistema
+Cantareira**](https://www.ana.gov.br/sar/outros-sistemas-hidricos/cantareira).
+A imagem abaixo apresenta as bacias dos reservatórios contidos no
+Sistema Cantareira.
+
+![Sistema
+Cantareira](man/figures/outros-sistemas-hidricos-cantareira-principal.png)
 
 `dados_reservatorio_cantareira(codigo_reservatorio, data_inicial,
 data_final)`
@@ -131,6 +147,15 @@ As variáveis retornadas são:
   - `volume_util_percent` - Volume útil (%)
   - `afluencia_m3_s` - Afluência (m³/s)
   - `defluencia_m3_s` - Defluência (m³/s)
+
+### A função `reservatorio_nordeste_semiarido()` (implementando)
+
+Utilize a função para obter os dados históricos dos reservatórios
+brasileiros que pertencem ao módulo [**Nordeste e
+Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido). A imagem
+abaixo apresenta as bacias dos reservatórios contidos no SAR.
+
+![Sistema Cantareira](man/figures/mapa-principal-ns.png)
 
 ### A função `ultima_medicao()`
 

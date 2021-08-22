@@ -1,6 +1,6 @@
 Package: reservatoriosBR
 Title: Get brazilian reservoirs data
-Version: 0.1
+Version: 0.4
 Authors@R: 
     person(given = "Bruno",
            family = "Mioto",
@@ -18,3 +18,5 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
