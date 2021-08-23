@@ -13,8 +13,8 @@ a partir da plataforma [SAR-ANA](https://www.ana.gov.br/sar/).
 
 Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
-Atualmente estou buscando voluntários para testar as funções e dados. Se
-puder, entre em contato\!
+Atualmente estou buscando **voluntários** para testar as funções e
+dados. Se puder, entre em contato\!
 
 Se utilizar em algum trabalho, cite ou me avise\! Gostaria de saber como
 este pacote pode ajudar\!
@@ -62,7 +62,7 @@ Nacional](man/figures/modelo-principal-mapa-sin.png)
 
 ``` r
 library(reservatoriosBR)
-dados_reservatorio(19058, "2000-01-01", "2019-12-31")
+reservatorio_sin(19058, "2000-01-01", "2019-12-31")
 ```
 
     ## # A tibble: 7,306 x 11
@@ -86,7 +86,7 @@ dados_reservatorio(19058, "2000-01-01", "2019-12-31")
 As variáveis retornadas são:
 
   - `data_medicao` - Data da medição realizada
-  - `codigo_reservatorio` - Código do reservatório segundo o SIN-ANA
+  - `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
   - `reservatorio` - Nome do reservatório
   - `cota_m` - Cota, o nível do reservatório (m)
   - `afluencia_m3_s` - Afluência (m³/s)
@@ -119,10 +119,9 @@ Sistema Cantareira.
 ![Sistema
 Cantareira](man/figures/outros-sistemas-hidricos-cantareira-principal.png)
 
-`dados_reservatorio_cantareira(codigo_reservatorio, data_inicial,
-data_final)`
+`reservatorio_cantareira(codigo_reservatorio, data_inicial, data_final)`
 
-  - `codigo_reservatorio` O código do reservatório de acordo com o SIN
+  - `codigo_reservatorio` O código do reservatório de acordo com o SAR
     (são apenas 4 reservatórios).
 
 | Reservatorio    | Codigo |
@@ -140,7 +139,7 @@ data_final)`
 As variáveis retornadas são:
 
   - `data_medicao` - Data da medição realizada
-  - `codigo_reservatorio` - Código do reservatório segundo o SIN-ANA
+  - `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
   - `reservatorio` - Nome do reservatório
   - `cota_m` - Cota, o nível do reservatório (m)
   - `volume_util_hm3` - Volume útil (hm³)
@@ -152,8 +151,8 @@ As variáveis retornadas são:
 
 Utilize a função para obter os dados históricos dos reservatórios
 brasileiros que pertencem ao módulo [**Nordeste e
-Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido). A imagem
-abaixo apresenta as bacias dos reservatórios contidos no SAR.
+Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido) do SAR. A
+imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
 
 ![Sistema Cantareira](man/figures/mapa-principal-ns.png)
 
@@ -179,6 +178,31 @@ As variáveis retornadas são:
     `NA`
   - `volume_util_percent` - Volume útil (%)
   - `tipo` - Tipo? Ainda preciso descobrir o que isso significa
+
+## O dataset `tabela_reservatorios`
+
+Esse dataset já vem pré-carregado com o pacote\! Nele estão algumas
+informações sobre os reservatórios que podem ser carregados com as
+funções acima.
+
+São 708 reservatórios com 5 variáveis, sendo elas: - `sistema` - Sistema
+o qual o reservatório pertence. - `estado_1` - Estado o qual o
+reservatório pertence. - `estado_2` - Se o reservatório fica entre dois
+estados, o segundo estado. A ordem não tem importância. - `reservatorio`
+- O nome do reservatório. - `codigo` - O código do reservatório segundo
+o SAR. Utilizado nas funções desse pacote.
+
+``` r
+head(tabela_reservatorios)
+```
+
+    ##      sistema estado_1 estado_2    reservatorio codigo
+    ## 1 cantareira       SP     <NA> JAGUARI-JACAREI  29001
+    ## 2 cantareira       SP     <NA>       CACHOEIRA  29002
+    ## 3 cantareira       SP     <NA>       ATIBAINHA  29003
+    ## 4 cantareira       SP     <NA>    PAIVA CASTRO  29004
+    ## 5        sin       RS     <NA>     14 DE JULHO  19083
+    ## 6        sin       MG       SP     A. VERMELHA  19015
 
 ## To-do
 
