@@ -5,15 +5,25 @@
 \alias{tabela_reservatorios}
 \title{Tabela com dados dos reservatorios brasileiros}
 \format{
-An object of class \code{data.frame} with 708 rows and 5 columns.
+Um dataframe com 708 observacoes e 5 variaveis
+\describe{
+\item{sistema}{sistema o qual o reservatorio pertence}
+\item{estado_1}{estado o qual o reservatorio pertence}
+\item{estado_2}{se o reservatorio fica entre estados, o segundo estado}
+\item{reservatorio}{o nome do reservatorio}
+\item{codigo}{o codigo do reservatorio segundo o SAR}
+}
+}
+\source{
+\url{https://www.ana.gov.br/sar0/}. obtido em 2021-08-22
 }
 \usage{
-data(tabela_reservatorios)
+tabela_reservatorios
 }
 \description{
-Tabela com dados dos reservatorios brasileiros
+Um dataset contendo os atributos dos principais reservatorios brasileiros.
 }
 \examples{
-data(tabela_reservatorios)
+tabela_reservatorios
 }
 \keyword{datasets}
