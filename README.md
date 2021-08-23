@@ -147,7 +147,7 @@ As variáveis retornadas são:
   - `afluencia_m3_s` - Afluência (m³/s)
   - `defluencia_m3_s` - Defluência (m³/s)
 
-### A função `reservatorio_nordeste_semiarido()` (implementando)
+### A função `reservatorio_nordeste_semiarido()`
 
 Utilize a função para obter os dados históricos dos reservatórios
 brasileiros que pertencem ao módulo [**Nordeste e
@@ -185,12 +185,17 @@ Esse dataset já vem pré-carregado com o pacote\! Nele estão algumas
 informações sobre os reservatórios que podem ser carregados com as
 funções acima.
 
-São 708 reservatórios com 5 variáveis, sendo elas: - `sistema` - Sistema
-o qual o reservatório pertence. - `estado_1` - Estado o qual o
-reservatório pertence. - `estado_2` - Se o reservatório fica entre dois
-estados, o segundo estado. A ordem não tem importância. - `reservatorio`
-- O nome do reservatório. - `codigo` - O código do reservatório segundo
-o SAR. Utilizado nas funções desse pacote.
+São 708 reservatórios com 5 variáveis, sendo elas:
+
+  - `sistema` - Sistema o qual o reservatório pertence.
+  - `estado_1` - Estado o qual o reservatório pertence.
+  - `estado_2` - Se o reservatório fica entre dois estados, o segundo
+    estado. A ordem não tem importância.
+  - `reservatorio` - O nome do reservatório.
+  - `codigo` - O código do reservatório segundo o SAR. Utilizado nas
+    funções desse pacote.
+
+<!-- end list -->
 
 ``` r
 head(tabela_reservatorios)
