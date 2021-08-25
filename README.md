@@ -3,6 +3,9 @@
 
 <!-- badges: start -->
 
+[![lifecycle](https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![License](https://img.shields.io/badge/license-MIT-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
+[![pix](https://img.shields.io/badge/Apoie%20com-PIX-brightgreen)](https://www.brunomioto.com.br/pix)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](https://twitter.com/BrunoHMioto)
 
@@ -14,7 +17,7 @@ a partir da plataforma [SAR-ANA](https://www.ana.gov.br/sar/).
 Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
 Atualmente estou buscando **voluntários** para testar as funções e
-dados. Se puder, entre em contato\!
+dados. Se puder, [entre em contato](https://twitter.com/BrunoHMioto)\!
 
 Se utilizar em algum trabalho, cite ou me avise\! Gostaria de saber como
 este pacote pode ajudar\!
