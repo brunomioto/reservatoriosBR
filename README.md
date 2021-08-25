@@ -24,8 +24,8 @@ este pacote pode ajudar\!
 
 ## Instalação
 
-Este pacote apenas está disponível para a instalação pelo github usando
-o devtools:
+Este pacote apenas está disponível para a instalação usando o devtools
+no R (mas é simples):
 
 ``` r
 #install.packages("devtools")
@@ -34,7 +34,7 @@ devtools::install_github('brunomioto/reservatoriosBR')
 
 ## Uso
 
-Atualmente o pacote possui 3 funções:
+Atualmente o pacote possui 4 funções:
 
   - `reservatorio_sin()`
   - `reservatorio_cantareira()`
