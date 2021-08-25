@@ -172,3 +172,7 @@ head(tabela_reservatorios)
 - Buscar outras bases de dados de reservatórios brasileiros
 
 - Confirmar a confiabilidade dos dados extraídos
+
+## Melhorias e sugestões
+
+Tem alguma ideia para o pacote ou sugestão de como posso melhorá-lo? Crie uma nova [issue](https://github.com/brunomioto/reservatoriosBR/issues) para que eu possa ajudar!
