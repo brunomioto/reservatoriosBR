@@ -22,6 +22,11 @@ dados. Se puder, [entre em contato](https://twitter.com/BrunoHMioto)\!
 Se utilizar em algum trabalho, cite ou me avise\! Gostaria de saber como
 este pacote pode ajudar\!
 
+Se você estiver procurando dados sobre os mananciais de abastecimento
+público na Região Metropolitana de São Paulo (SP - Brasil), o pacote
+[`mananciais`](https://beatrizmilz.github.io/mananciais/) foi feito para
+isso\!
+
 ## Instalação
 
 Este pacote apenas está disponível para a instalação usando o devtools
@@ -30,6 +35,7 @@ no R (mas é simples):
 ``` r
 #install.packages("devtools")
 devtools::install_github('brunomioto/reservatoriosBR')
+library(reservatoriosBR)
 ```
 
 ## Uso
@@ -64,7 +70,6 @@ Nacional](man/figures/modelo-principal-mapa-sin.png)
 <!-- end list -->
 
 ``` r
-library(reservatoriosBR)
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
 ```
 

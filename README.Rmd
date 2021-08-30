@@ -21,6 +21,8 @@ Atualmente estou buscando **voluntários** para testar as funções e dados. Se 
 
 Se utilizar em algum trabalho, cite ou me avise! Gostaria de saber como este pacote pode ajudar!
 
+Se você estiver procurando dados sobre os mananciais de abastecimento público na Região Metropolitana de São Paulo (SP - Brasil), o pacote [`mananciais`](https://beatrizmilz.github.io/mananciais/) foi feito para isso!
+
 ## Instalação
 
 Este pacote apenas está disponível para a instalação usando o devtools no R (mas é simples): 
@@ -28,6 +30,7 @@ Este pacote apenas está disponível para a instalação usando o devtools no R 
 ```{r, results='hide', message=FALSE, warning=FALSE}
 #install.packages("devtools")
 devtools::install_github('brunomioto/reservatoriosBR')
+library(reservatoriosBR)
 ```
 
 ## Uso
@@ -53,7 +56,6 @@ Utilize a função para obter os dados históricos dos principais reservatórios
 
 
 ```{r, message=FALSE, warning=FALSE}
-library(reservatoriosBR)
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
 ```
 
