@@ -11,6 +11,13 @@
 reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", data_final = Sys.Date()){
   #motivation msg
   message("Me avise o que achou deste pacote!")
+
+  reservatorio_busca <- tabela_reservatorios %>%
+    filter(codigo %in% codigo_reservatorio) %>%
+    select(reservatorio)
+
+  message("Buscando as informações do reservatório ", reservatorio_busca$reservatorio)
+
   message("-------")
   msg1 <- dplyr::case_when(weekdays(Sys.Date()) == "segunda-feira" ~ sample(c("Calma que hoje é segunda ZzZzZz...",
                                                                               "Bora trabalhar!",
@@ -18,22 +25,19 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
                                                                               "Eita, isso não vai demorar (tanto) ...",
                                                                               "Wait for it...",
                                                                               "Coletando (muitos) dados...",
-                                                                              "Enchendo um reservatório de informações ...",
-                                                                              "~~ Regando a plantinha ela cresce feliz! ~~"),1),
+                                                                              "Enchendo um reservatório de informações ..."),1),
                            weekdays(Sys.Date()) == "sexta-feira" ~ sample(c("SEXTOU! Mas vamos trabalhar né...",
                                                                             "SEXTOU! Ué, as pessoas trabalham na sexta??",
                                                                             "~~ All we need is just a little patience ~~",
                                                                             "Eita, isso não vai demorar (tanto) ...",
                                                                             "Wait for it...",
                                                                             "Coletando (muitos) dados...",
-                                                                            "Enchendo um reservatório de informações ...",
-                                                                            "~~ Regando a plantinha ela cresce feliz! ~~"),1),
+                                                                            "Enchendo um reservatório de informações ..."),1),
                            TRUE ~ sample(c("~~ All we need is just a little patience ~~ ",
                                            "Eita, isso não vai demorar (tanto) ...",
                                            "Wait for it...",
                                            "Coletando (muitos) dados...",
-                                           "Enchendo um reservatório de informações ...",
-                                           "~~ Regando a plantinha ela cresce feliz! ~~"),
+                                           "Enchendo um reservatório de informações ..."),
                                          size=1))
   message(msg1)
   #get url
@@ -43,7 +47,6 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
     rvest::html_nodes("table")
   #motivation msg 2
   msg2 <- dplyr::case_when(msg1 == "Calma que hoje é segunda ZzZzZz..." ~ "Espera só mais um pou... zZzZzZzZz",
-                           msg1 == "~~ Regando a plantinha ela cresce feliz! ~~" ~ "~~ É refrescante a aguinha na raiz! ~~",
                            TRUE ~ sample(c("Quase lá, só ajeitar essa tabela agora...",
                                            "Tô quase acabando!",
                                            "Deixa só eu deixar essa tabela mais bonita?",
@@ -82,7 +85,7 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
   if(nrow(table_reservoir) == 0){
     message("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
   }else{
-    print(table_reservoir)
+    return(table_reservoir)
   }
 
 }
