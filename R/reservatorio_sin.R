@@ -1,4 +1,4 @@
-#' Dados dos principais reservatorios brasileirospertencentes ao Sistema Interligado Nacional
+#' Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional
 #'
 #' @export
 #' @param codigo_reservatorio Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando `tabela_reservatorios`).
@@ -10,7 +10,6 @@
 
 reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", data_final = Sys.Date()){
   #motivation msg
-  message("Me avise o que achou deste pacote!")
 
   reservatorio_busca <- tabela_reservatorios %>%
     filter(codigo %in% codigo_reservatorio) %>%
@@ -68,6 +67,7 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
                   vazao_vertida_m3_s = 7,
                   vazao_turbinada_m3_s = 8,
                   vazao_natural_m3_s = 9,
+                  volume_util_porcentagem = 10,
                   vazao_incremental_m3_s = 11)
 
   table_reservoir$data_medicao <- as.Date(table_reservoir$data_medicao, format = "%d/%m/%Y")
@@ -79,7 +79,7 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
   table_reservoir$vazao_vertida_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_vertida_m3_s))
   table_reservoir$vazao_turbinada_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_turbinada_m3_s))
   table_reservoir$vazao_natural_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_natural_m3_s))
-  table_reservoir$volume_util_percent <- as.numeric(sub(",",".",table_reservoir$volume_util_percent))
+  table_reservoir$volume_util_porcentagem <- as.numeric(sub(",",".",table_reservoir$volume_util_porcentagem))
   table_reservoir$vazao_incremental_m3_s <- as.numeric(sub(",",".",table_reservoir$vazao_incremental_m3_s))
 
   if(nrow(table_reservoir) == 0){

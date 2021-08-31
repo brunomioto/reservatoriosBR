@@ -100,7 +100,7 @@ reservatorio_nordeste_semiarido <-
         capacidade_hm3 = 4,
         cota_m = 5,
         volume_hm3 = 6,
-        volume_percent = 7
+        volume_porcentagem = 7
       )
 
     table_reservoir$data_medicao <- as.Date(table_reservoir$data_medicao, format = "%d/%m/%Y")
@@ -109,7 +109,7 @@ reservatorio_nordeste_semiarido <-
     table_reservoir$capacidade_hm3 <- as.numeric(sub(",", ".", table_reservoir$capacidade_hm3))
     table_reservoir$cota_m <- as.numeric(sub(",", ".", table_reservoir$cota_m))
     table_reservoir$volume_hm3 <- as.numeric(sub(",", ".", table_reservoir$volume_hm3))
-    table_reservoir$volume_percent <- as.numeric(sub(",", ".", table_reservoir$volume_percent))
+    table_reservoir$volume_porcentagem <- as.numeric(sub(",", ".", table_reservoir$volume_porcentagem))
 
     if (nrow(table_reservoir) == 0) {
       message(
