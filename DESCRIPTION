@@ -1,13 +1,13 @@
 Package: reservatoriosBR
 Title: Get brazilian reservoirs data
-Version: 0.4.1
+Version: 0.5
 Authors@R: 
     person(given = "Bruno",
            family = "Mioto",
            role = c("aut", "cre"),
            email = "brunomioto97@gmail.com")
 Description: Download all the historic data from brazilian reservoir.
-License: MIT + file LICENSE
+License: GPL (>= 3)
 Imports:
 	glue,
 	rvest,
