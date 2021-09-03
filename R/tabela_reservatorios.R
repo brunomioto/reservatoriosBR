@@ -16,6 +16,6 @@
 #' @examples
 #' tabela_reservatorios()
 #'
-tabela_reservatorios_ONS <- function(){
-  reservatoriosBR::tabela_reservatorios_ONS
+tabela_reservatorios <- function(){
+  dplyr::as_tibble(reservatoriosBR:::tabela_reservatorios_data)
 }
