@@ -31,7 +31,7 @@ ultima_medicao <- function(codigo_reservatorio){
                   defluencia_m3_s = defluencia,
                   cota_m = cota,
                   vazao_transferida = vazaoTransferida,
-                  volume_util_porcentagem = volumeUtil) %>%
+                  volume_util_percentual = volumeUtil) %>%
   dplyr::relocate(data_medicao)
 
   if(nrow(tabela_reservatorio2) == 0){

@@ -2,13 +2,11 @@
 #'
 #' Um dataset contendo os atributos dos principais reservatorios brasileiros apresentados pela ONS.
 #'
-#' @docType data
-#'
 #' @source <http://www.ons.org.br/paginas/energia-agora/reservatorios>. obtido em 2021-08-30
 #'
 #' @format Um dataframe com 39 observacoes e 6 variaveis
 #' \describe{
-#' 
+#'
 #'   \item{reservatorio}{o nome do reservatorio}
 #'   \item{bacia}{bacia hidrológica a qual o reservatorio pertence}
 #'   \item{subsistema}{subsistema-ONS a qual o reservatorio pertence}
@@ -18,5 +16,8 @@
 #' }
 #'
 #' @examples
-#' tabela_reservatorios_ONS
-"tabela_reservatorios_ONS"
+#' tabela_reservatorios_ONS()
+
+tabela_reservatorios_ONS <- function(){
+  reservatoriosBR::tabela_reservatorios_ONS
+}

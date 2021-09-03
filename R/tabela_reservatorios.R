@@ -2,8 +2,6 @@
 #'
 #' Um dataset contendo os atributos dos principais reservatorios brasileiros.
 #'
-#' @docType data
-#'
 #' @source <https://www.ana.gov.br/sar0/>. obtido em 2021-08-22
 #'
 #' @format Um dataframe com 708 observacoes e 5 variaveis
@@ -16,5 +14,8 @@
 #' }
 #'
 #' @examples
-#' tabela_reservatorios
-"tabela_reservatorios"
+#' tabela_reservatorios()
+#'
+tabela_reservatorios_ONS <- function(){
+  reservatoriosBR::tabela_reservatorios_ONS
+}

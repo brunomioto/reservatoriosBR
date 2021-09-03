@@ -8,7 +8,7 @@ output: github_document
 
 [![pix](https://img.shields.io/badge/Apoie%20com-PIX-brightgreen)](https://www.brunomioto.com.br/pix)
 [![lifecycle](https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![License](https://img.shields.io/badge/license-MIT-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
+[![License](https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
 [![Twitter Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](https://twitter.com/BrunoHMioto)
 
 <!-- badges: end -->
@@ -70,7 +70,7 @@ As variáveis retornadas são:
 - `vazao_vertida_m3_s` - Vazão vertida (m³/s)
 - `vazao_turbinada_m3_s` - Vazão turbinada (m³/s)
 - `vazao_natural_m3_s` - Vazão natural (m³/s)
-- `volume_util_percent` - Volume útil (%) - Alguns reservatórios retornam apenas NA
+- `volume_util_porcentagem` - Volume útil (%) - Alguns reservatórios retornam apenas NA
 - `vazao_incremental_m3_s` - Vazão incremental (m³/s) - Retorna apenas NA
 
 As unidades de medida foram mantidas no nome das variáveis para não haver problemas de interpretação.
@@ -123,7 +123,7 @@ As variáveis retornadas são:
 - `reservatorio` - Nome do reservatório
 - `cota_m` - Cota, o nível do reservatório (m)
 - `volume_util_hm3` - Volume útil (hm³)
-- `volume_util_percent` - Volume útil (%)
+- `volume_util_porcentagem` - Volume útil (%)
 - `afluencia_m3_s` - Afluência (m³/s)
 - `defluencia_m3_s` - Defluência (m³/s)
 
@@ -132,6 +132,26 @@ As variáveis retornadas são:
 Utilize a função para obter os dados históricos dos reservatórios brasileiros que pertencem ao módulo [**Nordeste e Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido) do SAR. A imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
 
 ![Sistema Cantareira](man/figures/mapa-principal-ns.png)
+
+### A função `reservatorios_ONS()`
+
+Essa função busca os dados dos reservatórios brasileiros observados pelo [**Operador Nacional do Sistema Elétrico (ONS)**](http://www.ons.org.br/paginas/energia-agora/reservatorios) e pode retornar valores em 2 formatos:
+
+- Tabela
+
+Gera um dataframe com diversas variáveis de 39 reservatórios observados pela ONS.
+
+```{r}
+reservatorios_ONS(formato = "tabela")
+```
+
+- Resumo
+
+Gera um relatório dos 4 subsistemas da ONS e a porcentagem atual em cada um.
+
+```{r}
+reservatorios_ONS(formato = "resumo")
+```
 
 ### A função `ultima_medicao()`
 
@@ -149,7 +169,7 @@ As variáveis retornadas são:
 - `defluencia_m3_s` - Defluência (m³/s)
 - `cota_m` - Cota, o nível do reservatório (m)
 - `vazao_transferida` - Vazão transferida - Acho que sempre retorna `NA`
-- `volume_util_percent` - Volume útil (%)
+- `volume_util_porcentagem` - Volume útil (%)
 - `tipo` - Tipo? Ainda preciso descobrir o que isso significa
 
 ## O dataset `tabela_reservatorios`

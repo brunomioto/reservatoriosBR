@@ -97,7 +97,7 @@ reservatorio_cartareira <-
         data_medicao = 1,
         codigo_reservatorio = 2,
         volume_util_hm3 = 5,
-        volume_util_porcentagem = 6,
+        volume_util_percentual = 6,
         afluencia_m3_s = 7,
         defluencia_m3_s = 8
       )
@@ -108,7 +108,7 @@ reservatorio_cartareira <-
     table_reservoir$cota_m <- as.numeric(sub(",", ".", table_reservoir$cota_m))
     table_reservoir$afluencia_m3_s <- as.numeric(sub(",", ".", table_reservoir$afluencia_m3_s))
     table_reservoir$defluencia_m3_s <- as.numeric(sub(",", ".", table_reservoir$defluencia_m3_s))
-    table_reservoir$volume_util_porcentagem <- as.numeric(sub(",", ".", table_reservoir$volume_util_porcentagem))
+    table_reservoir$volume_util_percentual <- as.numeric(sub(",", ".", table_reservoir$volume_util_percentual))
     table_reservoir$volume_util_hm3 <- as.numeric(sub(",", ".", table_reservoir$volume_util_hm3))
 
     if (nrow(table_reservoir) == 0) {
