@@ -19,5 +19,5 @@
 #' tabela_reservatorios_ONS()
 
 tabela_reservatorios_ONS <- function(){
-  reservatoriosBR:::tabela_reservatorios_ONS
+  reservatoriosBR:::tabela_reservatorios_ONS_data
 }
