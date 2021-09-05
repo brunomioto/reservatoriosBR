@@ -202,7 +202,10 @@ São 708 reservatórios com 5 variáveis, sendo elas:
 - `codigo` - O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.
 
 ```{r}
-head(tabela_reservatorios)
+tabela_exemplo <- tabela_reservatorios_ONS()
+  
+
+
 ```
 
 
