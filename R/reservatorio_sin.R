@@ -11,9 +11,10 @@
 reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", data_final = Sys.Date()){
   #motivation msg
 
-  reservatorio_busca <- tabela_reservatorios %>%
-    filter(codigo %in% codigo_reservatorio) %>%
-    select(reservatorio)
+  reservatorio_busca <- tabela_reservatorios() %>%
+    dplyr::filter(codigo %in% codigo_reservatorio) %>%
+    dplyr::select(reservatorio)
+
 
   message("Buscando as informações do reservatório ", reservatorio_busca$reservatorio)
 

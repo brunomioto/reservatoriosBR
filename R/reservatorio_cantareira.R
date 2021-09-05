@@ -16,8 +16,8 @@ reservatorio_cartareira <-
     message("Me avise o que achou deste pacote!")
 
     reservatorio_busca <- tabela_reservatorios %>%
-      filter(codigo %in% codigo_reservatorio) %>%
-      select(reservatorio)
+      dplyr::filter(codigo %in% codigo_reservatorio) %>%
+      dplyr::select(reservatorio)
 
     message("Buscando as informações do reservatório ",
             reservatorio_busca$reservatorio)

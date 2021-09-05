@@ -27,7 +27,7 @@ ONS_reservatorios <- function(formato="tabela") {
       tabela_ONS$subsistema <- as.factor(tabela_ONS$subsistema)
       tabela_ONS$bacia <- as.factor(tabela_ONS$bacia)
 
-      return(tabela_ONS)
+      return(dplyr::as_tibble(tabela_ONS))
 
     } else{
 
@@ -35,7 +35,7 @@ ONS_reservatorios <- function(formato="tabela") {
         dplyr::group_by(data, subsistema) %>%
         dplyr::summarise(percentual = max(subsistema_valor_util))
 
-      return(resumo_ONS)
+      return(dplyr::as_tibble(resumo_ONS))
     }
 
   } else{
