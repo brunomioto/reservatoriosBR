@@ -183,7 +183,7 @@ As variáveis retornadas são:
 
 ### A função `ONS_reservatorios()`
 
-Essa função busca os dados dos reservatórios brasileiros observados pelo [**Operador Nacional do Sistema Elétrico (ONS)**](http://www.ons.org.br/paginas/energia-agora/reservatorios) e pode retornar valores em 2 formatos:
+Essa função busca os **dados atuais** dos reservatórios brasileiros observados pelo [**Operador Nacional do Sistema Elétrico (ONS)**](http://www.ons.org.br/paginas/energia-agora/reservatorios) e pode retornar valores em 2 formatos:
 
 - Tabela
 
@@ -203,7 +203,7 @@ ONS_reservatorios(formato = "resumo")
 
 ### A função `ONS_EAR_subsistemas()`
 
-Essa função tem como objetivo buscar a série histórica da Energia Armazenada (EAR) dos subsistemas observados pela ONS.
+Essa função tem como objetivo buscar a **série histórica** da Energia Armazenada (EAR) dos subsistemas observados pela ONS.
 
 As variáveis retornadas são:
 
@@ -292,8 +292,7 @@ tabela_reservatorios_ONS() %>%
   head()
 ```
 
-
-## A função `info_reservatoriosBR()`
+### A função `info_reservatoriosBR()`
 
 Essa função retorna uma tabela com informações das funções utilizadas nesse pacote.
 
@@ -304,6 +303,14 @@ As variáveis retornadas são:
 - `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
 - `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
 - `Fonte` - A fonte dos dados buscados. 
+
+```{r, warning=FALSE}
+library(knitr)
+
+info_reservatoriosBR() %>%
+  kable()
+```
+
 
 ## To-do
 

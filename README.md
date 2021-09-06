@@ -201,8 +201,8 @@ As variáveis retornadas são:
 
 ### A função `ONS_reservatorios()`
 
-Essa função busca os dados dos reservatórios brasileiros observados pelo
-[**Operador Nacional do Sistema Elétrico
+Essa função busca os **dados atuais** dos reservatórios brasileiros
+observados pelo [**Operador Nacional do Sistema Elétrico
 (ONS)**](http://www.ons.org.br/paginas/energia-agora/reservatorios) e
 pode retornar valores em 2 formatos:
 
@@ -254,7 +254,7 @@ ONS_reservatorios(formato = "resumo")
 
 ### A função `ONS_EAR_subsistemas()`
 
-Essa função tem como objetivo buscar a série histórica da Energia
+Essa função tem como objetivo buscar a **série histórica** da Energia
 Armazenada (EAR) dos subsistemas observados pela ONS.
 
 As variáveis retornadas são:
@@ -345,7 +345,7 @@ tabela_reservatorios_ONS() %>%
 #> 6 Norte      SERRA DA MESA           19128 TOCANTINS     GO       <NA>
 ```
 
-## A função `info_reservatoriosBR()`
+### A função `info_reservatoriosBR()`
 
 Essa função retorna uma tabela com informações das funções utilizadas
 nesse pacote.
@@ -357,6 +357,27 @@ As variáveis retornadas são:
   - `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
   - `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
   - `Fonte` - A fonte dos dados buscados.
+
+<!-- end list -->
+
+``` r
+library(knitr)
+
+info_reservatoriosBR() %>%
+  kable()
+```
+
+| Função                              | Ação                                                         | Nível.de.detalhamento | Dados.disponíveis | Fonte   |
+| :---------------------------------- | :----------------------------------------------------------- | :-------------------- | :---------------- | :------ |
+| ONS\_EAR\_subsistemas()             | Dados históricos da EAR de subsistemas                       | Subsistemas           | A partir de 2000  | ONS     |
+| ONS\_reservatorios()                | Dados atuais da EAR dos reservatórios segundo a ONS          | Reservatórios         | Última data       | ONS     |
+| reservatorio\_sin()                 | Dados históricos de reservatórios do SIN                     | Reservatórios         | \-                | SAR-ANA |
+| reservatorio\_cantareira()          | Dados históricos de reservatórios do Sist. Cantareira        | Reservatórios         | A partir de 2000  | SAR-ANA |
+| reservatorio\_nordeste\_semiarido() | Dados históricos de reservatórios do Mód. Nordeste-Semiárido | Reservatórios         | \-                | SAR-ANA |
+| ultima\_medicao()                   | Dados atuais dos reservatórios segundo o SAR                 | Reservatórios         | Última data       | SAR-ANA |
+| tabela\_reservatorios()             | Dataset dos reservatórios do SAR disponíveis para busca      | Reservatórios         | Dataset           | SAR-ANA |
+| tabela\_reservatorios\_ONS()        | Dataset dos reservatórios da ONS disponíveis para busca      | Reservatórios         | Dataset           | ONS     |
+| info\_reservatoriosBR()             | Lista todas as funções do pacote reservatoriosBR             | \-                    | \-                | \-      |
 
 ## To-do
 
