@@ -67,7 +67,7 @@ reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado
 Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as
 bacias dos reservatórios contidos no SIN.
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-mapa-sin.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/modelo-principal-mapa-sin.png" width="100%" style="display: block; margin: auto;" />
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 

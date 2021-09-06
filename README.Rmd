@@ -67,7 +67,7 @@ Atualmente o pacote possui **9** funções:
 Utilize a função para obter os dados históricos dos principais reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as bacias dos reservatórios contidos no SIN.
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
-knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-mapa-sin.png')
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/modelo-principal-mapa-sin.png')
 ```
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
@@ -213,7 +213,6 @@ As variáveis retornadas são:
 - `ear_verif_subsistema_mwmes` - Valor de EAR verificada no dia por subsistema na unidade de medida MWmês
 - `ear_verif_subsistema_percentual` - Valor de EAR verificada no dia por subsistema na unidade de
 medida %
-
 
 Esses valores são utilizados como referência para o nível dos reservatórios e quanta energia eles ainda podem produzir.
 
