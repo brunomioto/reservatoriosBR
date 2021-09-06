@@ -2,6 +2,14 @@
 output: github_document
 ---
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/readme-"
+)
+```
+
 # **reservatoriosBR** <img src="man/figures/logo.png" align="right" width="25%" min-width="120px"/>
 
 <!-- badges: start -->
@@ -222,7 +230,9 @@ plot_2 <- dados_ONS_SE %>%
 
 ```
 
-<img src=".figures/plot2.png" align="center" width="100%" min-width="120px"/>
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png')
+```
 
 ### O dataset `tabela_reservatorios`
 

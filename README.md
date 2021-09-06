@@ -2,6 +2,8 @@
 output: github_document
 ---
 
+
+
 # **reservatoriosBR** <img src="man/figures/logo.png" align="right" width="25%" min-width="120px"/>
 
 <!-- badges: start -->
@@ -71,24 +73,21 @@ Utilize a função para obter os dados históricos dos principais reservatórios
 
 ```r
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
-```
-
-```
-## # A tibble: 7,306 x 11
-##    data_medicao codigo_reservat~ reservatorio cota_m afluencia_m3_s defluencia_m3_s vazao_vertida_m~
-##    <date>       <fct>            <fct>         <dbl>          <dbl>           <dbl>            <dbl>
-##  1 2000-01-01   19058            ITAIPU         216.           9761            8101                0
-##  2 2000-01-02   19058            ITAIPU         216.           9300            8401                0
-##  3 2000-01-03   19058            ITAIPU         216.           9385            8870                0
-##  4 2000-01-04   19058            ITAIPU         216.           9450           10351                0
-##  5 2000-01-05   19058            ITAIPU         216.           8868           10789                0
-##  6 2000-01-06   19058            ITAIPU         216.           8275           10815                0
-##  7 2000-01-07   19058            ITAIPU         215.           7963            9854                0
-##  8 2000-01-08   19058            ITAIPU         215.           8367            8869                0
-##  9 2000-01-09   19058            ITAIPU         215.           9408            8279                0
-## 10 2000-01-10   19058            ITAIPU         215.           8706            8958                0
-## # ... with 7,296 more rows, and 4 more variables: vazao_turbinada_m3_s <dbl>,
-## #   vazao_natural_m3_s <dbl>, volume_util_percentual <dbl>, vazao_incremental_m3_s <dbl>
+#> # A tibble: 7,306 x 11
+#>    data_medicao codigo_reservat~ reservatorio cota_m afluencia_m3_s defluencia_m3_s vazao_vertida_m~
+#>    <date>       <fct>            <fct>         <dbl>          <dbl>           <dbl>            <dbl>
+#>  1 2000-01-01   19058            ITAIPU         216.           9761            8101                0
+#>  2 2000-01-02   19058            ITAIPU         216.           9300            8401                0
+#>  3 2000-01-03   19058            ITAIPU         216.           9385            8870                0
+#>  4 2000-01-04   19058            ITAIPU         216.           9450           10351                0
+#>  5 2000-01-05   19058            ITAIPU         216.           8868           10789                0
+#>  6 2000-01-06   19058            ITAIPU         216.           8275           10815                0
+#>  7 2000-01-07   19058            ITAIPU         215.           7963            9854                0
+#>  8 2000-01-08   19058            ITAIPU         215.           8367            8869                0
+#>  9 2000-01-09   19058            ITAIPU         215.           9408            8279                0
+#> 10 2000-01-10   19058            ITAIPU         215.           8706            8958                0
+#> # ... with 7,296 more rows, and 4 more variables: vazao_turbinada_m3_s <dbl>,
+#> #   vazao_natural_m3_s <dbl>, volume_util_percentual <dbl>, vazao_incremental_m3_s <dbl>
 ```
 
 As variáveis retornadas são:
@@ -183,27 +182,24 @@ Gera um dataframe com diversas variáveis de 39 reservatórios observados pela O
 
 ```r
 ONS_reservatorios(formato = "tabela")
-```
-
-```
-## # A tibble: 39 x 19
-##    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~ reservatorio_ea~
-##    <date>       <fct>      <fct> <chr>                   <dbl>            <dbl>            <dbl>
-##  1 2021-09-05   Norte      AMAZ~ BALBINA                  776.            655.              84.4
-##  2 2021-09-05   Norte      TOCA~ TUCURUI                 7686.           6533.              85.0
-##  3 2021-09-05   Norte      TOCA~ SERRA DA ME~            6530.           8830.              25.4
-##  4 2021-09-05   Nordeste   JEQU~ IRAPE                   1006.            565.              28.5
-##  5 2021-09-05   Nordeste   SAO ~ ITAPARICA               3415.           2381.              69.7
-##  6 2021-09-05   Nordeste   SAO ~ SOBRADINHO             30048.          13946.              46.4
-##  7 2021-09-05   Nordeste   SAO ~ TRÊS MARIAS            16013             974.              41.5
-##  8 2021-09-05   Sul        CAPI~ G. P. SOUZA              377.             88.8             23.6
-##  9 2021-09-05   Sul        IGUA~ SALTO SANTI~            3403.           1095.              32.2
-## 10 2021-09-05   Sul        IGUA~ SANTA CLARA~             378.             83.7             22.1
-## # ... with 29 more rows, and 12 more variables: reservatorio_valor_util <dbl>,
-## #   reservatorio_porcentagem <dbl>, bacia_max <dbl>, bacia_ear_verificada_mw_mes <dbl>,
-## #   bacia_ear_verificada_porcentagem <dbl>, bacia_porcentagem <dbl>, subsistema_max <dbl>,
-## #   subsistema_ear_verificada_mw_mes <dbl>, subsistema_valor_util <dbl>, sin_max <dbl>,
-## #   sinear_verificada_mw_mes <dbl>, sinear_porcentagem <dbl>
+#> # A tibble: 39 x 19
+#>    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~ reservatorio_ea~
+#>    <date>       <fct>      <fct> <chr>                   <dbl>            <dbl>            <dbl>
+#>  1 2021-09-05   Norte      AMAZ~ BALBINA                  776.            655.              84.4
+#>  2 2021-09-05   Norte      TOCA~ TUCURUI                 7686.           6533.              85.0
+#>  3 2021-09-05   Norte      TOCA~ SERRA DA ME~            6530.           8830.              25.4
+#>  4 2021-09-05   Nordeste   JEQU~ IRAPE                   1006.            565.              28.5
+#>  5 2021-09-05   Nordeste   SAO ~ ITAPARICA               3415.           2381.              69.7
+#>  6 2021-09-05   Nordeste   SAO ~ SOBRADINHO             30048.          13946.              46.4
+#>  7 2021-09-05   Nordeste   SAO ~ TRÊS MARIAS            16013             974.              41.5
+#>  8 2021-09-05   Sul        CAPI~ G. P. SOUZA              377.             88.8             23.6
+#>  9 2021-09-05   Sul        IGUA~ SALTO SANTI~            3403.           1095.              32.2
+#> 10 2021-09-05   Sul        IGUA~ SANTA CLARA~             378.             83.7             22.1
+#> # ... with 29 more rows, and 12 more variables: reservatorio_valor_util <dbl>,
+#> #   reservatorio_porcentagem <dbl>, bacia_max <dbl>, bacia_ear_verificada_mw_mes <dbl>,
+#> #   bacia_ear_verificada_porcentagem <dbl>, bacia_porcentagem <dbl>, subsistema_max <dbl>,
+#> #   subsistema_ear_verificada_mw_mes <dbl>, subsistema_valor_util <dbl>, sin_max <dbl>,
+#> #   sinear_verificada_mw_mes <dbl>, sinear_porcentagem <dbl>
 ```
 
 - Resumo
@@ -213,16 +209,13 @@ Gera um relatório dos 4 subsistemas da ONS e a porcentagem atual em cada um.
 
 ```r
 ONS_reservatorios(formato = "resumo")
-```
-
-```
-## # A tibble: 4 x 3
-##   data_medicao subsistema             percentual
-##   <date>       <chr>                       <dbl>
-## 1 2021-09-05   Nordeste                     48.2
-## 2 2021-09-05   Norte                        69.1
-## 3 2021-09-05   Sudeste / Centro-Oeste       20.4
-## 4 2021-09-05   Sul                          26.2
+#> # A tibble: 4 x 3
+#>   data_medicao subsistema             percentual
+#>   <date>       <chr>                       <dbl>
+#> 1 2021-09-05   Nordeste                     48.2
+#> 2 2021-09-05   Norte                        69.1
+#> 3 2021-09-05   Sudeste / Centro-Oeste       20.4
+#> 4 2021-09-05   Sul                          26.2
 ```
 
 ### A função `ONS_EAR_subsistemas()`
@@ -235,7 +228,7 @@ Com esses dados, podemos observar os resultados da seca nos reservatórios do su
 
 
 
-<img src=".figures/plot2.png" align="center" width="100%" min-width="120px"/>
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png" width="100%" style="display: block; margin: auto;" />
 
 ### O dataset `tabela_reservatorios`
 
@@ -255,18 +248,15 @@ tabela_exemplo <- tabela_reservatorios()
 
 tabela_exemplo %>% 
   head()
-```
-
-```
-## # A tibble: 6 x 8
-##   sistema            codigo reservatorio    bacia rio   estado_1 estado_2   ano
-##   <fct>               <int> <fct>           <fct> <lgl> <fct>    <fct>    <int>
-## 1 nordeste_semiarido  12001 25 DE MARÇO     <NA>  NA    RN       <NA>        NA
-## 2 nordeste_semiarido  12002 ABÓBORAS        <NA>  NA    PE       <NA>        NA
-## 3 nordeste_semiarido  12003 ACARAPE DO MEIO <NA>  NA    CE       <NA>        NA
-## 4 nordeste_semiarido  12004 ACARAÚ MIRIM    <NA>  NA    CE       <NA>      1907
-## 5 nordeste_semiarido  12005 ACAUÃ           <NA>  NA    PB       <NA>        NA
-## 6 nordeste_semiarido  12006 ADAUTO BEZERRA  <NA>  NA    CE       <NA>        NA
+#> # A tibble: 6 x 8
+#>   sistema            codigo reservatorio    bacia rio   estado_1 estado_2   ano
+#>   <fct>               <int> <fct>           <fct> <lgl> <fct>    <fct>    <int>
+#> 1 nordeste_semiarido  12001 25 DE MARÇO     <NA>  NA    RN       <NA>        NA
+#> 2 nordeste_semiarido  12002 ABÓBORAS        <NA>  NA    PE       <NA>        NA
+#> 3 nordeste_semiarido  12003 ACARAPE DO MEIO <NA>  NA    CE       <NA>        NA
+#> 4 nordeste_semiarido  12004 ACARAÚ MIRIM    <NA>  NA    CE       <NA>      1907
+#> 5 nordeste_semiarido  12005 ACAUÃ           <NA>  NA    PB       <NA>        NA
+#> 6 nordeste_semiarido  12006 ADAUTO BEZERRA  <NA>  NA    CE       <NA>        NA
 ```
 
 
