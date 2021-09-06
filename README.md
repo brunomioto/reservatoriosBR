@@ -304,12 +304,12 @@ tabela_reservatorios() %>%
 #> # A tibble: 6 x 8
 #>   sistema            codigo reservatorio    bacia rio   estado_1 estado_2   ano
 #>   <fct>               <int> <fct>           <fct> <lgl> <fct>    <fct>    <int>
-#> 1 nordeste_semiarido  12001 25 DE MARÇO     ""    NA    RN       ""          NA
-#> 2 nordeste_semiarido  12002 ABÓBORAS        ""    NA    PE       ""          NA
-#> 3 nordeste_semiarido  12003 ACARAPE DO MEIO ""    NA    CE       ""          NA
-#> 4 nordeste_semiarido  12004 ACARAÚ MIRIM    ""    NA    CE       ""        1907
-#> 5 nordeste_semiarido  12005 ACAUÃ           ""    NA    PB       ""          NA
-#> 6 nordeste_semiarido  12006 ADAUTO BEZERRA  ""    NA    CE       ""          NA
+#> 1 nordeste_semiarido  12001 25 DE MARÇO     <NA>  NA    RN       <NA>        NA
+#> 2 nordeste_semiarido  12002 ABÓBORAS        <NA>  NA    PE       <NA>        NA
+#> 3 nordeste_semiarido  12003 ACARAPE DO MEIO <NA>  NA    CE       <NA>        NA
+#> 4 nordeste_semiarido  12004 ACARAÚ MIRIM    <NA>  NA    CE       <NA>      1907
+#> 5 nordeste_semiarido  12005 ACAUÃ           <NA>  NA    PB       <NA>        NA
+#> 6 nordeste_semiarido  12006 ADAUTO BEZERRA  <NA>  NA    CE       <NA>        NA
 ```
 
 ### A função `tabela_reservatorios_ONS()`
@@ -337,12 +337,12 @@ tabela_reservatorios_ONS() %>%
 #> # A tibble: 6 x 6
 #>   subsistema reservatorio           codigo bacia         estado_1 estado_2
 #>   <fct>      <fct>                   <int> <fct>         <fct>    <fct>   
-#> 1 Nordeste   IRAPE                   19115 JEQUITINHONHA MG       ""      
-#> 2 Nordeste   SOBRADINHO              19121 SAO FRANCISCO BA       ""      
-#> 3 Nordeste   TRES MARIAS             19119 SAO FRANCISCO MG       ""      
-#> 4 Nordeste   LUIZ GONZAGA/ITAPARICA  19122 SAO FRANCISCO BA       "PE"    
-#> 5 Norte      BALBINA                 19141 AMAZONAS      AM       ""      
-#> 6 Norte      SERRA DA MESA           19128 TOCANTINS     GO       ""
+#> 1 Nordeste   IRAPE                   19115 JEQUITINHONHA MG       <NA>    
+#> 2 Nordeste   SOBRADINHO              19121 SAO FRANCISCO BA       <NA>    
+#> 3 Nordeste   TRES MARIAS             19119 SAO FRANCISCO MG       <NA>    
+#> 4 Nordeste   LUIZ GONZAGA/ITAPARICA  19122 SAO FRANCISCO BA       PE      
+#> 5 Norte      BALBINA                 19141 AMAZONAS      AM       <NA>    
+#> 6 Norte      SERRA DA MESA           19128 TOCANTINS     GO       <NA>
 ```
 
 ## A função `info_reservatoriosBR()`
