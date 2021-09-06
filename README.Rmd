@@ -279,9 +279,9 @@ Essa função retorna uma tabela parecida com a `tabela_reservatorios()`, mas co
 
 São 39 reservatórios com 6 variáveis, sendo elas:
 
+- `subsistema` - Nome do subsistema.
 - `reservatorio` - O nome do reservatório.
 - `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
-- `subsistema` - Nome do subsistema
 - `bacia` - A bacia a qual o reservatório pertence
 - `rio` - O rio o qual o reservatório pertence (se disponível).
 - `estado_1` - Estado o qual o reservatório pertence.
@@ -291,6 +291,19 @@ São 39 reservatórios com 6 variáveis, sendo elas:
 tabela_reservatorios_ONS() %>% 
   head()
 ```
+
+
+## A função `info_reservatoriosBR()`
+
+Essa função retorna uma tabela com informações das funções utilizadas nesse pacote.
+
+As variáveis retornadas são:
+
+- `Função` - O nome da função.
+- `Ação` - O objetivo da função a ser utilizada.
+- `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
+- `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
+- `Fonte` - A fonte dos dados buscados. 
 
 ## To-do
 
