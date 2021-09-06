@@ -20,10 +20,14 @@ ONS_reservatorios <- function(formato="tabela") {
       tidyr::unnest_wider(value) %>%
       janitor::clean_names()
 
+    tabela_ONS$data <- as.Date(tabela_ONS$data)
+
+    tabela_ONS <- tabela_ONS %>%
+      dplyr::rename(data_medicao = data)
+
     if (formato == "tabela") {
 
       tabela_ONS <- dplyr::select(tabela_ONS, -name)
-      tabela_ONS$data <- as.Date(tabela_ONS$data)
       tabela_ONS$subsistema <- as.factor(tabela_ONS$subsistema)
       tabela_ONS$bacia <- as.factor(tabela_ONS$bacia)
 
@@ -32,7 +36,7 @@ ONS_reservatorios <- function(formato="tabela") {
     } else{
 
       resumo_ONS <- tabela_ONS %>%
-        dplyr::group_by(data, subsistema) %>%
+        dplyr::group_by(data_medicao, subsistema) %>%
         dplyr::summarise(percentual = max(subsistema_valor_util))
 
       return(dplyr::as_tibble(resumo_ONS))

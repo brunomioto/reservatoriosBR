@@ -163,7 +163,7 @@ As variáveis retornadas são:
 - `volume_util_porcentagem` - Volume útil (%)
 - `tipo` - Tipo? Ainda preciso descobrir o que isso significa
 
-
+## As funções `ONS` - Operador Nacional do Sistema Elétrico
 
 ### A função `ONS_reservatorios()`
 
@@ -185,11 +185,46 @@ Gera um relatório dos 4 subsistemas da ONS e a porcentagem atual em cada um.
 ONS_reservatorios(formato = "resumo")
 ```
 
-### A função `ONS_EAR_reservatorios()`
+### A função `ONS_EAR_subsistemas()`
 
+Essa função tem como objetivo buscar a série histórica da Energia Armazenada (EAR) dos subsistemas observados pela ONS.
 
+Esses valores são utilizados como referência para o nível dos reservatórios e quanta energia eles ainda podem produzir.
 
-## O dataset `tabela_reservatorios`
+Com esses dados, podemos observar os resultados da seca nos reservatórios do subsistema Sudeste / Centro-oeste, por exemplo
+
+```{r, warning = FALSE, message = FALSE, results = 'hide', fig.keep = 'all', dpi = 600, echo=FALSE, eval = FALSE}
+library(tidyverse)
+
+dados_ONS <- ONS_EAR_subsistemas(ano_inicial = 2016, ano_final = 2021)
+
+dados_ONS_SE <- dados_ONS %>% 
+  filter(subsistema == "Sudeste / Centro-Oeste")
+
+plot_2 <- dados_ONS_SE %>% 
+  ggplot(aes(x=data_medicao, y=ear_verif_subsistema_percentual))+
+  geom_area(color = "#377eb8", fill = "#377eb850", size=1.2)+
+  geom_point(data = dados_ONS_SE %>% filter(data_medicao == max(data_medicao)),
+             color = "#377eb8",
+             size = 2)+
+  scale_x_date(breaks = "1 year",
+               date_labels = "%Y",
+               limits = c(as.Date("2016-01-01"), as.Date("2021-12-31")),
+               expand = c(0,0))+
+  scale_y_continuous(expand = c(0,0), limits = c(0,100))+
+  theme_bw()+
+  theme(
+    panel.grid.minor.x = element_blank()
+  )+
+  labs(x = "Data da medição",
+       y = "EAR Subsistema (%)",
+       title = "Série histórica (2016-2021) da EAR nos reservatórios do subsistema Sudeste / Centro-Oeste")
+
+```
+
+<img src=".figures/plot2.png" align="center" width="100%" min-width="120px"/>
+
+### O dataset `tabela_reservatorios`
 
 Esse dataset já vem pré-carregado com o pacote! Nele estão algumas informações sobre os reservatórios que podem ser carregados com as funções acima.
 
@@ -202,10 +237,10 @@ São 708 reservatórios com 5 variáveis, sendo elas:
 - `codigo` - O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.
 
 ```{r}
-tabela_exemplo <- tabela_reservatorios_ONS()
-  
+tabela_exemplo <- tabela_reservatorios()
 
-??tabela_reservatorios_ONS()
+tabela_exemplo %>% 
+  head()
 ```
 
 

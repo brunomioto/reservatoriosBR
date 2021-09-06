@@ -17,5 +17,5 @@
 #' tabela_reservatorios()
 #'
 tabela_reservatorios <- function(){
-  dplyr::as_tibble(reservatoriosBR:::tabela_reservatorios_data, envir=environment())
+  dplyr::as_tibble(reservatoriosBR:::tabela_reservatorios_data)
 }
