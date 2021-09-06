@@ -3,6 +3,7 @@
 #' Um dataset contendo os atributos dos principais reservatorios brasileiros.
 #'
 #' @source <https://www.ana.gov.br/sar0/>. obtido em 2021-08-22
+#' @export
 #'
 #' @format Um dataframe com 708 observacoes e 5 variaveis
 #' \describe{

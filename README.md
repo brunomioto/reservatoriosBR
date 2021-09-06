@@ -66,8 +66,7 @@ reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado
 Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as
 bacias dos reservatórios contidos no SIN.
 
-![Sistema Interligado
-Nacional](man/figures/modelo-principal-mapa-sin.png)
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-mapa-sin.png" width="100%" style="display: block; margin: auto;" />
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
@@ -125,7 +124,7 @@ Podemos utilizar estes dados históricos para fazer análises e gráficos.
 A Afluência(m³/s), por exemplo, mede a quantidade de água que chega nas
 represas.
 
-<img src="man/figures/plot1.png" align="center" width="100%" min-width="120px"/>
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png" width="100%" style="display: block; margin: auto;" />
 
 ### A função `reservatorio_cantareira()`
 
@@ -135,8 +134,7 @@ Cantareira**](https://www.ana.gov.br/sar/outros-sistemas-hidricos/cantareira).
 A imagem abaixo apresenta as bacias dos reservatórios contidos no
 Sistema Cantareira.
 
-![Sistema
-Cantareira](man/figures/outros-sistemas-hidricos-cantareira-principal.png)
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/outros-sistemas-hidricos-cantareira-principal.png" width="100%" style="display: block; margin: auto;" />
 
 `reservatorio_cantareira(codigo_reservatorio, data_inicial, data_final)`
 
@@ -173,7 +171,7 @@ brasileiros que pertencem ao módulo [**Nordeste e
 Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido) do SAR. A
 imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
 
-![Sistema Cantareira](man/figures/mapa-principal-ns.png)
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-ns.png" width="100%" style="display: block; margin: auto;" />
 
 ### A função `ultima_medicao()`
 
@@ -264,7 +262,7 @@ reservatórios e quanta energia eles ainda podem produzir.
 Com esses dados, podemos observar os resultados da seca nos
 reservatórios do subsistema Sudeste / Centro-oeste, por exemplo
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot2.png" width="100%" style="display: block; margin: auto;" />
 
 ### O dataset `tabela_reservatorios`
 

@@ -1,5 +1,7 @@
 #' Informações das funções do pacote reservatoriosBR
 #'
+#' @export
+#'
 #' @examples
 #' info_reservatoriosBR()
 

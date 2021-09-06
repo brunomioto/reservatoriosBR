@@ -3,6 +3,7 @@
 #' Um dataset contendo os atributos dos principais reservatorios brasileiros apresentados pela ONS.
 #'
 #' @source <http://www.ons.org.br/paginas/energia-agora/reservatorios>. obtido em 2021-08-30
+#' @export
 #'
 #' @format Um dataframe com 39 observacoes e 6 variaveis
 #' \describe{
