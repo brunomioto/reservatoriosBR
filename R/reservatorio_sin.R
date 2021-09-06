@@ -1,4 +1,4 @@
-#' Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional
+#' Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional
 #'
 #' @export
 #' @param codigo_reservatorio Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando `tabela_reservatorios`).

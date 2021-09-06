@@ -8,11 +8,11 @@ Um dataframe com 39 observacoes e 6 variaveis
 \describe{
 
 \item{reservatorio}{o nome do reservatorio}
+\item{codigo}{o codigo do reservatorio segundo o SAR}
 \item{bacia}{bacia hidrológica a qual o reservatorio pertence}
 \item{subsistema}{subsistema-ONS a qual o reservatorio pertence}
 \item{estado_1}{estado o qual o reservatorio pertence}
 \item{estado_2}{se o reservatorio fica entre estados, o segundo estado}
-\item{codigo}{o codigo do reservatorio segundo o SAR}
 }
 }
 \source{

@@ -1,4 +1,4 @@
-#' Dados dos principais reservatorios brasileiros do modulo Nordeste e Semiarido do SAR
+#' Dados dos principais reservatórios brasileiros do módulo Nordeste e Semiárido do SAR
 #'
 #' @export
 #' @param codigo_reservatorio Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando `tabela_reservatorios`).
@@ -13,7 +13,6 @@ reservatorio_nordeste_semiarido <-
            data_inicial = "1980-01-01",
            data_final = Sys.Date()) {
     #motivation msg
-    message("Me avise o que achou deste pacote!")
 
     reservatorio_busca <- tabela_reservatorios() %>%
       dplyr::filter(codigo %in% codigo_reservatorio) %>%

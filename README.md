@@ -257,6 +257,11 @@ ONS_reservatorios(formato = "resumo")
 Essa função tem como objetivo buscar a **série histórica** da Energia
 Armazenada (EAR) dos subsistemas observados pela ONS.
 
+`ONS_EAR_subsistemas(ano_inicial, ano_final)`
+
+  - `ano_inicial` O ano inicial dos registros. Ex: `2000`
+  - `ano_final` O ano final dos registros. E: `2021`
+
 As variáveis retornadas são:
 
   - `data_medicao` - Data da medição realizada
@@ -357,15 +362,6 @@ As variáveis retornadas são:
   - `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
   - `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
   - `Fonte` - A fonte dos dados buscados.
-
-<!-- end list -->
-
-``` r
-library(knitr)
-
-info_reservatoriosBR() %>%
-  kable()
-```
 
 | Função                              | Ação                                                         | Nível.de.detalhamento | Dados.disponíveis | Fonte   |
 | :---------------------------------- | :----------------------------------------------------------- | :-------------------- | :---------------- | :------ |

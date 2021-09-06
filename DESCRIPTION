@@ -1,18 +1,22 @@
 Package: reservatoriosBR
 Title: Get brazilian reservoirs data
-Version: 0.5
+Version: 1.0
 Authors@R: 
     person(given = "Bruno",
            family = "Mioto",
            role = c("aut", "cre"),
-           email = "brunomioto97@gmail.com")
+           email = "brunomioto97@gmail.com",
+           comment = c(ORCID = "0000-0002-3064-4486"))
 Description: Download all the historic data from brazilian reservoir.
 License: GPL (>= 3)
+URL: https://github.com/brunomioto/reservatoriosBR
+BugReports: https://github.com/brunomioto/reservatoriosBR/issues
 Imports:
 	glue,
 	rvest,
 	janitor,
 	dplyr,
+	jsonlite,
 	magrittr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

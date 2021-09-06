@@ -1,0 +1,10 @@
+title: reservatoriosBR
+url: http://brunomioto.github.io/reservatoriosBR
+template:
+  params:
+    bootswatch: flatly
+    ganalytics: 
+
+authors:
+  Bruno Mioto:
+  href: https://brunomioto.com.br

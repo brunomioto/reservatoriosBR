@@ -7,10 +7,10 @@
 Um dataframe com 708 observacoes e 5 variaveis
 \describe{
 \item{sistema}{sistema o qual o reservatorio pertence}
+\item{codigo}{o codigo do reservatorio segundo o SAR}
 \item{estado_1}{estado o qual o reservatorio pertence}
 \item{estado_2}{se o reservatorio fica entre estados, o segundo estado}
 \item{reservatorio}{o nome do reservatorio}
-\item{codigo}{o codigo do reservatorio segundo o SAR}
 }
 }
 \source{

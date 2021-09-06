@@ -1,4 +1,4 @@
-#' Dados dos reservatorios brasileiros do Sistema Cantareira (Cantareira)
+#' Dados dos reservatórios brasileiros do Sistema Cantareira
 #'
 #' @export
 #' @param codigo_reservatorio Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando `tabela_reservatorios`).
@@ -6,14 +6,13 @@
 #' @param data_final Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.
 #'
 #' @examples
-#' reservatorio_cartareira(29001, "2000-01-01", Sys.Date())
+#' reservatorio_cantareira(29001, "2000-01-01", Sys.Date())
 
-reservatorio_cartareira <-
+reservatorio_cantareira <-
   function(codigo_reservatorio,
            data_inicial = "1980-01-01",
            data_final = Sys.Date()) {
     #motivation msg
-    message("Me avise o que achou deste pacote!")
 
     reservatorio_busca <- tabela_reservatorios %>%
       dplyr::filter(codigo %in% codigo_reservatorio) %>%

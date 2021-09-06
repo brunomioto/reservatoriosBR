@@ -2,7 +2,7 @@
 % Please edit documentation in R/reservatorio_sin.R
 \name{reservatorio_sin}
 \alias{reservatorio_sin}
-\title{Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional}
+\title{Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional}
 \usage{
 reservatorio_sin(
   codigo_reservatorio,
@@ -18,7 +18,7 @@ reservatorio_sin(
 \item{data_final}{Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.}
 }
 \description{
-Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional
+Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional
 }
 \examples{
 reservatorio_sin(19058, "2000-01-01", Sys.Date())
