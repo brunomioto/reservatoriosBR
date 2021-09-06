@@ -12,7 +12,8 @@ Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](htt
 <!-- badges: end -->
 
 Pacote R para obtenção de dados dos principais reservatórios brasileiros
-a partir da plataforma [SAR-ANA](https://www.ana.gov.br/sar/).
+a partir da plataforma **[SAR-ANA](https://www.ana.gov.br/sar/)** e da
+**[ONS](http://www.ons.org.br/paginas/energia-agora/reservatorios)**.
 
 Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
@@ -40,7 +41,7 @@ library(reservatoriosBR)
 
 ## Uso
 
-Atualmente o pacote possui **n** funções:
+Atualmente o pacote possui **9** funções:
 
 ### Funções de busca de dados
 
@@ -218,7 +219,7 @@ ONS_reservatorios(formato = "tabela")
 #>  1 2021-09-05   Norte      AMAZ~ BALBINA                  776.            655. 
 #>  2 2021-09-05   Norte      TOCA~ TUCURUI                 7686.           6533. 
 #>  3 2021-09-05   Norte      TOCA~ SERRA DA ME~            6530.           8830. 
-#>  4 2021-09-05   Nordeste   JEQU~ IRAPE                   1006.            565. 
+#>  4 2021-09-05   Nordeste   JEQU~ IRAPE                   1006.            566. 
 #>  5 2021-09-05   Nordeste   SAO ~ ITAPARICA               3415.           2381. 
 #>  6 2021-09-05   Nordeste   SAO ~ SOBRADINHO             30048.          13946. 
 #>  7 2021-09-05   Nordeste   SAO ~ TRÊS MARIAS            16013             974. 
@@ -256,39 +257,92 @@ ONS_reservatorios(formato = "resumo")
 Essa função tem como objetivo buscar a série histórica da Energia
 Armazenada (EAR) dos subsistemas observados pela ONS.
 
+As variáveis retornadas são:
+
+  - `data_medicao` - Data da medição realizada
+  - `subsistema` - Nome do subsistema
+  - `ear_max_subsistema_mwmes` - Valor de EAR máxima por subsistema na
+    unidade de medida MWmês
+  - `ear_verif_subsistema_mwmes` - Valor de EAR verificada no dia por
+    subsistema na unidade de medida MWmês
+  - `ear_verif_subsistema_percentual` - Valor de EAR verificada no dia
+    por subsistema na unidade de medida %
+
 Esses valores são utilizados como referência para o nível dos
 reservatórios e quanta energia eles ainda podem produzir.
 
 Com esses dados, podemos observar os resultados da seca nos
-reservatórios do subsistema Sudeste / Centro-oeste, por exemplo
+reservatórios do subsistema Sudeste / Centro-oeste, por exemplo:
 
 <img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot2.png" width="100%" style="display: block; margin: auto;" />
 
-### O dataset `tabela_reservatorios`
+## As funções de datasets
 
-Esse dataset já vem pré-carregado com o pacote\! Nele estão algumas
-informações sobre os reservatórios que podem ser carregados com as
-funções acima.
+### A função `tabela_reservatorios()`
+
+Essa função retorna uma tabela com informações sobre os reservatórios
+que podem ser utilizadas com as funções acima.
 
 São 708 reservatórios com 5 variáveis, sendo elas:
 
   - `sistema` - Sistema o qual o reservatório pertence.
+  - `codigo` - **O código do reservatório segundo o SAR. Utilizado nas
+    funções desse pacote.**
+  - `reservatorio` - O nome do reservatório.
+  - `bacia` - A bacia a qual o reservatório pertence (se disponível).
+  - `rio` - O rio o qual o reservatório pertence (se disponível).
   - `estado_1` - Estado o qual o reservatório pertence.
   - `estado_2` - Se o reservatório fica entre dois estados, o segundo
     estado. A ordem não tem importância.
-  - `reservatorio` - O nome do reservatório.
-  - `codigo` - O código do reservatório segundo o SAR. Utilizado nas
-    funções desse pacote.
+  - `ano` - Ano de funcionamento do reservatório (se disponível).
 
 <!-- end list -->
 
 ``` r
-tabela_exemplo <- tabela_reservatorios()
-#> Error in tabela_reservatorios(): could not find function "tabela_reservatorios"
-
-tabela_exemplo %>% 
+tabela_reservatorios() %>% 
   head()
-#> Error in head(.): object 'tabela_exemplo' not found
+#> # A tibble: 6 x 8
+#>   sistema            codigo reservatorio    bacia rio   estado_1 estado_2   ano
+#>   <fct>               <int> <fct>           <fct> <lgl> <fct>    <fct>    <int>
+#> 1 nordeste_semiarido  12001 25 DE MARÇO     <NA>  NA    RN       <NA>        NA
+#> 2 nordeste_semiarido  12002 ABÓBORAS        <NA>  NA    PE       <NA>        NA
+#> 3 nordeste_semiarido  12003 ACARAPE DO MEIO <NA>  NA    CE       <NA>        NA
+#> 4 nordeste_semiarido  12004 ACARAÚ MIRIM    <NA>  NA    CE       <NA>      1907
+#> 5 nordeste_semiarido  12005 ACAUÃ           <NA>  NA    PB       <NA>        NA
+#> 6 nordeste_semiarido  12006 ADAUTO BEZERRA  <NA>  NA    CE       <NA>        NA
+```
+
+### A função `tabela_reservatorios_ONS()`
+
+Essa função retorna uma tabela parecida com a `tabela_reservatorios()`,
+mas contendo apenas os reservatórios observados pela **ONS**.
+
+São 39 reservatórios com 6 variáveis, sendo elas:
+
+  - `reservatorio` - O nome do reservatório.
+  - `codigo` - **O código do reservatório segundo o SAR. Utilizado nas
+    funções desse pacote.**
+  - `subsistema` - Nome do subsistema
+  - `bacia` - A bacia a qual o reservatório pertence
+  - `rio` - O rio o qual o reservatório pertence (se disponível).
+  - `estado_1` - Estado o qual o reservatório pertence.
+  - `estado_2` - Se o reservatório fica entre dois estados, o segundo
+    estado. A ordem não tem importância.
+
+<!-- end list -->
+
+``` r
+tabela_reservatorios_ONS() %>% 
+  head()
+#> # A tibble: 6 x 6
+#>   reservatorio           bacia         subsistema estado_1 estado_2 codigo
+#>   <fct>                  <fct>         <fct>      <fct>    <fct>     <int>
+#> 1 IRAPE                  JEQUITINHONHA Nordeste   MG       <NA>      19115
+#> 2 SOBRADINHO             SAO FRANCISCO Nordeste   BA       <NA>      19121
+#> 3 TRES MARIAS            SAO FRANCISCO Nordeste   MG       <NA>      19119
+#> 4 LUIZ GONZAGA/ITAPARICA SAO FRANCISCO Nordeste   BA       PE        19122
+#> 5 BALBINA                AMAZONAS      Norte      AM       <NA>      19141
+#> 6 SERRA DA MESA          TOCANTINS     Norte      GO       <NA>      19128
 ```
 
 ## To-do
