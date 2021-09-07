@@ -310,7 +310,7 @@ reservatórios do subsistema Sudeste / Centro-oeste, por exemplo:
 Essa função retorna uma tabela com informações sobre os reservatórios
 que podem ser utilizadas com as funções acima.
 
-São 708 reservatórios com 5 variáveis, sendo elas:
+São **708 reservatórios** com **5 variáveis**, sendo elas:
 
   - `sistema` - Sistema o qual o reservatório pertence.
   - `codigo` - **O código do reservatório segundo o SAR. Utilizado nas
@@ -344,7 +344,7 @@ tabela_reservatorios() %>%
 Essa função retorna uma tabela parecida com a `tabela_reservatorios()`,
 mas contendo apenas os reservatórios observados pela **ONS**.
 
-São 39 reservatórios com 6 variáveis, sendo elas:
+São **39 reservatórios** com **6 variáveis**, sendo elas:
 
   - `subsistema` - Nome do subsistema.
   - `reservatorio` - O nome do reservatório.
