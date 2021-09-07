@@ -11,9 +11,9 @@ reservatorio_sin(
 )
 }
 \arguments{
-\item{codigo_reservatorio}{Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando \code{tabela_reservatorios}).}
+\item{codigo_reservatorio}{Código do reservatório a ser buscado, (você pode consultar a tabela com os codigos chamando \code{tabela_reservatorios}).}
 
-\item{data_inicial}{Data inicial do registro. Se for anterior a data de funcionamento, retorna a data de registro mais antiga.}
+\item{data_inicial}{Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.}
 
 \item{data_final}{Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.}
 }

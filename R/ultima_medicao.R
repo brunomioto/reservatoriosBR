@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @param codigo_reservatorio Codigo do reservatorio a ser buscado.
-#' #' @examples
+#' @examples
 #' ultima_medicao(19058)
 
 ultima_medicao <- function(codigo_reservatorio){

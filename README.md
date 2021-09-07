@@ -34,7 +34,7 @@ no R (mas é simples):
 
 ``` r
 #install.packages("devtools")
-devtools::install_github('brunomioto/reservatoriosBR@v0.5')
+devtools::install_github('brunomioto/reservatoriosBR@v1.0')
 library(reservatoriosBR)
 ```
 
@@ -233,10 +233,10 @@ ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
 #>    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~
 #>    <date>       <fct>      <fct> <chr>                   <dbl>            <dbl>
-#>  1 2021-09-06   Norte      AMAZ~ BALBINA                  776.            650. 
+#>  1 2021-09-06   Norte      AMAZ~ BALBINA                  776.            652. 
 #>  2 2021-09-06   Norte      TOCA~ TUCURUI                 7686.           6521. 
 #>  3 2021-09-06   Norte      TOCA~ SERRA DA ME~            6530.           8769. 
-#>  4 2021-09-06   Nordeste   JEQU~ IRAPE                   1006.            562. 
+#>  4 2021-09-06   Nordeste   JEQU~ IRAPE                   1006.            564. 
 #>  5 2021-09-06   Nordeste   SAO ~ ITAPARICA               3415.           2375. 
 #>  6 2021-09-06   Nordeste   SAO ~ SOBRADINHO             30048.          13862. 
 #>  7 2021-09-06   Nordeste   SAO ~ TRÊS MARIAS            16013             967. 
