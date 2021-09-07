@@ -63,6 +63,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7L92HSL0FC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7L92HSL0FC');
+</script>
+
 
   </head>
 
@@ -151,7 +161,21 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>reservatorio_cantareira</span><span class='op'>(</span><span class='fl'>29001</span>, <span class='st'>"2000-01-01"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in UseMethod("filter"): no applicable method for 'filter' applied to an object of class "function"</span></div></pre>
+</div><div class='output co'>#&gt; <span class='message'>Buscando as informações do reservatório JAGUARI-JACAREI</span></div><div class='output co'>#&gt; <span class='message'>-------</span></div><div class='output co'>#&gt; <span class='message'>Wait for it...</span></div><div class='output co'>#&gt; <span class='message'>Calma, Bruno, já to acabando!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 7,934 x 8</span><span>
+#&gt;    data_medicao codigo_reservat~ reservatorio cota_m volume_util_hm3
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2000-01-01   29001            Jaguari-Jac~   837.            508.
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2000-01-02   29001            Jaguari-Jac~   837.            510.
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2000-01-03   29001            Jaguari-Jac~   837.            513.
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2000-01-04   29001            Jaguari-Jac~   838.            522.
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2000-01-05   29001            Jaguari-Jac~   838.            535.
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2000-01-06   29001            Jaguari-Jac~   838.            535.
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2000-01-07   29001            Jaguari-Jac~   839.            560.
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2000-01-08   29001            Jaguari-Jac~   839.            566.
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2000-01-09   29001            Jaguari-Jac~   839.            570.
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2000-01-10   29001            Jaguari-Jac~   839.            572.
+#&gt; </span><span style='color: #949494;'># ... with 7,924 more rows, and 3 more variables: volume_util_percentual &lt;dbl&gt;,</span><span>
+#&gt; </span><span style='color: #949494;'>#   afluencia_m3_s &lt;dbl&gt;, defluencia_m3_s &lt;dbl&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

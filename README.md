@@ -4,10 +4,9 @@
 <!-- badges: start -->
 
 [![pix](https://img.shields.io/badge/Apoie%20com-PIX-brightgreen)](https://www.brunomioto.com.br/pix)
-[![lifecycle](https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![License](https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
 [![Twitter
-Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](https://twitter.com/BrunoHMioto)
+Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
 
 <!-- badges: end -->
 
@@ -75,11 +74,14 @@ bacias dos reservatórios contidos no SIN.
     (você pode consultar a tabela com os códigos chamando
     `tabela_reservatorios`).
   - `data_inicial` Data inicial do registro. Se for anterior à data de
-    funcionamento, retorna a data de registro mais antiga.
+    funcionamento, retorna a data de registro mais antiga. O padrão é
+    `data_inicial = "1980-01-01"`
   - `data_final` Data final do registro. Pode ser usado `Sys.Date()`
-    para retornar a data de registro mais recente.
+    para retornar a data de registro mais recente. O padrão é
+    `data_final = Sys.Date()`
 
-<!-- end list -->
+Dessa forma, a função funciona utilizando apenas:
+`reservatorio_sin(codigo_reservatorio)`
 
 ``` r
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
@@ -150,9 +152,14 @@ Sistema Cantareira.
 | Paiva Castro    |  29004 |
 
   - `data_inicial` Data inicial do registro. Se for anterior à data de
-    funcionamento, retorna a data de registro mais antiga.
+    funcionamento, retorna a data de registro mais antiga. O padrão é
+    `data_inicial = "1980-01-01"`
   - `data_final` Data final do registro. Pode ser usado `Sys.Date()`
-    para retornar a data de registro mais recente.
+    para retornar a data de registro mais recente. O padrão é
+    `data_final = Sys.Date()`
+
+Dessa forma, a função funciona utilizando apenas:
+`reservatorio_cantareira(codigo_reservatorio)`
 
 As variáveis retornadas são:
 
@@ -171,6 +178,16 @@ Utilize a função para obter os dados históricos dos reservatórios
 brasileiros que pertencem ao módulo [**Nordeste e
 Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido) do SAR. A
 imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
+
+  - `data_inicial` Data inicial do registro. Se for anterior à data de
+    funcionamento, retorna a data de registro mais antiga. O padrão é
+    `data_inicial = "1980-01-01"`
+  - `data_final` Data final do registro. Pode ser usado `Sys.Date()`
+    para retornar a data de registro mais recente. O padrão é
+    `data_final = Sys.Date()`
+
+Dessa forma, a função funciona utilizando apenas:
+`reservatorio_nordeste_semiarido(codigo_reservatorio)`
 
 <img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-ns.png" width="100%" style="display: block; margin: auto;" />
 
@@ -216,16 +233,16 @@ ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
 #>    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~
 #>    <date>       <fct>      <fct> <chr>                   <dbl>            <dbl>
-#>  1 2021-09-05   Norte      AMAZ~ BALBINA                  776.            655. 
-#>  2 2021-09-05   Norte      TOCA~ TUCURUI                 7686.           6533. 
-#>  3 2021-09-05   Norte      TOCA~ SERRA DA ME~            6530.           8830. 
-#>  4 2021-09-05   Nordeste   JEQU~ IRAPE                   1006.            566. 
-#>  5 2021-09-05   Nordeste   SAO ~ ITAPARICA               3415.           2381. 
-#>  6 2021-09-05   Nordeste   SAO ~ SOBRADINHO             30048.          13946. 
-#>  7 2021-09-05   Nordeste   SAO ~ TRÊS MARIAS            16013             974. 
-#>  8 2021-09-05   Sul        CAPI~ G. P. SOUZA              377.             88.8
-#>  9 2021-09-05   Sul        IGUA~ SALTO SANTI~            3403.           1095. 
-#> 10 2021-09-05   Sul        IGUA~ SANTA CLARA~             378.             83.7
+#>  1 2021-09-06   Norte      AMAZ~ BALBINA                  776.            650. 
+#>  2 2021-09-06   Norte      TOCA~ TUCURUI                 7686.           6521. 
+#>  3 2021-09-06   Norte      TOCA~ SERRA DA ME~            6530.           8769. 
+#>  4 2021-09-06   Nordeste   JEQU~ IRAPE                   1006.            562. 
+#>  5 2021-09-06   Nordeste   SAO ~ ITAPARICA               3415.           2375. 
+#>  6 2021-09-06   Nordeste   SAO ~ SOBRADINHO             30048.          13862. 
+#>  7 2021-09-06   Nordeste   SAO ~ TRÊS MARIAS            16013             967. 
+#>  8 2021-09-06   Sul        CAPI~ G. P. SOUZA              377.             89.3
+#>  9 2021-09-06   Sul        IGUA~ SALTO SANTI~            3403.           1080. 
+#> 10 2021-09-06   Sul        IGUA~ SANTA CLARA~             378.             85.7
 #> # ... with 29 more rows, and 13 more variables:
 #> #   reservatorio_ear_verificada_porcentagem <dbl>,
 #> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
@@ -238,7 +255,7 @@ ONS_reservatorios(formato = "tabela")
 
   - Resumo
 
-Gera um relatório dos 4 subsistemas da ONS e a porcentagem atual em cada
+Gera um relatório dos 4 subsistemas da ONS e o percentual atual em cada
 um.
 
 ``` r
@@ -246,10 +263,10 @@ ONS_reservatorios(formato = "resumo")
 #> # A tibble: 4 x 3
 #>   data_medicao subsistema             percentual
 #>   <date>       <chr>                       <dbl>
-#> 1 2021-09-05   Nordeste                     48.2
-#> 2 2021-09-05   Norte                        69.1
-#> 3 2021-09-05   Sudeste / Centro-Oeste       20.4
-#> 4 2021-09-05   Sul                          26.2
+#> 1 2021-09-06   Nordeste                     47.9
+#> 2 2021-09-06   Norte                        68.8
+#> 3 2021-09-06   Sudeste / Centro-Oeste       20.1
+#> 4 2021-09-06   Sul                          25.9
 ```
 
 ### A função `ONS_EAR_subsistemas()`
@@ -259,8 +276,13 @@ Armazenada (EAR) dos subsistemas observados pela ONS.
 
 `ONS_EAR_subsistemas(ano_inicial, ano_final)`
 
-  - `ano_inicial` O ano inicial dos registros. Ex: `2000`
-  - `ano_final` O ano final dos registros. E: `2021`
+  - `ano_inicial` O ano inicial dos registros. O padrão é o início da
+    série histórica, `ano_inicial = 2000`
+  - `ano_final` O ano final dos registros. O padrão é o ano atual, no
+    caso, `ano_final = 2021`
+
+Dessa forma, rodando a função `ONS_EAR_subsistemas()` retorna todos os
+dados de todos os subsistemas de 2000 até o ano atual.
 
 As variáveis retornadas são:
 

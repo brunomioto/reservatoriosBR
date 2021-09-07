@@ -15,9 +15,8 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 
 [![pix](https://img.shields.io/badge/Apoie%20com-PIX-brightgreen)](https://www.brunomioto.com.br/pix)
-[![lifecycle](https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![License](https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
-[![Twitter Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](https://twitter.com/BrunoHMioto)
+[![Twitter Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
 
 <!-- badges: end -->
 
@@ -73,9 +72,10 @@ knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
 - `codigo_reservatorio` O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando `tabela_reservatorios`).
-- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
-- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente.
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
 
+Dessa forma, a função funciona utilizando apenas: `reservatorio_sin(codigo_reservatorio)`
 
 ```{r, message=FALSE, warning=FALSE}
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
@@ -138,8 +138,10 @@ tabela_cantareira <- data.frame(Reservatorio, Codigo)
 knitr::kable(tabela_cantareira)
 ```
 
-- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
-- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente.
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
+
+Dessa forma, a função funciona utilizando apenas: `reservatorio_cantareira(codigo_reservatorio)`
 
 As variáveis retornadas são:
 
@@ -155,6 +157,11 @@ As variáveis retornadas são:
 ### A função `reservatorio_nordeste_semiarido()`
 
 Utilize a função para obter os dados históricos dos reservatórios brasileiros que pertencem ao módulo [**Nordeste e Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido) do SAR. A imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
+
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
+
+Dessa forma, a função funciona utilizando apenas: `reservatorio_nordeste_semiarido(codigo_reservatorio)`
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
 knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-ns.png')
@@ -195,7 +202,7 @@ ONS_reservatorios(formato = "tabela")
 
 - Resumo
 
-Gera um relatório dos 4 subsistemas da ONS e a porcentagem atual em cada um.
+Gera um relatório dos 4 subsistemas da ONS e o percentual atual em cada um.
 
 ```{r}
 ONS_reservatorios(formato = "resumo")
@@ -207,8 +214,10 @@ Essa função tem como objetivo buscar a **série histórica** da Energia Armaze
 
 `ONS_EAR_subsistemas(ano_inicial, ano_final)`
 
-- `ano_inicial` O ano inicial dos registros. Ex: `2000`
-- `ano_final` O ano final dos registros. E: `2021`
+- `ano_inicial` O ano inicial dos registros. O padrão é o início da série histórica, `ano_inicial = 2000`
+- `ano_final` O ano final dos registros. O padrão é o ano atual, no caso, `ano_final = 2021`
+
+Dessa forma, rodando a função `ONS_EAR_subsistemas()` retorna todos os dados de todos os subsistemas de 2000 até o ano atual.
 
 As variáveis retornadas são:
 

@@ -23,7 +23,13 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-7L92HSL0FC"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7L92HSL0FC');
+</script>
 </head>
 <body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
@@ -131,11 +137,14 @@
 <li>
 <code>codigo_reservatorio</code> O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando <code>tabela_reservatorios</code>).</li>
 <li>
-<code>data_inicial</code> Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.</li>
+<code>data_inicial</code> Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é <code>data_inicial = "1980-01-01"</code>
+</li>
 <li>
-<code>data_final</code> Data final do registro. Pode ser usado <code><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a></code> para retornar a data de registro mais recente.</li>
+<code>data_final</code> Data final do registro. Pode ser usado <code><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a></code> para retornar a data de registro mais recente. O padrão é <code>data_final = Sys.Date()</code>
+</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<p>Dessa forma, a função funciona utilizando apenas: <code><a href="reference/reservatorio_sin.html">reservatorio_sin(codigo_reservatorio)</a></code></p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/reservatorio_sin.html">reservatorio_sin</a></span><span class="op">(</span><span class="fl">19058</span>, <span class="st">"2000-01-01"</span>, <span class="st">"2019-12-31"</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 7,306 x 11</span>
 <span class="co">#&gt;    data_medicao codigo_reservat~ reservatorio cota_m afluencia_m3_s</span>
@@ -334,6 +343,15 @@
 <a href="#a-fun%C3%A7%C3%A3o-ons_ear_subsistemas" class="anchor"></a>A função <code>ONS_EAR_subsistemas()</code>
 </h3>
 <p>Essa função tem como objetivo buscar a <strong>série histórica</strong> da Energia Armazenada (EAR) dos subsistemas observados pela ONS.</p>
+<p><code><a href="reference/ONS_EAR_subsistemas.html">ONS_EAR_subsistemas(ano_inicial, ano_final)</a></code></p>
+<ul>
+<li>
+<code>ano_inicial</code> O ano inicial dos registros. Ex: <code>2000</code>
+</li>
+<li>
+<code>ano_final</code> O ano final dos registros. E: <code>2021</code>
+</li>
+</ul>
 <p>As variáveis retornadas são:</p>
 <ul>
 <li>
@@ -447,11 +465,6 @@
 <li>
 <code>Fonte</code> - A fonte dos dados buscados.</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span>
-
-<span class="fu"><a href="reference/info_reservatoriosBR.html">info_reservatoriosBR</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="25%">
@@ -571,7 +584,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Bruno Mioto <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-3064-4486" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Bruno Mioto <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-3524-537X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
@@ -581,7 +594,7 @@
 <li><a href="https://www.brunomioto.com.br/pix"><img src="https://img.shields.io/badge/Apoie%20com-PIX-brightgreen" alt="pix"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg" alt="lifecycle"></a></li>
 <li><a href="https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md"><img src="https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat" alt="License"></a></li>
-<li><a href="https://twitter.com/BrunoHMioto"><img src="https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social" alt="Twitter Follow"></a></li>
+<li><a href="https://twitter.com/BrunoHMioto"><img src="https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&amp;label=Seguir%20%40BrunoHMioto&amp;style=social" alt="Twitter Follow"></a></li>
 </ul>
 </div>
 </div>

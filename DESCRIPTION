@@ -6,18 +6,19 @@ Authors@R:
            family = "Mioto",
            role = c("aut", "cre"),
            email = "brunomioto97@gmail.com",
-           comment = c(ORCID = "0000-0002-3064-4486"))
+           comment = c(ORCID = "0000-0002-3524-537X"))
 Description: Download all the historic data from brazilian reservoir.
 License: GPL (>= 3)
 URL: https://github.com/brunomioto/reservatoriosBR
 BugReports: https://github.com/brunomioto/reservatoriosBR/issues
 Imports:
-	glue,
-	rvest,
-	janitor,
-	dplyr,
-	jsonlite,
-	magrittr
+    glue,
+    rvest,
+    janitor,
+    dplyr,
+    jsonlite,
+    magrittr,
+    utils
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

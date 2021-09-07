@@ -14,7 +14,7 @@ reservatorio_cantareira <-
            data_final = Sys.Date()) {
     #motivation msg
 
-    reservatorio_busca <- tabela_reservatorios %>%
+    reservatorio_busca <- tabela_reservatorios() %>%
       dplyr::filter(codigo %in% codigo_reservatorio) %>%
       dplyr::select(reservatorio)
 
