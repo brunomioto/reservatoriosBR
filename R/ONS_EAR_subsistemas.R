@@ -22,7 +22,7 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
   historico <- list()
 
   for (i in anos) {
-    dados_ons <- read.csv(glue::glue("https://ons-dl-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_{i}.csv"),sep = ";")
+    dados_ons <- utils::read.csv(glue::glue("https://ons-dl-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_{i}.csv"),sep = ";")
     historico[[i]] <- dados_ons
   }
 
