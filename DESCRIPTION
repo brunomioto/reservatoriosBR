@@ -8,7 +8,7 @@ Authors@R:
            email = "brunomioto97@gmail.com",
            comment = c(ORCID = "0000-0002-3524-537X"))
 Description: Download all the historic data from brazilian reservoir.
-License: GPL (>= 3)
+License: License: GPL-3 + file LICENSE
 URL: https://github.com/brunomioto/reservatoriosBR
 BugReports: https://github.com/brunomioto/reservatoriosBR/issues
 Imports:
