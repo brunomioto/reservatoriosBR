@@ -2,18 +2,25 @@
 output: github_document
 ---
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  error = TRUE
+)
+```
+
 # **reservatoriosBR** <img src="man/figures/logo.png" align="right" width="25%" min-width="120px"/>
 
 <!-- badges: start -->
 
 [![pix](https://img.shields.io/badge/Apoie%20com-PIX-brightgreen)](https://www.brunomioto.com.br/pix)
-[![lifecycle](https://lifecycle.r-lib.org/articles/figures/lifecycle-stable.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![License](https://img.shields.io/badge/license-MIT-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
-[![Twitter Follow](https://img.shields.io/twitter/follow/BrunoHMioto.svg?style=social)](https://twitter.com/BrunoHMioto)
+[![License](https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
+[![Twitter Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
 
 <!-- badges: end -->
 
-Pacote R para obtenção de dados dos principais reservatórios brasileiros a partir da plataforma [SAR-ANA](https://www.ana.gov.br/sar/).
+Pacote R para obtenção de dados dos principais reservatórios brasileiros a partir da plataforma **[SAR-ANA](https://www.ana.gov.br/sar/)** e da **[ONS](http://www.ons.org.br/paginas/energia-agora/reservatorios)**.
 
 Este pacote baixa e organiza os dados em uma estrutura para uso no R.
 
@@ -29,31 +36,46 @@ Este pacote apenas está disponível para a instalação usando o devtools no R 
 
 ```{r, results='hide', message=FALSE, warning=FALSE}
 #install.packages("devtools")
-devtools::install_github('brunomioto/reservatoriosBR')
+devtools::install_github('brunomioto/reservatoriosBR@v1.0')
 library(reservatoriosBR)
 ```
 
 ## Uso
 
-Atualmente o pacote possui 4 funções:
+Atualmente o pacote possui **9** funções:
+
+### Funções de busca de dados
 
 - `reservatorio_sin()`
 - `reservatorio_cantareira()`
 - `reservatorio_nordeste_semiarido()`
 - `ultima_medicao()`
+- `ONS_reservatorios()`
+- `ONS_EAR_subsistemas()`
+
+### Funções de datasets
+
+- `tabela_reservatorios()`
+- `tabela_reservatorios_ONS()`
+- `info_reservatoriosBR()`
+
+---
 
 ### A função `reservatorio_sin()`
 
 Utilize a função para obter os dados históricos dos principais reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as bacias dos reservatórios contidos no SIN.
 
-![Sistema Interligado Nacional](man/figures/modelo-principal-mapa-sin.png)
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/modelo-principal-mapa-sin.png')
+```
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
 - `codigo_reservatorio` O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando `tabela_reservatorios`).
-- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
-- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente.
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
 
+Dessa forma, a função funciona utilizando apenas: `reservatorio_sin(codigo_reservatorio)`
 
 ```{r, message=FALSE, warning=FALSE}
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
@@ -70,11 +92,10 @@ As variáveis retornadas são:
 - `vazao_vertida_m3_s` - Vazão vertida (m³/s)
 - `vazao_turbinada_m3_s` - Vazão turbinada (m³/s)
 - `vazao_natural_m3_s` - Vazão natural (m³/s)
-- `volume_util_percent` - Volume útil (%) - Alguns reservatórios retornam apenas NA
+- `volume_util_percentual` - Volume útil (%) - Alguns reservatórios retornam apenas NA
 - `vazao_incremental_m3_s` - Vazão incremental (m³/s) - Retorna apenas NA
 
 As unidades de medida foram mantidas no nome das variáveis para não haver problemas de interpretação.
-
 
 Podemos utilizar estes dados históricos para fazer análises e gráficos. A Afluência(m³/s), por exemplo, mede a quantidade de água que chega nas represas.
 
@@ -92,13 +113,17 @@ ggplot(itaipu, aes(x=data_medicao, y=afluencia_m3_s))+
   coord_cartesian(xlim = c(as.Date("1994-01-01"), as.Date("2021-01-01")))
 ```
 
-<img src="man/figures/plot1.png" align="center" width="100%" min-width="120px"/>
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png')
+```
 
 ### A função `reservatorio_cantareira()`
 
 Utilize a função para obter os dados históricos dos reservatórios brasileiros que pertencem ao [**sistema Cantareira**](https://www.ana.gov.br/sar/outros-sistemas-hidricos/cantareira). A imagem abaixo apresenta as bacias dos reservatórios contidos no Sistema Cantareira.
 
-![Sistema Cantareira](man/figures/outros-sistemas-hidricos-cantareira-principal.png)
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/outros-sistemas-hidricos-cantareira-principal.png')
+```
 
 `reservatorio_cantareira(codigo_reservatorio, data_inicial, data_final)`
 
@@ -113,8 +138,10 @@ tabela_cantareira <- data.frame(Reservatorio, Codigo)
 knitr::kable(tabela_cantareira)
 ```
 
-- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
-- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente.
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
+
+Dessa forma, a função funciona utilizando apenas: `reservatorio_cantareira(codigo_reservatorio)`
 
 As variáveis retornadas são:
 
@@ -123,7 +150,7 @@ As variáveis retornadas são:
 - `reservatorio` - Nome do reservatório
 - `cota_m` - Cota, o nível do reservatório (m)
 - `volume_util_hm3` - Volume útil (hm³)
-- `volume_util_percent` - Volume útil (%)
+- `volume_util_percentual` - Volume útil (%)
 - `afluencia_m3_s` - Afluência (m³/s)
 - `defluencia_m3_s` - Defluência (m³/s)
 
@@ -131,7 +158,14 @@ As variáveis retornadas são:
 
 Utilize a função para obter os dados históricos dos reservatórios brasileiros que pertencem ao módulo [**Nordeste e Semiárido**](https://www.ana.gov.br/sar/nordeste-e-semiarido) do SAR. A imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
 
-![Sistema Cantareira](man/figures/mapa-principal-ns.png)
+- `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
+- `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
+
+Dessa forma, a função funciona utilizando apenas: `reservatorio_nordeste_semiarido(codigo_reservatorio)`
+
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-ns.png')
+```
 
 ### A função `ultima_medicao()`
 
@@ -149,23 +183,146 @@ As variáveis retornadas são:
 - `defluencia_m3_s` - Defluência (m³/s)
 - `cota_m` - Cota, o nível do reservatório (m)
 - `vazao_transferida` - Vazão transferida - Acho que sempre retorna `NA`
-- `volume_util_percent` - Volume útil (%)
+- `volume_util_porcentagem` - Volume útil (%)
 - `tipo` - Tipo? Ainda preciso descobrir o que isso significa
 
-## O dataset `tabela_reservatorios`
+## As funções `ONS` - Operador Nacional do Sistema Elétrico
 
-Esse dataset já vem pré-carregado com o pacote! Nele estão algumas informações sobre os reservatórios que podem ser carregados com as funções acima.
+### A função `ONS_reservatorios()`
 
-São 708 reservatórios com 5 variáveis, sendo elas:
+Essa função busca os **dados atuais** dos reservatórios brasileiros observados pelo [**Operador Nacional do Sistema Elétrico (ONS)**](http://www.ons.org.br/paginas/energia-agora/reservatorios) e pode retornar valores em 2 formatos:
 
-- `sistema` - Sistema o qual o reservatório pertence.
-- `estado_1` - Estado o qual o reservatório pertence.
-- `estado_2` - Se o reservatório fica entre dois estados, o segundo estado. A ordem não tem importância.
-- `reservatorio` - O nome do reservatório.
-- `codigo` - O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.
+- Tabela
+
+Gera um dataframe com diversas variáveis de 39 reservatórios observados pela ONS.
 
 ```{r}
-head(tabela_reservatorios)
+ONS_reservatorios(formato = "tabela")
+```
+
+- Resumo
+
+Gera um relatório dos 4 subsistemas da ONS e o percentual atual em cada um.
+
+```{r}
+ONS_reservatorios(formato = "resumo")
+```
+
+### A função `ONS_EAR_subsistemas()`
+
+Essa função tem como objetivo buscar a **série histórica** da Energia Armazenada (EAR) dos subsistemas observados pela ONS.
+
+`ONS_EAR_subsistemas(ano_inicial, ano_final)`
+
+- `ano_inicial` O ano inicial dos registros. O padrão é o início da série histórica, `ano_inicial = 2000`
+- `ano_final` O ano final dos registros. O padrão é o ano atual, no caso, `ano_final = 2021`
+
+Dessa forma, rodando a função `ONS_EAR_subsistemas()` retorna todos os dados de todos os subsistemas de 2000 até o ano atual.
+
+As variáveis retornadas são:
+
+- `data_medicao` - Data da medição realizada
+- `subsistema` - Nome do subsistema
+- `ear_max_subsistema_mwmes` - Valor de EAR máxima por subsistema na unidade de medida MWmês
+- `ear_verif_subsistema_mwmes` - Valor de EAR verificada no dia por subsistema na unidade de medida MWmês
+- `ear_verif_subsistema_percentual` - Valor de EAR verificada no dia por subsistema na unidade de
+medida %
+
+Esses valores são utilizados como referência para o nível dos reservatórios e quanta energia eles ainda podem produzir.
+
+Com esses dados, podemos observar os resultados da seca nos reservatórios do subsistema Sudeste / Centro-oeste, por exemplo:
+
+```{r, warning = FALSE, message = FALSE, results = 'hide', fig.keep = 'all', dpi = 600, echo=FALSE, eval = FALSE}
+library(tidyverse)
+
+dados_ONS <- ONS_EAR_subsistemas(ano_inicial = 2016, ano_final = 2021)
+
+dados_ONS_SE <- dados_ONS %>% 
+  filter(subsistema == "Sudeste / Centro-Oeste")
+
+plot_2 <- dados_ONS_SE %>% 
+  ggplot(aes(x=data_medicao, y=ear_verif_subsistema_percentual))+
+  geom_area(color = "#377eb8", fill = "#377eb850", size=1.2)+
+  geom_point(data = dados_ONS_SE %>% filter(data_medicao == max(data_medicao)),
+             color = "#377eb8",
+             size = 2)+
+  scale_x_date(breaks = "1 year",
+               date_labels = "%Y",
+               limits = c(as.Date("2016-01-01"), as.Date("2021-12-31")),
+               expand = c(0,0))+
+  scale_y_continuous(expand = c(0,0), limits = c(0,100))+
+  theme_bw()+
+  theme(
+    panel.grid.minor.x = element_blank()
+  )+
+  labs(x = "Data da medição",
+       y = "EAR Subsistema (%)",
+       title = "Série histórica (2016-2021) da EAR nos reservatórios do subsistema Sudeste / Centro-Oeste")
+
+```
+
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot2.png')
+```
+
+## As funções de datasets
+
+### A função `tabela_reservatorios()`
+
+Essa função retorna uma tabela com informações sobre os reservatórios que podem ser utilizadas com as funções acima.
+
+São **708 reservatórios** com **5 variáveis**, sendo elas:
+
+- `sistema` - Sistema o qual o reservatório pertence.
+- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
+- `reservatorio` - O nome do reservatório.
+- `bacia` - A bacia a qual o reservatório pertence (se disponível).
+- `rio` - O rio o qual o reservatório pertence (se disponível).
+- `estado_1` - Estado o qual o reservatório pertence.
+- `estado_2` - Se o reservatório fica entre dois estados, o segundo estado. A ordem não tem importância.
+- `ano` - Ano de funcionamento do reservatório (se disponível).
+
+```{r}
+tabela_reservatorios() %>% 
+  head()
+```
+
+### A função `tabela_reservatorios_ONS()`
+
+Essa função retorna uma tabela parecida com a `tabela_reservatorios()`, mas contendo apenas os reservatórios observados pela **ONS**.
+
+São **39 reservatórios** com **6 variáveis**, sendo elas:
+
+- `subsistema` - Nome do subsistema.
+- `reservatorio` - O nome do reservatório.
+- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
+- `bacia` - A bacia a qual o reservatório pertence
+- `rio` - O rio o qual o reservatório pertence (se disponível).
+- `estado_1` - Estado o qual o reservatório pertence.
+- `estado_2` - Se o reservatório fica entre dois estados, o segundo estado. A ordem não tem importância.
+
+```{r}
+tabela_reservatorios_ONS() %>% 
+  head()
+```
+
+### A função `info_reservatoriosBR()`
+
+Essa função retorna uma tabela com informações das funções utilizadas nesse pacote.
+
+As variáveis retornadas são:
+
+- `Função` - O nome da função.
+- `Ação` - O objetivo da função a ser utilizada.
+- `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
+- `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
+- `Fonte` - A fonte dos dados buscados. 
+
+```{r, warning=FALSE, echo=FALSE}
+library(knitr)
+
+info_reservatoriosBR() %>%
+  kable()
 ```
 
 

@@ -1,0 +1,27 @@
+title: reservatoriosBR
+url: http://brunomioto.github.io/reservatoriosBR
+template:
+  params:
+    bootswatch: flatly
+    ganalytics: G-7L92HSL0FC
+
+authors:
+  Bruno Mioto:
+  href: https://brunomioto.com.br
+
+reference:
+  - title: Funções de busca de dados
+    desc: Busque dados de diversas fontes como o SAR-ANA e ONS
+    contents:
+      - '`reservatorio_sin`'
+      - '`reservatorio_cantareira`'
+      - '`reservatorio_nordeste_semiarido`'
+      - '`ultima_medicao`'
+      - '`ONS_reservatorios`'
+      - '`ONS_EAR_subsistemas`'
+  - title: Funções de datasets
+    desc: Tabelas para auxílio na busca de dados
+    contents:
+      - '`tabela_reservatorios`'
+      - '`tabela_reservatorios_ONS`'
+      - '`info_reservatoriosBR`'

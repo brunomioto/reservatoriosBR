@@ -2,7 +2,7 @@
 % Please edit documentation in R/reservatorio_nordeste_semiarido.R
 \name{reservatorio_nordeste_semiarido}
 \alias{reservatorio_nordeste_semiarido}
-\title{Dados dos principais reservatorios brasileiros do modulo Nordeste e Semiarido do SAR}
+\title{Dados dos principais reservatórios brasileiros do módulo Nordeste e Semiárido do SAR}
 \usage{
 reservatorio_nordeste_semiarido(
   codigo_reservatorio,
@@ -18,7 +18,7 @@ reservatorio_nordeste_semiarido(
 \item{data_final}{Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.}
 }
 \description{
-Dados dos principais reservatorios brasileiros do modulo Nordeste e Semiarido do SAR
+Dados dos principais reservatórios brasileiros do módulo Nordeste e Semiárido do SAR
 }
 \examples{
 reservatorio_nordeste_semiarido(12354, "2012-09-10", Sys.Date())

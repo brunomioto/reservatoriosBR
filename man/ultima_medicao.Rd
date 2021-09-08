@@ -7,10 +7,11 @@
 ultima_medicao(codigo_reservatorio)
 }
 \arguments{
-\item{codigo_reservatorio}{Codigo do reservatorio a ser buscado.
-#' @examples
-ultima_medicao(19058)}
+\item{codigo_reservatorio}{Codigo do reservatorio a ser buscado.}
 }
 \description{
 Ultima medicao dos reservatorios brasileiros
+}
+\examples{
+ultima_medicao(19058)
 }
