@@ -34,7 +34,7 @@ no R (mas é simples):
 
 ``` r
 #install.packages("devtools")
-devtools::install_github('brunomioto/reservatoriosBR@v1.0')
+devtools::install_github('brunomioto/reservatoriosBR')
 library(reservatoriosBR)
 ```
 
@@ -233,16 +233,16 @@ ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
 #>    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~
 #>    <date>       <fct>      <fct> <chr>                   <dbl>            <dbl>
-#>  1 2021-09-06   Norte      AMAZ~ BALBINA                  776.            652. 
-#>  2 2021-09-06   Norte      TOCA~ TUCURUI                 7686.           6521. 
-#>  3 2021-09-06   Norte      TOCA~ SERRA DA ME~            6530.           8769. 
-#>  4 2021-09-06   Nordeste   JEQU~ IRAPE                   1006.            564. 
-#>  5 2021-09-06   Nordeste   SAO ~ ITAPARICA               3415.           2375. 
-#>  6 2021-09-06   Nordeste   SAO ~ SOBRADINHO             30048.          13862. 
-#>  7 2021-09-06   Nordeste   SAO ~ TRÊS MARIAS            16013             967. 
-#>  8 2021-09-06   Sul        CAPI~ G. P. SOUZA              377.             89.3
-#>  9 2021-09-06   Sul        IGUA~ SALTO SANTI~            3403.           1080. 
-#> 10 2021-09-06   Sul        IGUA~ SANTA CLARA~             378.             85.7
+#>  1 2021-09-07   Norte      AMAZ~ BALBINA                  776.            644. 
+#>  2 2021-09-07   Norte      TOCA~ TUCURUI                 7686.           6496. 
+#>  3 2021-09-07   Norte      TOCA~ SERRA DA ME~            6530.           8700. 
+#>  4 2021-09-07   Nordeste   JEQU~ IRAPE                   1006.            560. 
+#>  5 2021-09-07   Nordeste   SAO ~ ITAPARICA               3415.           2367. 
+#>  6 2021-09-07   Nordeste   SAO ~ SOBRADINHO             30048.          13805. 
+#>  7 2021-09-07   Nordeste   SAO ~ TRÊS MARIAS            16013             961. 
+#>  8 2021-09-07   Sul        CAPI~ G. P. SOUZA              377.             90.0
+#>  9 2021-09-07   Sul        IGUA~ SALTO SANTI~            3403.           1065. 
+#> 10 2021-09-07   Sul        IGUA~ SANTA CLARA~             378.             87.6
 #> # ... with 29 more rows, and 13 more variables:
 #> #   reservatorio_ear_verificada_porcentagem <dbl>,
 #> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
@@ -263,10 +263,10 @@ ONS_reservatorios(formato = "resumo")
 #> # A tibble: 4 x 3
 #>   data_medicao subsistema             percentual
 #>   <date>       <chr>                       <dbl>
-#> 1 2021-09-06   Nordeste                     47.9
-#> 2 2021-09-06   Norte                        68.8
-#> 3 2021-09-06   Sudeste / Centro-Oeste       20.1
-#> 4 2021-09-06   Sul                          25.9
+#> 1 2021-09-07   Nordeste                     47.7
+#> 2 2021-09-07   Norte                        68.5
+#> 3 2021-09-07   Sudeste / Centro-Oeste       19.9
+#> 4 2021-09-07   Sul                          25.9
 ```
 
 ### A função `ONS_EAR_subsistemas()`
