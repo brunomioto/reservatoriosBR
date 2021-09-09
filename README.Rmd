@@ -67,7 +67,7 @@ Atualmente o pacote possui **9** funções:
 Utilize a função para obter os dados históricos dos principais reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as bacias dos reservatórios contidos no SIN.
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
-knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/modelo-principal-mapa-sin.png')
+knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/modelo-principal-mapa-sin.png')
 ```
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
@@ -115,7 +115,7 @@ ggplot(itaipu, aes(x=data_medicao, y=afluencia_m3_s))+
 ```
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
-knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png')
+knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/plot1.png')
 ```
 
 ### A função `reservatorio_cantareira()`
@@ -123,7 +123,7 @@ knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main
 Utilize a função para obter os dados históricos dos reservatórios brasileiros que pertencem ao [**sistema Cantareira**](https://www.ana.gov.br/sar/outros-sistemas-hidricos/cantareira). A imagem abaixo apresenta as bacias dos reservatórios contidos no Sistema Cantareira.
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
-knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/outros-sistemas-hidricos-cantareira-principal.png')
+knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/outros-sistemas-hidricos-cantareira-principal.png')
 ```
 
 `reservatorio_cantareira(codigo_reservatorio, data_inicial, data_final)`
@@ -165,7 +165,7 @@ Utilize a função para obter os dados históricos dos reservatórios brasileiro
 Dessa forma, a função funciona utilizando apenas: `reservatorio_nordeste_semiarido(codigo_reservatorio)`
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
-knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-ns.png')
+knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/mapa-principal-ns.png')
 ```
 
 ### A função `ultima_medicao()`
@@ -263,7 +263,7 @@ plot_2 <- dados_ONS_SE %>%
 ```
 
 ```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
-knitr::include_graphics('https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot2.png')
+knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/plot2.png')
 ```
 
 ## As funções de datasets

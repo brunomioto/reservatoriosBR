@@ -67,7 +67,7 @@ reservatórios brasileiros que pertencem ao [SIN - Sistema Interligado
 Nacional](https://www.ana.gov.br/sar/sin). A imagem abaixo apresenta as
 bacias dos reservatórios contidos no SIN.
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/modelo-principal-mapa-sin.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/modelo-principal-mapa-sin.png" width="100%" style="display: block; margin: auto;" />
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
@@ -128,7 +128,7 @@ Podemos utilizar estes dados históricos para fazer análises e gráficos.
 A Afluência(m³/s), por exemplo, mede a quantidade de água que chega nas
 represas.
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot1.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/plot1.png" width="100%" style="display: block; margin: auto;" />
 
 ### A função `reservatorio_cantareira()`
 
@@ -138,7 +138,7 @@ Cantareira**](https://www.ana.gov.br/sar/outros-sistemas-hidricos/cantareira).
 A imagem abaixo apresenta as bacias dos reservatórios contidos no
 Sistema Cantareira.
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/outros-sistemas-hidricos-cantareira-principal.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/outros-sistemas-hidricos-cantareira-principal.png" width="100%" style="display: block; margin: auto;" />
 
 `reservatorio_cantareira(codigo_reservatorio, data_inicial, data_final)`
 
@@ -190,7 +190,7 @@ imagem abaixo apresenta os estados dos reservatórios contidos no SAR.
 Dessa forma, a função funciona utilizando apenas:
 `reservatorio_nordeste_semiarido(codigo_reservatorio)`
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/mapa-principal-ns.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/mapa-principal-ns.png" width="100%" style="display: block; margin: auto;" />
 
 ### A função `ultima_medicao()`
 
@@ -234,16 +234,16 @@ ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
 #>    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~
 #>    <date>       <fct>      <fct> <chr>                   <dbl>            <dbl>
-#>  1 2021-09-07   Norte      AMAZ~ BALBINA                  776.            644. 
-#>  2 2021-09-07   Norte      TOCA~ TUCURUI                 7686.           6496. 
-#>  3 2021-09-07   Norte      TOCA~ SERRA DA ME~            6530.           8700. 
-#>  4 2021-09-07   Nordeste   JEQU~ IRAPE                   1006.            562. 
-#>  5 2021-09-07   Nordeste   SAO ~ ITAPARICA               3415.           2410. 
-#>  6 2021-09-07   Nordeste   SAO ~ SOBRADINHO             30048.          13806. 
-#>  7 2021-09-07   Nordeste   SAO ~ TRÊS MARIAS            16013             961. 
-#>  8 2021-09-07   Sul        CAPI~ G. P. SOUZA              377.             90.0
-#>  9 2021-09-07   Sul        IGUA~ SALTO SANTI~            3403.           1065. 
-#> 10 2021-09-07   Sul        IGUA~ SANTA CLARA~             378.             87.6
+#>  1 2021-09-08   Norte      AMAZ~ BALBINA                  776.            640. 
+#>  2 2021-09-08   Norte      TOCA~ TUCURUI                 7686.           6472. 
+#>  3 2021-09-08   Norte      TOCA~ SERRA DA ME~            6530.           8634. 
+#>  4 2021-09-08   Nordeste   JEQU~ IRAPE                   1006.            551. 
+#>  5 2021-09-08   Nordeste   SAO ~ ITAPARICA               3415.           2389. 
+#>  6 2021-09-08   Nordeste   SAO ~ SOBRADINHO             30048.          13694. 
+#>  7 2021-09-08   Nordeste   SAO ~ TRÊS MARIAS            16013             953. 
+#>  8 2021-09-08   Sul        CAPI~ G. P. SOUZA              377.             89.1
+#>  9 2021-09-08   Sul        IGUA~ SALTO SANTI~            3403.           1050. 
+#> 10 2021-09-08   Sul        IGUA~ SANTA CLARA~             378.             89.4
 #> # ... with 29 more rows, and 13 more variables:
 #> #   reservatorio_ear_verificada_porcentagem <dbl>,
 #> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
@@ -264,10 +264,10 @@ ONS_reservatorios(formato = "resumo")
 #> # A tibble: 4 x 3
 #>   data_medicao subsistema             percentual
 #>   <date>       <chr>                       <dbl>
-#> 1 2021-09-07   Nordeste                     47.7
-#> 2 2021-09-07   Norte                        68.5
-#> 3 2021-09-07   Sudeste / Centro-Oeste       19.9
-#> 4 2021-09-07   Sul                          25.9
+#> 1 2021-09-08   Nordeste                     47.4
+#> 2 2021-09-08   Norte                        68.2
+#> 3 2021-09-08   Sudeste / Centro-Oeste       19.6
+#> 4 2021-09-08   Sul                          25.8
 ```
 
 ### A função `ONS_EAR_subsistemas()`
@@ -302,7 +302,7 @@ reservatórios e quanta energia eles ainda podem produzir.
 Com esses dados, podemos observar os resultados da seca nos
 reservatórios do subsistema Sudeste / Centro-oeste, por exemplo:
 
-<img src="https://github.com/brunomioto/reservatoriosBR/blob/main/man/figures/plot2.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/plot2.png" width="100%" style="display: block; margin: auto;" />
 
 ## As funções de datasets
 
