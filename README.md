@@ -5,6 +5,7 @@
 
 [![pix](https://img.shields.io/badge/Apoie%20com-PIX-brightgreen)](https://www.brunomioto.com.br/pix)
 [![License](https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5496237.svg)](https://doi.org/10.5281/zenodo.5496237)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
 
@@ -236,9 +237,9 @@ ONS_reservatorios(formato = "tabela")
 #>  1 2021-09-07   Norte      AMAZ~ BALBINA                  776.            644. 
 #>  2 2021-09-07   Norte      TOCA~ TUCURUI                 7686.           6496. 
 #>  3 2021-09-07   Norte      TOCA~ SERRA DA ME~            6530.           8700. 
-#>  4 2021-09-07   Nordeste   JEQU~ IRAPE                   1006.            560. 
-#>  5 2021-09-07   Nordeste   SAO ~ ITAPARICA               3415.           2367. 
-#>  6 2021-09-07   Nordeste   SAO ~ SOBRADINHO             30048.          13805. 
+#>  4 2021-09-07   Nordeste   JEQU~ IRAPE                   1006.            562. 
+#>  5 2021-09-07   Nordeste   SAO ~ ITAPARICA               3415.           2410. 
+#>  6 2021-09-07   Nordeste   SAO ~ SOBRADINHO             30048.          13806. 
 #>  7 2021-09-07   Nordeste   SAO ~ TRÊS MARIAS            16013             961. 
 #>  8 2021-09-07   Sul        CAPI~ G. P. SOUZA              377.             90.0
 #>  9 2021-09-07   Sul        IGUA~ SALTO SANTI~            3403.           1065. 
@@ -396,6 +397,10 @@ As variáveis retornadas são:
 | tabela\_reservatorios()             | Dataset dos reservatórios do SAR disponíveis para busca      | Reservatórios         | Dataset           | SAR-ANA |
 | tabela\_reservatorios\_ONS()        | Dataset dos reservatórios da ONS disponíveis para busca      | Reservatórios         | Dataset           | ONS     |
 | info\_reservatoriosBR()             | Lista todas as funções do pacote reservatoriosBR             | \-                    | \-                | \-      |
+
+## Como citar o pacote
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5496237.svg)](https://doi.org/10.5281/zenodo.5496237)
 
 ## To-do
 

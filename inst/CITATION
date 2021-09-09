@@ -6,9 +6,9 @@ citEntry(
   author   = person("Bruno Stabile"),
   year     = 2021,
   note     = "R package version 1.0",
-  doi      = "10.5281/zenodo.5335902",
+  doi      = "10.5281/zenodo.5496237",
   url      = "https://brunomioto.github.io/reservatoriosBR",
   textVersion = paste(
-"Bruno Stabile (2021). reservatoriosBR: Pacote em R para obtenção de dados históricos e atuais dos principais reservatórios brasileiros. https://doi.org/10.5281/zenodo.5335902"
+"Bruno Stabile (2021). reservatoriosBR: Pacote em R para obtenção de dados históricos e atuais dos principais reservatórios brasileiros. https://doi.org/10.5281/zenodo.5496237"
   )
 )
