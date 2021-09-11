@@ -1,5 +1,5 @@
 Package: reservatoriosBR
-Title: Get Bbrazilian reservoirs data
+Title: Get Brazilian reservoirs data
 Version: 1.0
 Authors@R: 
     person(given = "Bruno",
