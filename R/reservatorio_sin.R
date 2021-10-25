@@ -1,8 +1,8 @@
-#' Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional
+#' Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional
 #'
 #' @export
-#' @param codigo_reservatorio Código do reservatório a ser buscado, (você pode consultar a tabela com os codigos chamando `tabela_reservatorios`).
-#' @param data_inicial Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.
+#' @param codigo_reservatorio Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando `tabela_reservatorios`).
+#' @param data_inicial Data inicial do registro. Se for anterior a data de funcionamento, retorna a data de registro mais antiga.
 #' @param data_final Data final do registro. Pode ser usado Sys.Date() para retornar a data de registro mais recente.
 #'
 #' @examples
@@ -19,6 +19,7 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
   message("Buscando as informações do reservatório ", reservatorio_busca$reservatorio)
 
   message("-------")
+
   msg1 <- dplyr::case_when(weekdays(Sys.Date()) == "segunda-feira" ~ sample(c("Calma que hoje é segunda ZzZzZz...",
                                                                               "Bora trabalhar!",
                                                                               "~~ All we need is just a little patience ~~",
