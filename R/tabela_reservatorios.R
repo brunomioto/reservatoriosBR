@@ -2,22 +2,37 @@
 #'
 #' Um dataset contendo os atributos dos principais reservatorios brasileiros.
 #'
-#' @source <https://www.ana.gov.br/sar0/>. obtido em 2021-08-22
+#' @source ANA (Antônio Augusto, Diego Pena e Théo Albuquerque), editado por Bruno Mioto. obtido em 2021-08-22
+#'
 #' @export
 #'
-#' @format Um dataframe com 708 observacoes e 5 variaveis
+#' @format Um dataframe com 805 observacoes e 12 variaveis
 #' \describe{
-#'   \item{sistema}{sistema o qual o reservatorio pertence}
-#'   \item{codigo}{o codigo do reservatorio segundo o SAR}
-#'   \item{estado_1}{estado o qual o reservatorio pertence}
-#'   \item{estado_2}{se o reservatorio fica entre estados, o segundo estado}
+#'   \item{sistema}{sistema o qual o reservatorio pertence segundo o SAR}
+#'   \item{codigo_reservatorio}{o codigo do reservatorio segundo o SAR}
 #'   \item{reservatorio}{o nome do reservatorio}
+#'   \item{res_latitude}{latitude do reservatorio}
+#'   \item{res_longitude}{longitude do reservatorio}
+#'   \item{municipio}{longitude do reservatorio}
+#'   \item{codigo_municipio_ibge}{codigo do municipio na base do ibge}
+#'   \item{estado_nome}{estado em forma de nome}
+#'   \item{estado_sigla}{estado em forma de sigla}
+#'   \item{rio}{nome do rio}
+#'   \item{sub_bacia}{sub-bacia do rio}
+#'   \item{bacia}{bacia hidrográfica do rio}
 #' }
 #'
-#' @examples
-#' tabela_reservatorios()
-#'
+#' @examples tabela_reservatorios()
 tabela_reservatorios <- function(){
-  dplyr::as_tibble(reservatoriosBR:::tabela_reservatorios_data)
-  #teste
+  readr::read_delim(
+    file =
+      "https://github.com/brunomioto/reservatoriosBR/raw/v1.1/inst/extdata/tabela_reservatorios_ana.csv",
+    locale = readr::locale(
+      encoding = "UTF-8",
+    ),
+    col_types = "cicddciccccc",
+    delim = ",",
+    escape_double = FALSE,
+    trim_ws = TRUE
+  )
 }
