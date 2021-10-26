@@ -36,6 +36,7 @@ tabela_reservatorios_ONS <- function(){
     col_types = "cciddciccccc",
     delim = ",",
     escape_double = FALSE,
-    trim_ws = TRUE
+    trim_ws = TRUE,
+    progress = FALSE
   )
 }

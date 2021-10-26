@@ -33,6 +33,7 @@ tabela_reservatorios <- function(){
     col_types = "cicddciccccc",
     delim = ",",
     escape_double = FALSE,
-    trim_ws = TRUE
+    trim_ws = TRUE,
+    progress = FALSE
   )
 }
