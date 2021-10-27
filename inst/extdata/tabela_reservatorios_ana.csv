@@ -1,4 +1,4 @@
-"sistema","codigo_reservatorio","reservatorio","res_latitude","res_longitude","municipio","codigo_municipio_ibge","estado_nome","estado_sigla","rio","sub_bacia","bacia"
+"sistema","codigo","reservatorio","res_latitude","res_longitude","municipio","codigo_municipio_ibge","estado_nome","estado_sigla","rio","sub_bacia","bacia"
 "nordeste_semiarido",12001,"25 DE MARÇO",-6.110896,-38.216597,"PAU DOS FERROS",2409407,"Rio Grande do Norte","RN","RIACHO CAJAZEIRAS","APODI/MOSSORÓ","APODI/MOSSORÓ"
 "nordeste_semiarido",12002,"ABÓBORAS",-8.087024,-39.429267,"PARNAMIRIM",2610400,"Pernambuco","PE","RIO SÃO DOMINGOS","TERRA NOVA","TERRA NOVA"
 "nordeste_semiarido",12003,"ACARAPE DO MEIO",-4.193478,-38.799304,"REDENÇÃO",2311603,"Ceará","CE","RIO PACOTI","METROPOLITANA","METROPOLITANA"
