@@ -43,8 +43,7 @@ ONS_reservatorios <- function(formato="tabela") {
     }
 
   } else{
-    message(
-      "Você deve escolher formato=\"tabela\" ou formato=\"resumo\" na função.\n\"tabela\" gera um dataframe com diversas variáveis de 39 reservatórios observados pela ONS.\n\"resumo\" gera um relatório dos 4 subsistemas da ONS e a % atual em cada um."
+    usethis::ui_oops("Você deve escolher {usethis::ui_code('formato=\"tabela\"')} ou {usethis::ui_code('formato=\"resumo\"')} na função.\n\"tabela\" gera um dataframe com diversas variáveis de 39 reservatórios observados pela ONS.\n\"resumo\" gera um relatório dos 4 subsistemas da ONS e a % atual em cada um."
     )
   }
 }
