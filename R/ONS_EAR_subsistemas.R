@@ -12,12 +12,12 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
 
   if(ano_inicial < 2000|
      ano_final > format(Sys.Date(), "%Y")){
-    message("Escolha um ano inicial igual ou maior que 2000 e um ano final igual ou menor que ", format(Sys.Date(), "%Y"))
+    usethis::ui_todo("Escolha um ano inicial igual ou maior que 2000 e um ano final igual ou menor que {format(Sys.Date(), '%Y')}")
   }else{
 
   anos <- seq(ano_inicial,ano_final)
 
-  message("Buscando dados diários de ", ano_inicial, " até ", ano_final, "...")
+  usethis::ui_info("Buscando dados diários de {ano_inicial} até {ano_final} ...")
 
   historico <- list()
 
@@ -43,7 +43,7 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
 
   historico_ear_clean$data_medicao <- as.Date(historico_ear_clean$data_medicao)
 
-  return(historico_ear_clean)
+  return(dplyr::as_tibble(historico_ear_clean))
 
   }
 }
