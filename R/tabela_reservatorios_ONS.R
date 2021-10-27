@@ -27,15 +27,13 @@
 #' tabela_reservatorios_ONS()
 
 tabela_reservatorios_ONS <- function(){
-  readr::read_delim(
+  readr::read_csv(
     file =
       "https://github.com/brunomioto/reservatoriosBR/raw/v1.1/inst/extdata/tabela_reservatorios_ONS.csv",
     locale = readr::locale(
       encoding = "UTF-8",
     ),
     col_types = "cciddciccccc",
-    delim = ",",
-    escape_double = FALSE,
     trim_ws = TRUE,
     progress = FALSE
   )
