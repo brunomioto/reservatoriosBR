@@ -73,6 +73,7 @@ reservatórios contabilizados pela ANA.
 São **713 reservatórios** (são 804 linhas pois reservatórios em 2
 cidades são duplicados) com **12 variáveis**, sendo elas:
 
+<<<<<<< HEAD
 -   `sistema` - sistema o qual o reservatório pertence segundo o SAR.
 -   `codigo` - **O código do reservatório segundo o SAR. Utilizado nas
     funções desse pacote.**
@@ -86,6 +87,17 @@ cidades são duplicados) com **12 variáveis**, sendo elas:
 -   `rio` - Nome do rio.
 -   `sub_bacia` - Sub-bacia do rio.
 -   `bacia` - Bacia hidrográfica do rio.
+=======
+`sistema` - sistema o qual o reservatório pertence segundo o SAR.
+`codigo` - **O código do reservatório segundo o SAR. Utilizado nas
+funções desse pacote.** `reservatorio` - O nome do reservatorio.
+`res_latitude` - Latitude do reservatório `res_longitude` - Longitude do
+reservatório `municipio` - Município do reservatório
+`codigo_municipio_ibge` - Código do município na base do IBGE.
+`estado_nome` - Estado em forma de nome. `estado_sigla` - Estado em
+forma de sigla. `rio` - Nome do rio. `sub_bacia` - Sub-bacia do rio.
+`bacia` - Bacia hidrográfica do rio.
+>>>>>>> a23ae538c60bbad9fb1ab24d04b8424e76ae4f35
 
 **Agradeço ao pessoal da ANA, em especial, o coordenador Antônio
 Augusto, o especialista Diego Pena e o técnico Théo Albuquerque, que
@@ -94,12 +106,24 @@ construíram essa tabela e apoiam essa iniciativa de dados abertos!**
 ``` r
 #library(dplyr)
 
+<<<<<<< HEAD
 tabela_reservatorios() #%>% 
 #> Error in tabela_reservatorios(): não foi possível encontrar a função "tabela_reservatorios"
   #distinct(codigo, .keep_all = TRUE) #caso queira uma lista sem códigos duplicados
 ```
 
     #> Error in ggplot(.): não foi possível encontrar a função "ggplot"
+=======
+tabela_reservatorios() %>% 
+  #distinct(codigo, .keep_all = TRUE) #caso queira uma lista sem códigos duplicados
+#> Error: <text>:5:0: unexpected end of input
+#> 3: tabela_reservatorios() %>% 
+#> 4:   #distinct(codigo, .keep_all = TRUE) #caso queira uma lista sem códigos duplicados
+#>   ^
+```
+
+    #> Error in tabela_reservatorios() %>% distinct(codigo, .keep_all = TRUE) %>% : não foi possível encontrar a função "%>%"
+>>>>>>> a23ae538c60bbad9fb1ab24d04b8424e76ae4f35
 
 ### A função `tabela_reservatorios_ONS()`
 
@@ -108,6 +132,7 @@ mas contendo apenas os reservatórios observados pela **ONS**.
 
 São **39 reservatórios** com **12 variáveis**, sendo elas:
 
+<<<<<<< HEAD
 -   `subsistema` - Subsistema-ONS a qual o reservatório pertence.
 -   `reservatorio` - O nome do reservatório
 -   `codigo` - **O código do reservatório segundo o SAR. Utilizado nas
@@ -121,6 +146,17 @@ São **39 reservatórios** com **12 variáveis**, sendo elas:
 -   `rio` - Nome do rio.
 -   `sub_bacia` - Sub-bacia do rio.
 -   `bacia` - Bacia hidrográfica do rio.
+=======
+`subsistema` - Subsistema-ONS a qual o reservatório pertence.
+`reservatorio` - O nome do reservatório `codigo` - **O código do
+reservatório segundo o SAR. Utilizado nas funções desse pacote.** código
+do reservatório segundo o SAR. `res_latitude` - Latitude do reservatório
+`res_longitude` - Longitude do reservatório `municipio` - Município do
+reservatório `codigo_municipio_ibge` - Código do município na base do
+IBGE. `estado_nome` - Estado em forma de nome. `estado_sigla` - Estado
+em forma de sigla. `rio` - Nome do rio. `sub_bacia` - Sub-bacia do rio.
+`bacia` - Bacia hidrográfica do rio.
+>>>>>>> a23ae538c60bbad9fb1ab24d04b8424e76ae4f35
 
 ``` r
 tabela_reservatorios_ONS()
@@ -142,7 +178,11 @@ As variáveis retornadas são:
 
 <!-- -->
 
+<<<<<<< HEAD
     #> Error in info_reservatoriosBR(): não foi possível encontrar a função "info_reservatoriosBR"
+=======
+    #> Error in info_reservatoriosBR() %>% kable(): não foi possível encontrar a função "%>%"
+>>>>>>> a23ae538c60bbad9fb1ab24d04b8424e76ae4f35
 
 ## As funções de busca de dados
 
