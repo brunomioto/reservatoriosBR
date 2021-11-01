@@ -37,11 +37,11 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
                                       SE = "Sudeste / Centro-Oeste",
                                       S = "Sul")) %>%
     dplyr::select(-id_subsistema, -nom_subsistema) %>%
-    dplyr::rename(data_medicao = ear_data,
+    dplyr::rename(data = ear_data,
                   ear_max_subsistema_mwmes = ear_max_subsistema) %>%
-    dplyr::select(data_medicao, subsistema, ear_max_subsistema_mwmes, ear_verif_subsistema_mwmes, ear_verif_subsistema_percentual)
+    dplyr::select(data, subsistema, ear_max_subsistema_mwmes, ear_verif_subsistema_mwmes, ear_verif_subsistema_percentual)
 
-  historico_ear_clean$data_medicao <- as.Date(historico_ear_clean$data_medicao)
+  historico_ear_clean$data <- as.Date(historico_ear_clean$data)
 
   return(dplyr::as_tibble(historico_ear_clean))
 

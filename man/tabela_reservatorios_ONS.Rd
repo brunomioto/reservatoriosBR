@@ -12,7 +12,7 @@ Um dataframe com 39 observacoes e 12 variaveis
 \item{codigo}{o codigo do reservatorio segundo o SAR}
 \item{res_latitude}{latitude do reservatorio}
 \item{res_longitude}{longitude do reservatorio}
-\item{municipio}{longitude do reservatorio}
+\item{municipio}{municipio do reservatorio}
 \item{codigo_municipio_ibge}{codigo do municipio na base do ibge}
 \item{estado_nome}{estado em forma de nome}
 \item{estado_sigla}{estado em forma de sigla}

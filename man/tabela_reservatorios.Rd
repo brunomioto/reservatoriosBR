@@ -7,11 +7,11 @@
 Um dataframe com 805 observacoes e 12 variaveis
 \describe{
 \item{sistema}{sistema o qual o reservatorio pertence segundo o SAR}
-\item{codigo_reservatorio}{o codigo do reservatorio segundo o SAR}
+\item{codigo}{o codigo do reservatorio segundo o SAR}
 \item{reservatorio}{o nome do reservatorio}
 \item{res_latitude}{latitude do reservatorio}
 \item{res_longitude}{longitude do reservatorio}
-\item{municipio}{longitude do reservatorio}
+\item{municipio}{municipio do reservatorio}
 \item{codigo_municipio_ibge}{codigo do municipio na base do ibge}
 \item{estado_nome}{estado em forma de nome}
 \item{estado_sigla}{estado em forma de sigla}
