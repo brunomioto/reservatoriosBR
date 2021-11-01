@@ -88,6 +88,7 @@ São **713 reservatórios** (são 804 linhas pois reservatórios em 2 cidades s�
 
 
 ```{r}
+library(reservatoriosBR)
 #library(dplyr)
 
 tabela_reservatorios() #%>% 
@@ -95,7 +96,7 @@ tabela_reservatorios() #%>%
 ```
 
 ```{r, echo=FALSE}
-library(magrittr)
+library(tidyverse)
 
 tabela_reservatorios() %>% 
   distinct(codigo, .keep_all = TRUE) %>% 

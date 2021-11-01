@@ -92,14 +92,39 @@ Augusto, o especialista Diego Pena e o técnico Théo Albuquerque, que
 construíram essa tabela e apoiam essa iniciativa de dados abertos!**
 
 ``` r
+library(reservatoriosBR)
 #library(dplyr)
 
 tabela_reservatorios() #%>% 
-#> Error in tabela_reservatorios(): não foi possível encontrar a função "tabela_reservatorios"
+#> # A tibble: 804 x 12
+#>    sistema            codigo reservatorio  res_latitude res_longitude municipio 
+#>    <chr>               <int> <chr>                <dbl>         <dbl> <chr>     
+#>  1 nordeste_semiarido  12001 25 DE MARÇO          -6.11         -38.2 PAU DOS F~
+#>  2 nordeste_semiarido  12002 ABÓBORAS             -8.09         -39.4 PARNAMIRIM
+#>  3 nordeste_semiarido  12003 ACARAPE DO M~        -4.19         -38.8 REDENÇÃO  
+#>  4 nordeste_semiarido  12004 ACARAÚ MIRIM         -3.51         -40.3 MASSAPÊ   
+#>  5 nordeste_semiarido  12005 ACAUÃ                -7.44         -35.6 ITATUBA   
+#>  6 nordeste_semiarido  12006 ADAUTO BEZER~        -6.04         -38.4 PEREIRO   
+#>  7 nordeste_semiarido  12007 ADUSTINA            -10.6          -38.1 ADUSTINA  
+#>  8 nordeste_semiarido  12008 ÁGUA FRIA II        -14.9          -40.6 BARRA DO ~
+#>  9 nordeste_semiarido  12009 AIPIM               -10.6          -40.3 ANTONIO G~
+#> 10 nordeste_semiarido  12010 ALAGADIÇO           -10.5          -37.6 FREI PAULO
+#> # ... with 794 more rows, and 6 more variables: codigo_municipio_ibge <int>,
+#> #   estado_nome <chr>, estado_sigla <chr>, rio <chr>, sub_bacia <chr>,
+#> #   bacia <chr>
   #distinct(codigo, .keep_all = TRUE) #caso queira uma lista sem códigos duplicados
 ```
 
-    #> Error in ggplot(.): não foi possível encontrar a função "ggplot"
+    #> -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+    #> v ggplot2 3.3.5     v purrr   0.3.4
+    #> v tibble  3.1.5     v dplyr   1.0.7
+    #> v tidyr   1.1.4     v stringr 1.4.0
+    #> v readr   2.0.2     v forcats 0.5.1
+    #> -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+    #> x dplyr::filter() masks stats::filter()
+    #> x dplyr::lag()    masks stats::lag()
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### A função `tabela_reservatorios_ONS()`
 
@@ -124,7 +149,22 @@ São **39 reservatórios** com **12 variáveis**, sendo elas:
 
 ``` r
 tabela_reservatorios_ONS()
-#> Error in tabela_reservatorios_ONS(): não foi possível encontrar a função "tabela_reservatorios_ONS"
+#> # A tibble: 39 x 12
+#>    subsistema      reservatorio  codigo res_latitude res_longitude municipio    
+#>    <chr>           <chr>          <int>        <dbl>         <dbl> <chr>        
+#>  1 Nordeste        IRAPE          19115       -16.7          -42.6 GRÃO MOGOL   
+#>  2 Nordeste        SOBRADINHO     19121        -9.42         -40.8 CASA NOVA    
+#>  3 Nordeste        TRÊS MARIAS    19119       -18.2          -45.3 TRÊS MARIAS  
+#>  4 Nordeste        LUIZ GONZAGA   19122        -9.15         -38.3 JATOBÁ       
+#>  5 Norte           BALBINA        19141        -1.92         -59.5 PRESIDENTE F~
+#>  6 Norte           SERRA DA MESA  19128       -13.8          -48.3 MINAÇU       
+#>  7 Norte           TUCURUI        19134        -3.75         -49.7 TUCURUÍ      
+#>  8 Sudeste / Cent~ A. VERMELHA    19015       -19.9          -50.4 ITURAMA      
+#>  9 Sudeste / Cent~ FURNAS         19004       -20.7          -46.3 ALPINÓPOLIS  
+#> 10 Sudeste / Cent~ M. MORAES      19005       -20.3          -47.1 SACRAMENTO   
+#> # ... with 29 more rows, and 6 more variables: codigo_municipio_ibge <int>,
+#> #   estado_nome <chr>, estado_sigla <chr>, rio <chr>, sub_bacia <chr>,
+#> #   bacia <chr>
 ```
 
 ### A função `info_reservatoriosBR()`
@@ -140,9 +180,17 @@ As variáveis retornadas são:
 -   `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
 -   `Fonte` - A fonte dos dados buscados.
 
-<!-- -->
-
-    #> Error in info_reservatoriosBR(): não foi possível encontrar a função "info_reservatoriosBR"
+| Função                            | Ação                                                         | Nível.de.detalhamento | Dados.disponíveis | Fonte   |
+|:----------------------------------|:-------------------------------------------------------------|:----------------------|:------------------|:--------|
+| ONS_EAR_subsistemas()             | Dados históricos da EAR de subsistemas                       | Subsistemas           | A partir de 2000  | ONS     |
+| ONS_reservatorios()               | Dados atuais da EAR dos reservatórios segundo a ONS          | Reservatórios         | Última data       | ONS     |
+| reservatorio_sin()                | Dados históricos de reservatórios do SIN                     | Reservatórios         | \-                | SAR-ANA |
+| reservatorio_cantareira()         | Dados históricos de reservatórios do Sist. Cantareira        | Reservatórios         | A partir de 2000  | SAR-ANA |
+| reservatorio_nordeste_semiarido() | Dados históricos de reservatórios do Mód. Nordeste-Semiárido | Reservatórios         | \-                | SAR-ANA |
+| ultima_medicao()                  | Dados atuais dos reservatórios segundo o SAR                 | Reservatórios         | Última data       | SAR-ANA |
+| tabela_reservatorios()            | Dataset dos reservatórios do SAR disponíveis para busca      | Reservatórios         | Dataset           | SAR-ANA |
+| tabela_reservatorios_ONS()        | Dataset dos reservatórios da ONS disponíveis para busca      | Reservatórios         | Dataset           | ONS     |
+| info_reservatoriosBR()            | Lista todas as funções do pacote reservatoriosBR             | \-                    | \-                | \-      |
 
 ## As funções de busca de dados
 
@@ -172,7 +220,23 @@ Dessa forma, a função funciona utilizando apenas:
 
 ``` r
 reservatorio_sin(19058, "2000-01-01", "2019-12-31")
-#> Error in reservatorio_sin(19058, "2000-01-01", "2019-12-31"): não foi possível encontrar a função "reservatorio_sin"
+#> # A tibble: 7,306 x 11
+#>    data       codigo_reservatorio reservatorio cota_m afluencia_m3_s
+#>    <date>     <fct>               <fct>         <dbl>          <dbl>
+#>  1 2000-01-01 19058               ITAIPU         216.           9761
+#>  2 2000-01-02 19058               ITAIPU         216.           9300
+#>  3 2000-01-03 19058               ITAIPU         216.           9385
+#>  4 2000-01-04 19058               ITAIPU         216.           9450
+#>  5 2000-01-05 19058               ITAIPU         216.           8868
+#>  6 2000-01-06 19058               ITAIPU         216.           8275
+#>  7 2000-01-07 19058               ITAIPU         215.           7963
+#>  8 2000-01-08 19058               ITAIPU         215.           8367
+#>  9 2000-01-09 19058               ITAIPU         215.           9408
+#> 10 2000-01-10 19058               ITAIPU         215.           8706
+#> # ... with 7,296 more rows, and 6 more variables: defluencia_m3_s <dbl>,
+#> #   vazao_vertida_m3_s <dbl>, vazao_turbinada_m3_s <dbl>,
+#> #   vazao_natural_m3_s <dbl>, volume_util_percentual <dbl>,
+#> #   vazao_incremental_m3_s <dbl>
 ```
 
 As variáveis retornadas são:
@@ -301,7 +365,26 @@ pela ONS.
 
 ``` r
 ONS_reservatorios(formato = "tabela")
-#> Error in ONS_reservatorios(formato = "tabela"): não foi possível encontrar a função "ONS_reservatorios"
+#> # A tibble: 39 x 19
+#>    data_medicao subsistema bacia  reservatorio reservatorio_max reservatorio_ea~
+#>    <date>       <fct>      <fct>  <chr>                   <dbl>            <dbl>
+#>  1 2021-10-31   Norte      AMAZO~ BALBINA                  776.             481.
+#>  2 2021-10-31   Norte      TOCAN~ TUCURUI                 7686.            3952.
+#>  3 2021-10-31   Norte      TOCAN~ SERRA DA ME~            6530.            7238.
+#>  4 2021-10-31   Nordeste   JEQUI~ IRAPE                   1006.             361.
+#>  5 2021-10-31   Nordeste   SAO F~ ITAPARICA               3415.            2842.
+#>  6 2021-10-31   Nordeste   SAO F~ SOBRADINHO             30048.            9763.
+#>  7 2021-10-31   Nordeste   SAO F~ TRÊS MARIAS            16013              674.
+#>  8 2021-10-31   Sul        CAPIV~ G. P. SOUZA              377.             130.
+#>  9 2021-10-31   Sul        IGUACU SANTA CLARA~             378.             326.
+#> 10 2021-10-31   Sul        IGUACU SEGREDO                  453.             247.
+#> # ... with 29 more rows, and 13 more variables:
+#> #   reservatorio_ear_verificada_porcentagem <dbl>,
+#> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
+#> #   bacia_max <dbl>, bacia_ear_verificada_mw_mes <dbl>,
+#> #   bacia_ear_verificada_porcentagem <dbl>, bacia_porcentagem <dbl>,
+#> #   subsistema_max <dbl>, subsistema_ear_verificada_mw_mes <dbl>,
+#> #   subsistema_valor_util <dbl>, sin_max <dbl>, ...
 ```
 
 -   Resumo
@@ -311,7 +394,13 @@ um.
 
 ``` r
 ONS_reservatorios(formato = "resumo")
-#> Error in ONS_reservatorios(formato = "resumo"): não foi possível encontrar a função "ONS_reservatorios"
+#> # A tibble: 4 x 3
+#>   data_medicao subsistema             percentual
+#>   <date>       <chr>                       <dbl>
+#> 1 2021-10-31   Nordeste                     36.4
+#> 2 2021-10-31   Norte                        46.4
+#> 3 2021-10-31   Sudeste / Centro-Oeste       18.2
+#> 4 2021-10-31   Sul                          52.0
 ```
 
 ### A função `ONS_EAR_subsistemas()`
