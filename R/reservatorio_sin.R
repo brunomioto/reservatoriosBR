@@ -17,7 +17,7 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
     dplyr::select(reservatorio)
 
   if(nrow(reservatorio_busca) == 0){
-    ui_stop("Não foi possível encontrar esse código no banco de dados. Verifique o código na tabela utilizando a função {ui_code('tabela_reservatorios()')}")
+    usethis::ui_stop("Não foi possível encontrar esse código no banco de dados. Verifique o código na tabela utilizando a função {ui_code('tabela_reservatorios()')}")
   }
 
 
@@ -63,7 +63,7 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
   if(nrow(table_reservoir) == 0){
     usethis::ui_oops("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
   }else{
-    ui_done(motivational_message(3))
+    usethis::ui_done(motivational_message(3))
     return(table_reservoir)
   }
 

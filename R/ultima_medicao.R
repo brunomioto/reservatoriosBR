@@ -36,7 +36,7 @@ ultima_medicao <- function(codigo_reservatorio){
   if(nrow(tabela_reservatorio2) == 0){
     usethis::ui_oops("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
   }else{
-    ui_done(motivational_message(3))
+    usethis::ui_done(motivational_message(3))
     return(tabela_reservatorio2)
   }
 }
