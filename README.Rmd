@@ -91,11 +91,16 @@ São **713 reservatórios** (são 804 linhas pois reservatórios em 2 cidades s�
 library(reservatoriosBR)
 #library(dplyr)
 
-tabela_reservatorios() #%>% 
-  #distinct(codigo, .keep_all = TRUE) #caso queira uma lista sem códigos duplicados
+tabela_reservatorios() 
+
+#caso queira uma lista sem códigos duplicados
+
+#library(dplyr)
+#tabela_reservatorios() %>% 
+#  distinct(codigo, .keep_all = TRUE) 
 ```
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 
 tabela_reservatorios() %>% 
@@ -120,7 +125,7 @@ São **39 reservatórios** com **12 variáveis**, sendo elas:
 
 - `subsistema` - Subsistema-ONS a qual o reservatório pertence.
 - `reservatorio` - O nome do reservatório
-- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.** código do reservatório segundo o SAR.
+- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
 - `res_latitude` - Latitude do reservatório
 - `res_longitude` - Longitude do reservatório
 - `municipio` - Município do reservatório

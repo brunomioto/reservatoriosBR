@@ -95,7 +95,7 @@ construíram essa tabela e apoiam essa iniciativa de dados abertos!**
 library(reservatoriosBR)
 #library(dplyr)
 
-tabela_reservatorios() #%>% 
+tabela_reservatorios() 
 #> # A tibble: 804 x 12
 #>    sistema            codigo reservatorio  res_latitude res_longitude municipio 
 #>    <chr>               <int> <chr>                <dbl>         <dbl> <chr>     
@@ -112,17 +112,13 @@ tabela_reservatorios() #%>%
 #> # ... with 794 more rows, and 6 more variables: codigo_municipio_ibge <int>,
 #> #   estado_nome <chr>, estado_sigla <chr>, rio <chr>, sub_bacia <chr>,
 #> #   bacia <chr>
-  #distinct(codigo, .keep_all = TRUE) #caso queira uma lista sem códigos duplicados
-```
 
-    #> -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
-    #> v ggplot2 3.3.5     v purrr   0.3.4
-    #> v tibble  3.1.5     v dplyr   1.0.7
-    #> v tidyr   1.1.4     v stringr 1.4.0
-    #> v readr   2.0.2     v forcats 0.5.1
-    #> -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-    #> x dplyr::filter() masks stats::filter()
-    #> x dplyr::lag()    masks stats::lag()
+#caso queira uma lista sem códigos duplicados
+
+#library(dplyr)
+#tabela_reservatorios() %>% 
+#  distinct(codigo, .keep_all = TRUE) 
+```
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
@@ -136,7 +132,7 @@ São **39 reservatórios** com **12 variáveis**, sendo elas:
 -   `subsistema` - Subsistema-ONS a qual o reservatório pertence.
 -   `reservatorio` - O nome do reservatório
 -   `codigo` - **O código do reservatório segundo o SAR. Utilizado nas
-    funções desse pacote.** código do reservatório segundo o SAR.
+    funções desse pacote.**
 -   `res_latitude` - Latitude do reservatório
 -   `res_longitude` - Longitude do reservatório
 -   `municipio` - Município do reservatório
@@ -366,18 +362,18 @@ pela ONS.
 ``` r
 ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
-#>    data_medicao subsistema bacia  reservatorio reservatorio_max reservatorio_ea~
-#>    <date>       <fct>      <fct>  <chr>                   <dbl>            <dbl>
-#>  1 2021-10-31   Norte      AMAZO~ BALBINA                  776.             481.
-#>  2 2021-10-31   Norte      TOCAN~ TUCURUI                 7686.            3952.
-#>  3 2021-10-31   Norte      TOCAN~ SERRA DA ME~            6530.            7238.
-#>  4 2021-10-31   Nordeste   JEQUI~ IRAPE                   1006.             361.
-#>  5 2021-10-31   Nordeste   SAO F~ ITAPARICA               3415.            2842.
-#>  6 2021-10-31   Nordeste   SAO F~ SOBRADINHO             30048.            9763.
-#>  7 2021-10-31   Nordeste   SAO F~ TRÊS MARIAS            16013              674.
-#>  8 2021-10-31   Sul        CAPIV~ G. P. SOUZA              377.             130.
-#>  9 2021-10-31   Sul        IGUACU SANTA CLARA~             378.             326.
-#> 10 2021-10-31   Sul        IGUACU SEGREDO                  453.             247.
+#>    data       subsistema bacia  reservatorio  reservatorio_max reservatorio_ear~
+#>    <date>     <fct>      <fct>  <chr>                    <dbl>             <dbl>
+#>  1 2021-10-31 Norte      AMAZO~ BALBINA                   776.              481.
+#>  2 2021-10-31 Norte      TOCAN~ TUCURUI                  7686.             3952.
+#>  3 2021-10-31 Norte      TOCAN~ SERRA DA MESA            6530.             7238.
+#>  4 2021-10-31 Nordeste   JEQUI~ IRAPE                    1006.              361.
+#>  5 2021-10-31 Nordeste   SAO F~ ITAPARICA                3415.             2842.
+#>  6 2021-10-31 Nordeste   SAO F~ SOBRADINHO              30048.             9763.
+#>  7 2021-10-31 Nordeste   SAO F~ TRÊS MARIAS             16013               674.
+#>  8 2021-10-31 Sul        CAPIV~ G. P. SOUZA               377.              130.
+#>  9 2021-10-31 Sul        IGUACU SANTA CLARA-~             378.              326.
+#> 10 2021-10-31 Sul        IGUACU SEGREDO                   453.              247.
 #> # ... with 29 more rows, and 13 more variables:
 #> #   reservatorio_ear_verificada_porcentagem <dbl>,
 #> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
@@ -395,12 +391,12 @@ um.
 ``` r
 ONS_reservatorios(formato = "resumo")
 #> # A tibble: 4 x 3
-#>   data_medicao subsistema             percentual
-#>   <date>       <chr>                       <dbl>
-#> 1 2021-10-31   Nordeste                     36.4
-#> 2 2021-10-31   Norte                        46.4
-#> 3 2021-10-31   Sudeste / Centro-Oeste       18.2
-#> 4 2021-10-31   Sul                          52.0
+#>   data       subsistema             percentual
+#>   <date>     <chr>                       <dbl>
+#> 1 2021-10-31 Nordeste                     36.4
+#> 2 2021-10-31 Norte                        46.4
+#> 3 2021-10-31 Sudeste / Centro-Oeste       18.2
+#> 4 2021-10-31 Sul                          52.0
 ```
 
 ### A função `ONS_EAR_subsistemas()`
