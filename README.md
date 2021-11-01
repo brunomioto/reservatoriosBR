@@ -93,7 +93,6 @@ construíram essa tabela e apoiam essa iniciativa de dados abertos!**
 
 ``` r
 library(reservatoriosBR)
-#library(dplyr)
 
 tabela_reservatorios() 
 #> # A tibble: 804 x 12
@@ -114,11 +113,12 @@ tabela_reservatorios()
 #> #   bacia <chr>
 
 #caso queira uma lista sem códigos duplicados
-
 #library(dplyr)
 #tabela_reservatorios() %>% 
 #  distinct(codigo, .keep_all = TRUE) 
 ```
+
+Mapa dos reservatórios brasileiros!
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
@@ -237,7 +237,7 @@ reservatorio_sin(19058, "2000-01-01", "2019-12-31")
 
 As variáveis retornadas são:
 
--   `data_medicao` - Data da medição realizada
+-   `data` - Data da medição realizada
 -   `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
 -   `reservatorio` - Nome do reservatório
 -   `cota_m` - Cota, o nível do reservatório (m)
@@ -294,7 +294,7 @@ Dessa forma, a função funciona utilizando apenas:
 
 As variáveis retornadas são:
 
--   `data_medicao` - Data da medição realizada
+-   `data` - Data da medição realizada
 -   `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
 -   `reservatorio` - Nome do reservatório
 -   `cota_m` - Cota, o nível do reservatório (m)
@@ -335,7 +335,7 @@ reservatórios que não estão inclusos no dataset criado pela função
 
 As variáveis retornadas são:
 
--   `data_medicao` - Data da medição realizada
+-   `data` - Data da medição realizada
 -   `reservatorio` - Nome do reservatório
 -   `afluencia_m3_s` - Afluência (m³/s)
 -   `defluencia_m3_s` - Defluência (m³/s)
@@ -416,7 +416,7 @@ dados de todos os subsistemas de 2000 até o ano atual.
 
 As variáveis retornadas são:
 
--   `data_medicao` - Data da medição realizada
+-   `data` - Data da medição realizada
 -   `subsistema` - Nome do subsistema
 -   `ear_max_subsistema_mwmes` - Valor de EAR máxima por subsistema na
     unidade de medida MWmês

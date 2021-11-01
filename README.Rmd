@@ -89,16 +89,16 @@ São **713 reservatórios** (são 804 linhas pois reservatórios em 2 cidades s�
 
 ```{r}
 library(reservatoriosBR)
-#library(dplyr)
 
 tabela_reservatorios() 
 
 #caso queira uma lista sem códigos duplicados
-
 #library(dplyr)
 #tabela_reservatorios() %>% 
 #  distinct(codigo, .keep_all = TRUE) 
 ```
+
+Mapa dos reservatórios brasileiros!
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -183,7 +183,7 @@ reservatorio_sin(19058, "2000-01-01", "2019-12-31")
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
 - `reservatorio` - Nome do reservatório
 - `cota_m` - Cota, o nível do reservatório (m)
@@ -204,7 +204,7 @@ library(ggplot2)
 
 itaipu <- reservatorio_sin(19058, "1980-01-01", Sys.Date())
 
-ggplot(itaipu, aes(x=data_medicao, y=afluencia_m3_s))+
+ggplot(itaipu, aes(x=data, y=afluencia_m3_s))+
   geom_line(color = "#377eb8")+
   scale_x_date(date_breaks = "years", date_labels = "%Y")+
   theme_bw()+
@@ -245,7 +245,7 @@ Dessa forma, a função funciona utilizando apenas: `reservatorio_cantareira(cod
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
 - `reservatorio` - Nome do reservatório
 - `cota_m` - Cota, o nível do reservatório (m)
@@ -277,7 +277,7 @@ Fiz essa função pois ela fornece o **Volume útil** de alguns reservatórios q
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `reservatorio` - Nome do reservatório
 - `afluencia_m3_s` - Afluência (m³/s)
 - `defluencia_m3_s` - Defluência (m³/s)
@@ -321,7 +321,7 @@ Dessa forma, rodando a função `ONS_EAR_subsistemas()` retorna todos os dados d
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `subsistema` - Nome do subsistema
 - `ear_max_subsistema_mwmes` - Valor de EAR máxima por subsistema na unidade de medida MWmês
 - `ear_verif_subsistema_mwmes` - Valor de EAR verificada no dia por subsistema na unidade de medida MWmês
@@ -341,9 +341,9 @@ dados_ONS_SE <- dados_ONS %>%
   filter(subsistema == "Sudeste / Centro-Oeste")
 
 plot_2 <- dados_ONS_SE %>% 
-  ggplot(aes(x=data_medicao, y=ear_verif_subsistema_percentual))+
+  ggplot(aes(x=data, y=ear_verif_subsistema_percentual))+
   geom_area(color = "#377eb8", fill = "#377eb850", size=1.2)+
-  geom_point(data = dados_ONS_SE %>% filter(data_medicao == max(data_medicao)),
+  geom_point(data = dados_ONS_SE %>% filter(data == max(data)),
              color = "#377eb8",
              size = 2)+
   scale_x_date(breaks = "1 year",
