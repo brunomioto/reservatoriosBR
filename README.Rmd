@@ -100,7 +100,7 @@ tabela_reservatorios()
 
 Mapa dos reservatórios brasileiros!
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 
 tabela_reservatorios() %>% 
@@ -171,7 +171,7 @@ knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservator
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
-- `codigo_reservatorio` O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando `tabela_reservatorios`).
+- `codigo_reservatorio` O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando a função `tabela_reservatorios()`).
 - `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
 - `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
 
@@ -271,7 +271,7 @@ knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservator
 
 Essa função retorna a última medição (e somente ela) dos dados de um reservatório.
 
-Fiz essa função pois ela fornece o **Volume útil** de alguns reservatórios que não estão inclusos no dataset criado pela função `dados_reservatorio()`, como é o exemplo de **Itaipu**.
+Fiz essa função pois ela fornece o **Volume útil** de alguns reservatórios que não estão inclusos no dataset criado pela função `reservatorio_sin()`, como é o exemplo de **Itaipu**.
 
 `ultima_medicao(codigo_reservatorio)`
 

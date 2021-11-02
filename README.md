@@ -120,6 +120,23 @@ tabela_reservatorios()
 
 Mapa dos reservatórios brasileiros!
 
+``` r
+library(tidyverse)
+
+tabela_reservatorios() %>% 
+  distinct(codigo, .keep_all = TRUE) %>% 
+  ggplot()+
+  borders("world", fill = "grey70", colour = "black")+
+  theme_minimal()+
+  geom_point(aes(x=res_longitude, y=res_latitude),
+             colour = "blue",
+             size = 2,
+             alpha = 0.5) + 
+  labs(x = "",
+       y = "")+
+  coord_fixed(xlim= c(-73,-35), ylim=c(-35,5))
+```
+
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### A função `tabela_reservatorios_ONS()`
@@ -202,8 +219,8 @@ bacias dos reservatórios contidos no SIN.
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
 -   `codigo_reservatorio` O código do reservatório de acordo com o SIN
-    (você pode consultar a tabela com os códigos chamando
-    `tabela_reservatorios`).
+    (você pode consultar a tabela com os códigos chamando a função
+    `tabela_reservatorios()`).
 -   `data_inicial` Data inicial do registro. Se for anterior à data de
     funcionamento, retorna a data de registro mais antiga. O padrão é
     `data_inicial = "1980-01-01"`
@@ -329,7 +346,7 @@ reservatório.
 
 Fiz essa função pois ela fornece o **Volume útil** de alguns
 reservatórios que não estão inclusos no dataset criado pela função
-`dados_reservatorio()`, como é o exemplo de **Itaipu**.
+`reservatorio_sin()`, como é o exemplo de **Itaipu**.
 
 `ultima_medicao(codigo_reservatorio)`
 
@@ -364,16 +381,16 @@ ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
 #>    data       subsistema bacia  reservatorio  reservatorio_max reservatorio_ear~
 #>    <date>     <fct>      <fct>  <chr>                    <dbl>             <dbl>
-#>  1 2021-10-31 Norte      AMAZO~ BALBINA                   776.              481.
-#>  2 2021-10-31 Norte      TOCAN~ TUCURUI                  7686.             3952.
-#>  3 2021-10-31 Norte      TOCAN~ SERRA DA MESA            6530.             7238.
-#>  4 2021-10-31 Nordeste   JEQUI~ IRAPE                    1006.              361.
-#>  5 2021-10-31 Nordeste   SAO F~ ITAPARICA                3415.             2842.
-#>  6 2021-10-31 Nordeste   SAO F~ SOBRADINHO              30048.             9763.
-#>  7 2021-10-31 Nordeste   SAO F~ TRÊS MARIAS             16013               674.
-#>  8 2021-10-31 Sul        CAPIV~ G. P. SOUZA               377.              130.
-#>  9 2021-10-31 Sul        IGUACU SANTA CLARA-~             378.              326.
-#> 10 2021-10-31 Sul        IGUACU SEGREDO                   453.              247.
+#>  1 2021-11-01 Norte      AMAZO~ BALBINA                   776.              477.
+#>  2 2021-11-01 Norte      TOCAN~ TUCURUI                  7686.             3916.
+#>  3 2021-11-01 Norte      TOCAN~ SERRA DA MESA            6530.             7238.
+#>  4 2021-11-01 Nordeste   JEQUI~ IRAPE                    1006.              361.
+#>  5 2021-11-01 Nordeste   SAO F~ ITAPARICA                3415.             2812.
+#>  6 2021-11-01 Nordeste   SAO F~ SOBRADINHO              30048.             9808.
+#>  7 2021-11-01 Nordeste   SAO F~ TRÊS MARIAS             16013               674.
+#>  8 2021-11-01 Sul        CAPIV~ G. P. SOUZA               377.              137.
+#>  9 2021-11-01 Sul        IGUACU SANTA CLARA-~             378.              322.
+#> 10 2021-11-01 Sul        IGUACU G. B. MUNHOZ             5934.             3222.
 #> # ... with 29 more rows, and 13 more variables:
 #> #   reservatorio_ear_verificada_porcentagem <dbl>,
 #> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
@@ -393,10 +410,10 @@ ONS_reservatorios(formato = "resumo")
 #> # A tibble: 4 x 3
 #>   data       subsistema             percentual
 #>   <date>     <chr>                       <dbl>
-#> 1 2021-10-31 Nordeste                     36.4
-#> 2 2021-10-31 Norte                        46.4
-#> 3 2021-10-31 Sudeste / Centro-Oeste       18.2
-#> 4 2021-10-31 Sul                          52.0
+#> 1 2021-11-01 Nordeste                     36.4
+#> 2 2021-11-01 Norte                        46.1
+#> 3 2021-11-01 Sudeste / Centro-Oeste       18.4
+#> 4 2021-11-01 Sul                          52.5
 ```
 
 ### A função `ONS_EAR_subsistemas()`
