@@ -90,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reservatoriosBR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/brunomioto/reservatoriosBR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -140,19 +140,20 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>info_reservatoriosBR</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 9 x 5</span><span>
-#&gt;   Função         Ação                  Nível.de.detalham~ Dados.disponíve~ Fonte
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>                 </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> ONS_EAR_subsi~ Dados históricos da ~ Subsistemas        A partir de 2000 ONS  
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> ONS_reservato~ Dados atuais da EAR ~ Reservatórios      Última data      ONS  
-#&gt; </span><span style='color: #BCBCBC;'>3</span><span> reservatorio_~ Dados históricos de ~ Reservatórios      -                SAR-~
-#&gt; </span><span style='color: #BCBCBC;'>4</span><span> reservatorio_~ Dados históricos de ~ Reservatórios      A partir de 2000 SAR-~
-#&gt; </span><span style='color: #BCBCBC;'>5</span><span> reservatorio_~ Dados históricos de ~ Reservatórios      -                SAR-~
-#&gt; </span><span style='color: #BCBCBC;'>6</span><span> ultima_medica~ Dados atuais dos res~ Reservatórios      Última data      SAR-~
-#&gt; </span><span style='color: #BCBCBC;'>7</span><span> tabela_reserv~ Dataset dos reservat~ Reservatórios      Dataset          SAR-~
-#&gt; </span><span style='color: #BCBCBC;'>8</span><span> tabela_reserv~ Dataset dos reservat~ Reservatórios      Dataset          ONS  
-#&gt; </span><span style='color: #BCBCBC;'>9</span><span> info_reservat~ Lista todas as funçõ~ -                  -                -    </div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>info_reservatoriosBR</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 9 x 5</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   Função         Ação                  Nível.de.detalham~ Dados.disponíve~ Fonte</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                 <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> ONS_EAR_subsi~ Dados históricos da ~ Subsistemas        A partir de 2000 ONS  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>2</span> ONS_reservato~ Dados atuais da EAR ~ Reservatórios      Última data      ONS  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>3</span> reservatorio_~ Dados históricos de ~ Reservatórios      -                SAR-~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>4</span> reservatorio_~ Dados históricos de ~ Reservatórios      A partir de 2000 SAR-~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>5</span> reservatorio_~ Dados históricos de ~ Reservatórios      -                SAR-~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>6</span> ultima_medica~ Dados atuais dos res~ Reservatórios      Última data      SAR-~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>7</span> tabela_reserv~ Dataset dos reservat~ Reservatórios      Dataset          SAR-~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>8</span> tabela_reserv~ Dataset dos reservat~ Reservatórios      Dataset          ONS  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>9</span> info_reservat~ Lista todas as funçõ~ -                  -                -    </span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -90,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reservatoriosBR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/brunomioto/reservatoriosBR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -140,37 +140,46 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Um dataframe com 39 observacoes e 6 variaveis</p><dl>
+    <p>Um dataframe com 39 observacoes e 12 variaveis</p><dl>
 
+<dt>subsistema</dt><dd><p>subsistema-ONS a qual o reservatorio pertence</p></dd>
 <dt>reservatorio</dt><dd><p>o nome do reservatorio</p></dd>
 <dt>codigo</dt><dd><p>o codigo do reservatorio segundo o SAR</p></dd>
-<dt>bacia</dt><dd><p>bacia hidrológica a qual o reservatorio pertence</p></dd>
-<dt>subsistema</dt><dd><p>subsistema-ONS a qual o reservatorio pertence</p></dd>
-<dt>estado_1</dt><dd><p>estado o qual o reservatorio pertence</p></dd>
-<dt>estado_2</dt><dd><p>se o reservatorio fica entre estados, o segundo estado</p></dd>
+<dt>res_latitude</dt><dd><p>latitude do reservatorio</p></dd>
+<dt>res_longitude</dt><dd><p>longitude do reservatorio</p></dd>
+<dt>municipio</dt><dd><p>municipio do reservatorio</p></dd>
+<dt>codigo_municipio_ibge</dt><dd><p>codigo do municipio na base do ibge</p></dd>
+<dt>estado_nome</dt><dd><p>estado em forma de nome</p></dd>
+<dt>estado_sigla</dt><dd><p>estado em forma de sigla</p></dd>
+<dt>rio</dt><dd><p>nome do rio</p></dd>
+<dt>sub_bacia</dt><dd><p>sub-bacia do rio</p></dd>
+<dt>bacia</dt><dd><p>bacia hidrográfica do rio</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='http://www.ons.org.br/paginas/energia-agora/reservatorios'>http://www.ons.org.br/paginas/energia-agora/reservatorios</a>. obtido em 2021-08-30</p>
+    <p>ANA (Antônio Augusto, Diego Pena e Théo Albuquerque) e <a href='http://www.ons.org.br/paginas/energia-agora/reservatorios'>http://www.ons.org.br/paginas/energia-agora/reservatorios</a>, editado por Bruno Mioto. obtido em 2021-10-22.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>tabela_reservatorios_ONS</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 39 x 6</span><span>
-#&gt;    subsistema             reservatorio           codigo bacia  estado_1 estado_2
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>                  </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>                   </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>   
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> Nordeste               IRAPE                   </span><span style='text-decoration: underline;'>19</span><span>115 JEQUI~ MG       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> Nordeste               SOBRADINHO              </span><span style='text-decoration: underline;'>19</span><span>121 SAO F~ BA       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> Nordeste               TRES MARIAS             </span><span style='text-decoration: underline;'>19</span><span>119 SAO F~ MG       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> Nordeste               LUIZ GONZAGA/ITAPARICA  </span><span style='text-decoration: underline;'>19</span><span>122 SAO F~ BA       PE      
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> Norte                  BALBINA                 </span><span style='text-decoration: underline;'>19</span><span>141 AMAZO~ AM       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> Norte                  SERRA DA MESA           </span><span style='text-decoration: underline;'>19</span><span>128 TOCAN~ GO       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> Norte                  TUCURUI                 </span><span style='text-decoration: underline;'>19</span><span>134 TOCAN~ PA       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> Sudeste / Centro-Oeste AGUA VERMELHA           </span><span style='text-decoration: underline;'>19</span><span>015 GRANDE MG       SP      
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> Sudeste / Centro-Oeste FURNAS                  </span><span style='text-decoration: underline;'>19</span><span>004 GRANDE MG       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> Sudeste / Centro-Oeste MASCARENHAS DE MORAES   </span><span style='text-decoration: underline;'>19</span><span>005 GRANDE MG       </span><span style='color: #BB0000;'>NA</span><span>      
-#&gt; </span><span style='color: #949494;'># ... with 29 more rows</span><span></div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>tabela_reservatorios_ONS</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 39 x 12</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    subsistema      reservatorio  codigo res_latitude res_longitude municipio    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> Nordeste        IRAPE          <span style='text-decoration: underline;'>19</span>115       -<span style='color: #BB0000;'>16.7</span>          -<span style='color: #BB0000;'>42.6</span> GRÃO MOGOL   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> Nordeste        SOBRADINHO     <span style='text-decoration: underline;'>19</span>121        -<span style='color: #BB0000;'>9.42</span>         -<span style='color: #BB0000;'>40.8</span> CASA NOVA    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> Nordeste        TRÊS MARIAS    <span style='text-decoration: underline;'>19</span>119       -<span style='color: #BB0000;'>18.2</span>          -<span style='color: #BB0000;'>45.3</span> TRÊS MARIAS  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> Nordeste        LUIZ GONZAGA   <span style='text-decoration: underline;'>19</span>122        -<span style='color: #BB0000;'>9.15</span>         -<span style='color: #BB0000;'>38.3</span> JATOBÁ       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> Norte           BALBINA        <span style='text-decoration: underline;'>19</span>141        -<span style='color: #BB0000;'>1.92</span>         -<span style='color: #BB0000;'>59.5</span> PRESIDENTE F~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> Norte           SERRA DA MESA  <span style='text-decoration: underline;'>19</span>128       -<span style='color: #BB0000;'>13.8</span>          -<span style='color: #BB0000;'>48.3</span> MINAÇU       </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> Norte           TUCURUI        <span style='text-decoration: underline;'>19</span>134        -<span style='color: #BB0000;'>3.75</span>         -<span style='color: #BB0000;'>49.7</span> TUCURUÍ      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> Sudeste / Cent~ A. VERMELHA    <span style='text-decoration: underline;'>19</span>015       -<span style='color: #BB0000;'>19.9</span>          -<span style='color: #BB0000;'>50.4</span> ITURAMA      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> Sudeste / Cent~ FURNAS         <span style='text-decoration: underline;'>19</span>004       -<span style='color: #BB0000;'>20.7</span>          -<span style='color: #BB0000;'>46.3</span> ALPINÓPOLIS  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> Sudeste / Cent~ M. MORAES      <span style='text-decoration: underline;'>19</span>005       -<span style='color: #BB0000;'>20.3</span>          -<span style='color: #BB0000;'>47.1</span> SACRAMENTO   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># ... with 29 more rows, and 6 more variables: codigo_municipio_ibge &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   estado_nome &lt;chr&gt;, estado_sigla &lt;chr&gt;, rio &lt;chr&gt;, sub_bacia &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   bacia &lt;chr&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

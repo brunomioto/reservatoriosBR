@@ -90,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reservatoriosBR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/brunomioto/reservatoriosBR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -160,21 +160,26 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>reservatorio_nordeste_semiarido</span><span class='op'>(</span><span class='fl'>12354</span>, <span class='st'>"2012-09-10"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Buscando as informações do reservatório PONTO NOVO</span></div><div class='output co'>#&gt; <span class='message'>-------</span></div><div class='output co'>#&gt; <span class='message'>Coletando (muitos) dados...</span></div><div class='output co'>#&gt; <span class='message'>Você lembrou de trancar a porta?</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1,193 x 7</span><span>
-#&gt;    data_medicao estado reservatorio capacidade_hm3 cota_m volume_hm3
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>                 </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2012-09-10   Bahia  PONTO NOVO             38.9   355.      10.6 
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2012-11-26   Bahia  PONTO NOVO             38.9   353.       6.25
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2012-12-10   Bahia  PONTO NOVO             38.9   353.       5.18
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2012-12-27   Bahia  PONTO NOVO             38.9   353.       5.58
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2013-01-07   Bahia  PONTO NOVO             38.9   353.       5.18
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2013-01-14   Bahia  PONTO NOVO             38.9   353.       4.89
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2013-02-04   Bahia  PONTO NOVO             38.9   356.      14.9 
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2013-02-18   Bahia  PONTO NOVO             38.9   356.      13.7 
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2013-02-25   Bahia  PONTO NOVO             38.9   355.      12.8 
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2013-03-18   Bahia  PONTO NOVO             38.9   355.       9.99
-#&gt; </span><span style='color: #949494;'># ... with 1,183 more rows, and 1 more variable: volume_percentual &lt;dbl&gt;</span><span></div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>reservatorio_nordeste_semiarido</span><span class='op'>(</span><span class='fl'>12354</span>, <span class='st'>"2012-09-10"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> <span style='color: #BBBB00;'>i</span> Buscando as informações do reservatório PONTO NOVO</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Eita, isso não vai demorar (tanto) ...</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Você já regou as plantas hoje? </span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> <span style='color: #00BB00;'>v</span> O que achou?</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 1,246 x 7</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    data       estado reservatorio capacidade_hm3 cota_m volume_hm3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;date&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>                 <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 2012-09-10 Bahia  PONTO NOVO             38.9   355.      10.6 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 2012-11-26 Bahia  PONTO NOVO             38.9   353.       6.25</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 2012-12-10 Bahia  PONTO NOVO             38.9   353.       5.18</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 2012-12-27 Bahia  PONTO NOVO             38.9   353.       5.58</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 2013-01-07 Bahia  PONTO NOVO             38.9   353.       5.18</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 2013-01-14 Bahia  PONTO NOVO             38.9   353.       4.89</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 2013-02-04 Bahia  PONTO NOVO             38.9   356.      14.9 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 2013-02-18 Bahia  PONTO NOVO             38.9   356.      13.7 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 2013-02-25 Bahia  PONTO NOVO             38.9   355.      12.8 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 2013-03-18 Bahia  PONTO NOVO             38.9   355.       9.99</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># ... with 1,236 more rows, and 1 more variable: volume_percentual &lt;dbl&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

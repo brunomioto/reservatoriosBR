@@ -90,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reservatoriosBR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/brunomioto/reservatoriosBR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -140,36 +140,45 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Um dataframe com 708 observacoes e 5 variaveis</p><dl>
-<dt>sistema</dt><dd><p>sistema o qual o reservatorio pertence</p></dd>
+    <p>Um dataframe com 805 observacoes e 12 variaveis</p><dl>
+<dt>sistema</dt><dd><p>sistema o qual o reservatorio pertence segundo o SAR</p></dd>
 <dt>codigo</dt><dd><p>o codigo do reservatorio segundo o SAR</p></dd>
-<dt>estado_1</dt><dd><p>estado o qual o reservatorio pertence</p></dd>
-<dt>estado_2</dt><dd><p>se o reservatorio fica entre estados, o segundo estado</p></dd>
 <dt>reservatorio</dt><dd><p>o nome do reservatorio</p></dd>
+<dt>res_latitude</dt><dd><p>latitude do reservatorio</p></dd>
+<dt>res_longitude</dt><dd><p>longitude do reservatorio</p></dd>
+<dt>municipio</dt><dd><p>municipio do reservatorio</p></dd>
+<dt>codigo_municipio_ibge</dt><dd><p>codigo do municipio na base do ibge</p></dd>
+<dt>estado_nome</dt><dd><p>estado em forma de nome</p></dd>
+<dt>estado_sigla</dt><dd><p>estado em forma de sigla</p></dd>
+<dt>rio</dt><dd><p>nome do rio</p></dd>
+<dt>sub_bacia</dt><dd><p>sub-bacia do rio</p></dd>
+<dt>bacia</dt><dd><p>bacia hidrográfica do rio</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='https://www.ana.gov.br/sar0/'>https://www.ana.gov.br/sar0/</a>. obtido em 2021-08-22</p>
+    <p>ANA (Antônio Augusto, Diego Pena e Théo Albuquerque), editado por Bruno Mioto. obtido em 2021-08-22</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>tabela_reservatorios</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 710 x 8</span><span>
-#&gt;    sistema            codigo reservatorio    bacia rio   estado_1 estado_2   ano
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>001 25 DE MARÇO     </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    RN       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>002 ABÓBORAS        </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    PE       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>003 ACARAPE DO MEIO </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    CE       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>004 ACARAÚ MIRIM    </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    CE       </span><span style='color: #BB0000;'>NA</span><span>        </span><span style='text-decoration: underline;'>1</span><span>907
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>005 ACAUÃ           </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    PB       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>006 ADAUTO BEZERRA  </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    CE       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>007 ADUSTINA        </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    BA       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>008 ÁGUA FRIA II    </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    BA       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>009 AIPIM           </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    BA       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> nordeste_semiarido  </span><span style='text-decoration: underline;'>12</span><span>010 ALAGADIÇO       </span><span style='color: #BB0000;'>NA</span><span>    </span><span style='color: #BB0000;'>NA</span><span>    SE       </span><span style='color: #BB0000;'>NA</span><span>          </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #949494;'># ... with 700 more rows</span><span></div><div class='input'>
-</div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>tabela_reservatorios</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 804 x 12</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    sistema            codigo reservatorio  res_latitude res_longitude municipio </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>001 25 DE MARÇO          -<span style='color: #BB0000;'>6.11</span>         -<span style='color: #BB0000;'>38.2</span> PAU DOS F~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>002 ABÓBORAS             -<span style='color: #BB0000;'>8.09</span>         -<span style='color: #BB0000;'>39.4</span> PARNAMIRIM</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>003 ACARAPE DO M~        -<span style='color: #BB0000;'>4.19</span>         -<span style='color: #BB0000;'>38.8</span> REDENÇÃO  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>004 ACARAÚ MIRIM         -<span style='color: #BB0000;'>3.51</span>         -<span style='color: #BB0000;'>40.3</span> MASSAPÊ   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>005 ACAUÃ                -<span style='color: #BB0000;'>7.44</span>         -<span style='color: #BB0000;'>35.6</span> ITATUBA   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>006 ADAUTO BEZER~        -<span style='color: #BB0000;'>6.04</span>         -<span style='color: #BB0000;'>38.4</span> PEREIRO   </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>007 ADUSTINA            -<span style='color: #BB0000;'>10.6</span>          -<span style='color: #BB0000;'>38.1</span> ADUSTINA  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>008 ÁGUA FRIA II        -<span style='color: #BB0000;'>14.9</span>          -<span style='color: #BB0000;'>40.6</span> BARRA DO ~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>009 AIPIM               -<span style='color: #BB0000;'>10.6</span>          -<span style='color: #BB0000;'>40.3</span> ANTONIO G~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> nordeste_semiarido  <span style='text-decoration: underline;'>12</span>010 ALAGADIÇO           -<span style='color: #BB0000;'>10.5</span>          -<span style='color: #BB0000;'>37.6</span> FREI PAULO</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># ... with 794 more rows, and 6 more variables: codigo_municipio_ibge &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   estado_nome &lt;chr&gt;, estado_sigla &lt;chr&gt;, rio &lt;chr&gt;, sub_bacia &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   bacia &lt;chr&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

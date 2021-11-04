@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional — reservatorio_sin • reservatoriosBR</title>
+<title>Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional — reservatorio_sin • reservatoriosBR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional — reservatorio_sin" />
-<meta property="og:description" content="Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional" />
+<meta property="og:title" content="Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional — reservatorio_sin" />
+<meta property="og:description" content="Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional" />
 <meta property="og:image" content="http://brunomioto.github.io/reservatoriosBR/logo.png" />
 
 
@@ -90,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reservatoriosBR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/brunomioto/reservatoriosBR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -126,13 +126,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional</h1>
+    <h1>Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional</h1>
     <small class="dont-index">Source: <a href='https://github.com/brunomioto/reservatoriosBR/blob/master/R/reservatorio_sin.R'><code>R/reservatorio_sin.R</code></a></small>
     <div class="hidden name"><code>reservatorio_sin.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Dados dos principais reservatórios brasileiros pertencentes ao Sistema Interligado Nacional</p>
+    <p>Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional</p>
     </div>
 
     <pre class="usage"><span class='fu'>reservatorio_sin</span><span class='op'>(</span>
@@ -146,11 +146,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>codigo_reservatorio</th>
-      <td><p>Código do reservatório a ser buscado, (você pode consultar a tabela com os codigos chamando <code>tabela_reservatorios</code>).</p></td>
+      <td><p>Codigo do reservatorio a ser buscado, (voce pode consultar a tabela com os codigos chamando <code>tabela_reservatorios</code>).</p></td>
     </tr>
     <tr>
       <th>data_inicial</th>
-      <td><p>Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga.</p></td>
+      <td><p>Data inicial do registro. Se for anterior a data de funcionamento, retorna a data de registro mais antiga.</p></td>
     </tr>
     <tr>
       <th>data_final</th>
@@ -160,24 +160,29 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>reservatorio_sin</span><span class='op'>(</span><span class='fl'>19058</span>, <span class='st'>"2000-01-01"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Buscando as informações do reservatório ITAIPU</span></div><div class='output co'>#&gt; <span class='message'>-------</span></div><div class='output co'>#&gt; <span class='message'>Enchendo um reservatório de informações ...</span></div><div class='output co'>#&gt; <span class='message'>Calma, Bruno, já to acabando!</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 7,923 x 11</span><span>
-#&gt;    data_medicao codigo_reservat~ reservatorio cota_m afluencia_m3_s
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2000-01-01   19058            ITAIPU         216.           </span><span style='text-decoration: underline;'>9</span><span>761
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2000-01-02   19058            ITAIPU         216.           </span><span style='text-decoration: underline;'>9</span><span>300
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2000-01-03   19058            ITAIPU         216.           </span><span style='text-decoration: underline;'>9</span><span>385
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2000-01-04   19058            ITAIPU         216.           </span><span style='text-decoration: underline;'>9</span><span>450
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2000-01-05   19058            ITAIPU         216.           </span><span style='text-decoration: underline;'>8</span><span>868
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2000-01-06   19058            ITAIPU         216.           </span><span style='text-decoration: underline;'>8</span><span>275
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2000-01-07   19058            ITAIPU         215.           </span><span style='text-decoration: underline;'>7</span><span>963
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2000-01-08   19058            ITAIPU         215.           </span><span style='text-decoration: underline;'>8</span><span>367
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2000-01-09   19058            ITAIPU         215.           </span><span style='text-decoration: underline;'>9</span><span>408
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2000-01-10   19058            ITAIPU         215.           </span><span style='text-decoration: underline;'>8</span><span>706
-#&gt; </span><span style='color: #949494;'># ... with 7,913 more rows, and 6 more variables: defluencia_m3_s &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   vazao_vertida_m3_s &lt;dbl&gt;, vazao_turbinada_m3_s &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   vazao_natural_m3_s &lt;dbl&gt;, volume_util_percentual &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   vazao_incremental_m3_s &lt;dbl&gt;</span><span></div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>reservatorio_sin</span><span class='op'>(</span><span class='fl'>19058</span>, <span class='st'>"2000-01-01"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> <span style='color: #BBBB00;'>i</span> Buscando as informações do reservatório ITAIPU</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Coletando (muitos) dados...</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> Deixa só eu deixar essa tabela mais bonita?</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> <span style='color: #00BB00;'>v</span> Ficou uma graça!</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 7,979 x 11</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    data       codigo_reservatorio reservatorio cota_m afluencia_m3_s</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;date&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 2000-01-01 19058               ITAIPU         216.           <span style='text-decoration: underline;'>9</span>761</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 2000-01-02 19058               ITAIPU         216.           <span style='text-decoration: underline;'>9</span>300</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 2000-01-03 19058               ITAIPU         216.           <span style='text-decoration: underline;'>9</span>385</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 2000-01-04 19058               ITAIPU         216.           <span style='text-decoration: underline;'>9</span>450</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 2000-01-05 19058               ITAIPU         216.           <span style='text-decoration: underline;'>8</span>868</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 2000-01-06 19058               ITAIPU         216.           <span style='text-decoration: underline;'>8</span>275</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 2000-01-07 19058               ITAIPU         215.           <span style='text-decoration: underline;'>7</span>963</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 2000-01-08 19058               ITAIPU         215.           <span style='text-decoration: underline;'>8</span>367</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 2000-01-09 19058               ITAIPU         215.           <span style='text-decoration: underline;'>9</span>408</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 2000-01-10 19058               ITAIPU         215.           <span style='text-decoration: underline;'>8</span>706</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># ... with 7,969 more rows, and 6 more variables: defluencia_m3_s &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   vazao_vertida_m3_s &lt;dbl&gt;, vazao_turbinada_m3_s &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   vazao_natural_m3_s &lt;dbl&gt;, volume_util_percentual &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   vazao_incremental_m3_s &lt;dbl&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

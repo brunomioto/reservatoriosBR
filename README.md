@@ -8,8 +8,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5496237.svg)](https://doi.org/10.5281/zenodo.5496237)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
-[![Codecov test
-coverage](https://codecov.io/gh/brunomioto/reservatoriosBR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/brunomioto/reservatoriosBR?branch=main)
 <!-- badges: end -->
 
 Pacote R para obtenção de dados dos principais reservatórios brasileiros

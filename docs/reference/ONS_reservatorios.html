@@ -90,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reservatoriosBR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/brunomioto/reservatoriosBR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -148,35 +148,36 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ONS_reservatorios</span><span class='op'>(</span>formato<span class='op'>=</span><span class='st'>"tabela"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 39 x 19</span><span>
-#&gt;    data_medicao subsistema bacia reservatorio reservatorio_max reservatorio_ea~
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 2021-09-08   Norte      AMAZ~ BALBINA                  776.            640. 
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 2021-09-08   Norte      TOCA~ TUCURUI                 </span><span style='text-decoration: underline;'>7</span><span>686.           </span><span style='text-decoration: underline;'>6</span><span>472. 
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 2021-09-08   Norte      TOCA~ SERRA DA ME~            </span><span style='text-decoration: underline;'>6</span><span>530.           </span><span style='text-decoration: underline;'>8</span><span>634. 
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 2021-09-08   Nordeste   JEQU~ IRAPE                   </span><span style='text-decoration: underline;'>1</span><span>006.            551. 
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 2021-09-08   Nordeste   SAO ~ ITAPARICA               </span><span style='text-decoration: underline;'>3</span><span>415.           </span><span style='text-decoration: underline;'>2</span><span>389. 
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 2021-09-08   Nordeste   SAO ~ SOBRADINHO             </span><span style='text-decoration: underline;'>30</span><span>048.          </span><span style='text-decoration: underline;'>13</span><span>694. 
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 2021-09-08   Nordeste   SAO ~ TRÊS MARIAS            </span><span style='text-decoration: underline;'>16</span><span>013             953. 
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 2021-09-08   Sul        CAPI~ G. P. SOUZA              377.             89.1
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 2021-09-08   Sul        IGUA~ SALTO SANTI~            </span><span style='text-decoration: underline;'>3</span><span>403.           </span><span style='text-decoration: underline;'>1</span><span>050. 
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 2021-09-08   Sul        IGUA~ SANTA CLARA~             378.             89.4
-#&gt; </span><span style='color: #949494;'># ... with 29 more rows, and 13 more variables:</span><span>
-#&gt; </span><span style='color: #949494;'>#   reservatorio_ear_verificada_porcentagem &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   reservatorio_valor_util &lt;dbl&gt;, reservatorio_porcentagem &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   bacia_max &lt;dbl&gt;, bacia_ear_verificada_mw_mes &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   bacia_ear_verificada_porcentagem &lt;dbl&gt;, bacia_porcentagem &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   subsistema_max &lt;dbl&gt;, subsistema_ear_verificada_mw_mes &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   subsistema_valor_util &lt;dbl&gt;, sin_max &lt;dbl&gt;, sinear_verificada_mw_mes &lt;dbl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   sinear_porcentagem &lt;dbl&gt;</span><span></div><div class='input'><span class='fu'>ONS_reservatorios</span><span class='op'>(</span>formato<span class='op'>=</span><span class='st'>"resumo"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 4 x 3</span><span>
-#&gt;   data_medicao subsistema             percentual
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 2021-09-08   Nordeste                     47.4
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 2021-09-08   Norte                        68.2
-#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 2021-09-08   Sudeste / Centro-Oeste       19.6
-#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 2021-09-08   Sul                          25.8</div></span></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>ONS_reservatorios</span><span class='op'>(</span>formato<span class='op'>=</span><span class='st'>"tabela"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 39 x 19</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    data       subsistema bacia  reservatorio  reservatorio_max reservatorio_ear~</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;date&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                    <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 2021-11-03 Norte      AMAZO~ BALBINA                   776.              470.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 2021-11-03 Norte      TOCAN~ TUCURUI                  <span style='text-decoration: underline;'>7</span>686.             <span style='text-decoration: underline;'>3</span>781.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 2021-11-03 Norte      TOCAN~ SERRA DA MESA            <span style='text-decoration: underline;'>6</span>530.             <span style='text-decoration: underline;'>7</span>238.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 2021-11-03 Nordeste   JEQUI~ IRAPE                    <span style='text-decoration: underline;'>1</span>006.              366.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 2021-11-03 Nordeste   SAO F~ ITAPARICA                <span style='text-decoration: underline;'>3</span>415.             <span style='text-decoration: underline;'>2</span>617.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 2021-11-03 Nordeste   SAO F~ SOBRADINHO              <span style='text-decoration: underline;'>30</span>048.             <span style='text-decoration: underline;'>9</span>923.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 2021-11-03 Nordeste   SAO F~ TRÊS MARIAS             <span style='text-decoration: underline;'>16</span>013               675.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 2021-11-03 Sul        CAPIV~ G. P. SOUZA               377.              153.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 2021-11-03 Sul        IGUACU SANTA CLARA-~             378.              308.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 2021-11-03 Sul        IGUACU G. B. MUNHOZ             <span style='text-decoration: underline;'>5</span>934.             <span style='text-decoration: underline;'>3</span>292.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># ... with 29 more rows, and 13 more variables:</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   reservatorio_ear_verificada_porcentagem &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   reservatorio_valor_util &lt;dbl&gt;, reservatorio_porcentagem &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   bacia_max &lt;dbl&gt;, bacia_ear_verificada_mw_mes &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   bacia_ear_verificada_porcentagem &lt;dbl&gt;, bacia_porcentagem &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   subsistema_max &lt;dbl&gt;, subsistema_ear_verificada_mw_mes &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   subsistema_valor_util &lt;dbl&gt;, sin_max &lt;dbl&gt;, ...</span></span>
+<span class='r-in'><span class='fu'>ONS_reservatorios</span><span class='op'>(</span>formato<span class='op'>=</span><span class='st'>"resumo"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 4 x 3</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   data       subsistema             percentual</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;date&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                       <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> 2021-11-03 Nordeste                     36.3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>2</span> 2021-11-03 Norte                        45.2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>3</span> 2021-11-03 Sudeste / Centro-Oeste       18.6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>4</span> 2021-11-03 Sul                          52.9</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
