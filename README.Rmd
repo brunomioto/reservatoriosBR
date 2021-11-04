@@ -18,7 +18,8 @@ knitr::opts_chunk$set(
 [![License](https://img.shields.io/badge/license-GPL-blueviolet.svg?style=flat)](https://github.com/brunomioto/reservatoriosBR/blob/main/LICENSE.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5496237.svg)](https://doi.org/10.5281/zenodo.5496237)
 [![Twitter Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
-
+[![R-CMD-check](https://github.com/brunomioto/reservatoriosBR/workflows/R-CMD-check/badge.svg)](https://github.com/brunomioto/reservatoriosBR/actions)
+[![Codecov test coverage](https://codecov.io/gh/brunomioto/reservatoriosBR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/brunomioto/reservatoriosBR?branch=main)
 <!-- badges: end -->
 
 Pacote R para obtenção de dados dos principais reservatórios brasileiros a partir da plataforma **[SAR-ANA](https://www.ana.gov.br/sar/)** e da **[ONS](http://www.ons.org.br/paginas/energia-agora/reservatorios)**.
@@ -35,7 +36,7 @@ Se você estiver procurando dados sobre os mananciais de abastecimento público 
 
 Este pacote apenas está disponível para a instalação usando o devtools no R (mas é simples): 
 
-```{r, results='hide', message=FALSE, warning=FALSE}
+```{r, results='hide', message=FALSE, warning=FALSE, eval=FALSE}
 #install.packages("devtools")
 devtools::install_github('brunomioto/reservatoriosBR')
 library(reservatoriosBR)
@@ -44,6 +45,12 @@ library(reservatoriosBR)
 ## Uso
 
 Atualmente o pacote possui **9** funções:
+
+### Funções de datasets
+
+- `tabela_reservatorios()`
+- `tabela_reservatorios_ONS()`
+- `info_reservatoriosBR()`
 
 ### Funções de busca de dados
 
@@ -54,13 +61,105 @@ Atualmente o pacote possui **9** funções:
 - `ONS_reservatorios()`
 - `ONS_EAR_subsistemas()`
 
-### Funções de datasets
-
-- `tabela_reservatorios()`
-- `tabela_reservatorios_ONS()`
-- `info_reservatoriosBR()`
-
 ---
+
+## As funções de datasets
+
+### A função `tabela_reservatorios()`
+
+Essa função retorna uma tabela com informações sobre os reservatórios que podem ser utilizadas com as funções de busca de dados. Este são os reservatórios contabilizados pela ANA.
+
+São **713 reservatórios** (são 804 linhas pois reservatórios em 2 cidades são duplicados) com **12 variáveis**, sendo elas:
+
+- `sistema` - sistema o qual o reservatório pertence segundo o SAR.
+- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
+- `reservatorio` - O nome do reservatorio.
+- `res_latitude` - Latitude do reservatório
+- `res_longitude` - Longitude do reservatório
+- `municipio` - Município do reservatório
+- `codigo_municipio_ibge` - Código do município na base do IBGE.
+- `estado_nome` - Estado em forma de nome.
+- `estado_sigla` - Estado em forma de sigla.
+- `rio` - Nome do rio.
+- `sub_bacia` - Sub-bacia do rio.
+- `bacia` - Bacia hidrográfica do rio.
+
+**Agradeço ao pessoal da ANA, em especial, o coordenador Antônio Augusto, o especialista Diego Pena e o técnico Théo Albuquerque, que construíram essa tabela e apoiam essa iniciativa de dados abertos!**
+
+
+```{r}
+library(reservatoriosBR)
+
+tabela_reservatorios() 
+
+#caso queira uma lista sem códigos duplicados
+#library(dplyr)
+#tabela_reservatorios() %>% 
+#  distinct(codigo, .keep_all = TRUE) 
+```
+
+Mapa dos reservatórios brasileiros!
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+tabela_reservatorios() %>% 
+  distinct(codigo, .keep_all = TRUE) %>% 
+  ggplot()+
+  borders("world", fill = "grey70", colour = "black")+
+  theme_minimal()+
+  geom_point(aes(x=res_longitude, y=res_latitude),
+             colour = "blue",
+             size = 2,
+             alpha = 0.5) + 
+  labs(x = "",
+       y = "")+
+  coord_fixed(xlim= c(-73,-35), ylim=c(-35,5))
+```
+
+### A função `tabela_reservatorios_ONS()`
+
+Essa função retorna uma tabela parecida com a `tabela_reservatorios()`, mas contendo apenas os reservatórios observados pela **ONS**.
+
+São **39 reservatórios** com **12 variáveis**, sendo elas:
+
+- `subsistema` - Subsistema-ONS a qual o reservatório pertence.
+- `reservatorio` - O nome do reservatório
+- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
+- `res_latitude` - Latitude do reservatório
+- `res_longitude` - Longitude do reservatório
+- `municipio` - Município do reservatório
+- `codigo_municipio_ibge` - Código do município na base do IBGE.
+- `estado_nome` - Estado em forma de nome.
+- `estado_sigla` - Estado em forma de sigla.
+- `rio` - Nome do rio.
+- `sub_bacia` - Sub-bacia do rio.
+- `bacia` - Bacia hidrográfica do rio.
+
+```{r}
+tabela_reservatorios_ONS()
+```
+
+### A função `info_reservatoriosBR()`
+
+Essa função retorna uma tabela com informações das funções utilizadas nesse pacote.
+
+As variáveis retornadas são:
+
+- `Função` - O nome da função.
+- `Ação` - O objetivo da função a ser utilizada.
+- `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
+- `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
+- `Fonte` - A fonte dos dados buscados. 
+
+```{r, warning=FALSE, echo=FALSE}
+library(knitr)
+
+info_reservatoriosBR() %>%
+  kable()
+```
+
+## As funções de busca de dados
 
 ### A função `reservatorio_sin()`
 
@@ -72,7 +171,7 @@ knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservator
 
 `reservatorio_sin(codigo_reservatorio, data_inicial, data_final)`
 
-- `codigo_reservatorio` O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando `tabela_reservatorios`).
+- `codigo_reservatorio` O código do reservatório de acordo com o SIN (você pode consultar a tabela com os códigos chamando a função `tabela_reservatorios()`).
 - `data_inicial` Data inicial do registro. Se for anterior à data de funcionamento, retorna a data de registro mais antiga. O padrão é `data_inicial = "1980-01-01"`
 - `data_final` Data final do registro. Pode ser usado `Sys.Date()` para retornar a data de registro mais recente. O padrão é `data_final = Sys.Date()`
 
@@ -84,7 +183,7 @@ reservatorio_sin(19058, "2000-01-01", "2019-12-31")
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
 - `reservatorio` - Nome do reservatório
 - `cota_m` - Cota, o nível do reservatório (m)
@@ -105,7 +204,7 @@ library(ggplot2)
 
 itaipu <- reservatorio_sin(19058, "1980-01-01", Sys.Date())
 
-ggplot(itaipu, aes(x=data_medicao, y=afluencia_m3_s))+
+ggplot(itaipu, aes(x=data, y=afluencia_m3_s))+
   geom_line(color = "#377eb8")+
   scale_x_date(date_breaks = "years", date_labels = "%Y")+
   theme_bw()+
@@ -146,7 +245,7 @@ Dessa forma, a função funciona utilizando apenas: `reservatorio_cantareira(cod
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `codigo_reservatorio` - Código do reservatório segundo o SAR-ANA
 - `reservatorio` - Nome do reservatório
 - `cota_m` - Cota, o nível do reservatório (m)
@@ -172,13 +271,13 @@ knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservator
 
 Essa função retorna a última medição (e somente ela) dos dados de um reservatório.
 
-Fiz essa função pois ela fornece o **Volume útil** de alguns reservatórios que não estão inclusos no dataset criado pela função `dados_reservatorio()`, como é o exemplo de **Itaipu**.
+Fiz essa função pois ela fornece o **Volume útil** de alguns reservatórios que não estão inclusos no dataset criado pela função `reservatorio_sin()`, como é o exemplo de **Itaipu**.
 
 `ultima_medicao(codigo_reservatorio)`
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `reservatorio` - Nome do reservatório
 - `afluencia_m3_s` - Afluência (m³/s)
 - `defluencia_m3_s` - Defluência (m³/s)
@@ -222,7 +321,7 @@ Dessa forma, rodando a função `ONS_EAR_subsistemas()` retorna todos os dados d
 
 As variáveis retornadas são:
 
-- `data_medicao` - Data da medição realizada
+- `data` - Data da medição realizada
 - `subsistema` - Nome do subsistema
 - `ear_max_subsistema_mwmes` - Valor de EAR máxima por subsistema na unidade de medida MWmês
 - `ear_verif_subsistema_mwmes` - Valor de EAR verificada no dia por subsistema na unidade de medida MWmês
@@ -242,9 +341,9 @@ dados_ONS_SE <- dados_ONS %>%
   filter(subsistema == "Sudeste / Centro-Oeste")
 
 plot_2 <- dados_ONS_SE %>% 
-  ggplot(aes(x=data_medicao, y=ear_verif_subsistema_percentual))+
+  ggplot(aes(x=data, y=ear_verif_subsistema_percentual))+
   geom_area(color = "#377eb8", fill = "#377eb850", size=1.2)+
-  geom_point(data = dados_ONS_SE %>% filter(data_medicao == max(data_medicao)),
+  geom_point(data = dados_ONS_SE %>% filter(data == max(data)),
              color = "#377eb8",
              size = 2)+
   scale_x_date(breaks = "1 year",
@@ -266,65 +365,7 @@ plot_2 <- dados_ONS_SE %>%
 knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/plot2.png')
 ```
 
-## As funções de datasets
 
-### A função `tabela_reservatorios()`
-
-Essa função retorna uma tabela com informações sobre os reservatórios que podem ser utilizadas com as funções acima.
-
-São **708 reservatórios** com **5 variáveis**, sendo elas:
-
-- `sistema` - Sistema o qual o reservatório pertence.
-- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
-- `reservatorio` - O nome do reservatório.
-- `bacia` - A bacia a qual o reservatório pertence (se disponível).
-- `rio` - O rio o qual o reservatório pertence (se disponível).
-- `estado_1` - Estado o qual o reservatório pertence.
-- `estado_2` - Se o reservatório fica entre dois estados, o segundo estado. A ordem não tem importância.
-- `ano` - Ano de funcionamento do reservatório (se disponível).
-
-```{r}
-tabela_reservatorios() %>% 
-  head()
-```
-
-### A função `tabela_reservatorios_ONS()`
-
-Essa função retorna uma tabela parecida com a `tabela_reservatorios()`, mas contendo apenas os reservatórios observados pela **ONS**.
-
-São **39 reservatórios** com **6 variáveis**, sendo elas:
-
-- `subsistema` - Nome do subsistema.
-- `reservatorio` - O nome do reservatório.
-- `codigo` - **O código do reservatório segundo o SAR. Utilizado nas funções desse pacote.**
-- `bacia` - A bacia a qual o reservatório pertence
-- `rio` - O rio o qual o reservatório pertence (se disponível).
-- `estado_1` - Estado o qual o reservatório pertence.
-- `estado_2` - Se o reservatório fica entre dois estados, o segundo estado. A ordem não tem importância.
-
-```{r}
-tabela_reservatorios_ONS() %>% 
-  head()
-```
-
-### A função `info_reservatoriosBR()`
-
-Essa função retorna uma tabela com informações das funções utilizadas nesse pacote.
-
-As variáveis retornadas são:
-
-- `Função` - O nome da função.
-- `Ação` - O objetivo da função a ser utilizada.
-- `Nível de detalhamento` - Subsistemas, Reservatórios ou Datasets.
-- `Dados disponíveis` - Informações sobre a disponibilidade dos dados.
-- `Fonte` - A fonte dos dados buscados. 
-
-```{r, warning=FALSE, echo=FALSE}
-library(knitr)
-
-info_reservatoriosBR() %>%
-  kable()
-```
 
 ## Como citar o pacote
 

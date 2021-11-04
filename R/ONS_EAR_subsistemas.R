@@ -12,12 +12,12 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
 
   if(ano_inicial < 2000|
      ano_final > format(Sys.Date(), "%Y")){
-    message("Escolha um ano inicial igual ou maior que 2000 e um ano final igual ou menor que ", format(Sys.Date(), "%Y"))
+    usethis::ui_todo("Escolha um ano inicial igual ou maior que 2000 e um ano final igual ou menor que {format(Sys.Date(), '%Y')}")
   }else{
 
   anos <- seq(ano_inicial,ano_final)
 
-  message("Buscando dados diários de ", ano_inicial, " até ", ano_final, "...")
+  usethis::ui_info("Buscando dados diários de {ano_inicial} até {ano_final} ...")
 
   historico <- list()
 
@@ -37,13 +37,17 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
                                       SE = "Sudeste / Centro-Oeste",
                                       S = "Sul")) %>%
     dplyr::select(-id_subsistema, -nom_subsistema) %>%
-    dplyr::rename(data_medicao = ear_data,
+    dplyr::rename(data = ear_data,
                   ear_max_subsistema_mwmes = ear_max_subsistema) %>%
-    dplyr::select(data_medicao, subsistema, ear_max_subsistema_mwmes, ear_verif_subsistema_mwmes, ear_verif_subsistema_percentual)
+    dplyr::select(data, subsistema, ear_max_subsistema_mwmes, ear_verif_subsistema_mwmes, ear_verif_subsistema_percentual)
 
-  historico_ear_clean$data_medicao <- as.Date(historico_ear_clean$data_medicao)
+  historico_ear_clean$data <- as.Date(historico_ear_clean$data)
 
-  return(historico_ear_clean)
-
+  if(nrow(historico_ear_clean) == 0){
+    usethis::ui_oops("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
+  }else{
+    usethis::ui_done(motivational_message(3))
+    return(dplyr::as_tibble(historico_ear_clean))
+    }
   }
 }

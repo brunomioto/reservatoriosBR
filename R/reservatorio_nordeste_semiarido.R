@@ -12,54 +12,22 @@ reservatorio_nordeste_semiarido <-
   function(codigo_reservatorio,
            data_inicial = "1980-01-01",
            data_final = Sys.Date()) {
-    #motivation msg
+    #info msg
 
     reservatorio_busca <- tabela_reservatorios() %>%
       dplyr::filter(codigo %in% codigo_reservatorio) %>%
       dplyr::select(reservatorio)
 
-    message("Buscando as informações do reservatório ",
-            reservatorio_busca$reservatorio)
+    if(nrow(reservatorio_busca) == 0){
+      usethis::ui_stop("Não foi possível encontrar esse código no banco de dados. Verifique o código na tabela utilizando a função {ui_code('tabela_reservatorios()')}")
+    }
 
-    message("-------")
-    msg1 <-
-      dplyr::case_when(
-        weekdays(Sys.Date()) == "segunda-feira" ~ sample(
-          c(
-            "Calma que hoje é segunda ZzZzZz...",
-            "Bora trabalhar!",
-            "~~ All we need is just a little patience ~~",
-            "Eita, isso não vai demorar (tanto) ...",
-            "Wait for it...",
-            "Coletando (muitos) dados...",
-            "Enchendo um reservatório de informações ..."
-          ),
-          1
-        ),
-        weekdays(Sys.Date()) == "sexta-feira" ~ sample(
-          c(
-            "SEXTOU! Mas vamos trabalhar né...",
-            "SEXTOU! Ué, as pessoas trabalham na sexta??",
-            "~~ All we need is just a little patience ~~",
-            "Eita, isso não vai demorar (tanto) ...",
-            "Wait for it...",
-            "Coletando (muitos) dados...",
-            "Enchendo um reservatório de informações ..."
-          ),
-          1
-        ),
-        TRUE ~ sample(
-          c(
-            "~~ All we need is just a little patience ~~ ",
-            "Eita, isso não vai demorar (tanto) ...",
-            "Wait for it...",
-            "Coletando (muitos) dados...",
-            "Enchendo um reservatório de informações ..."
-          ),
-          size = 1
-        )
-      )
-    message(msg1)
+
+    usethis::ui_info("Buscando as informações do reservatório {reservatorio_busca$reservatorio}")
+
+    #motivational msg1
+    message(motivational_message(1))
+
     #get url
     url <-
       glue::glue(
@@ -69,31 +37,14 @@ reservatorio_nordeste_semiarido <-
     nodes_table <- rvest::read_html(url) %>%
       rvest::html_nodes("table")
     #motivation msg 2
-    msg2 <-
-      dplyr::case_when(
-        msg1 == "Calma que hoje é segunda ZzZzZz..." ~ "Espera só mais um pou... zZzZzZzZz",
-        TRUE ~ sample(
-          c(
-            "Quase lá, só ajeitar essa tabela agora...",
-            "Tô quase acabando!",
-            "Deixa só eu deixar essa tabela mais bonita?",
-            "Esses dados estão uma zona... Vou arrumar aqui",
-            "Você já regou as plantas hoje? ",
-            "Você lembrou de trancar a porta?",
-            glue::glue("Calma, {Sys.info()[['effective_user']]}, já to acabando!"),
-            glue::glue("{Sys.info()[['effective_user']]}, isso vai ficar incrível!")
-          ),
-          1
-        )
-      )
-    message(msg2)
+    message(motivational_message(2))
     #organiza
     table_reservoir <- nodes_table[[1]] %>%
       rvest::html_table() %>%
       janitor::clean_names() %>%
       dplyr::relocate(dplyr::last_col()) %>%
       dplyr::rename(
-        data_medicao = 1,
+        data = 1,
         estado = 2,
         reservatorio = 3,
         capacidade_hm3 = 4,
@@ -102,7 +53,7 @@ reservatorio_nordeste_semiarido <-
         volume_percentual = 7
       )
 
-    table_reservoir$data_medicao <- as.Date(table_reservoir$data_medicao, format = "%d/%m/%Y")
+    table_reservoir$data <- as.Date(table_reservoir$data, format = "%d/%m/%Y")
     table_reservoir$estado <- as.factor(table_reservoir$estado)
     table_reservoir$reservatorio <- as.factor(table_reservoir$reservatorio)
     table_reservoir$capacidade_hm3 <- as.numeric(sub(",", ".", table_reservoir$capacidade_hm3))
@@ -110,11 +61,10 @@ reservatorio_nordeste_semiarido <-
     table_reservoir$volume_hm3 <- as.numeric(sub(",", ".", table_reservoir$volume_hm3))
     table_reservoir$volume_percentual <- as.numeric(sub(",", ".", table_reservoir$volume_percentual))
 
-    if (nrow(table_reservoir) == 0) {
-      message(
-        "Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!"
-      )
-    } else{
+    if(nrow(table_reservoir) == 0){
+      usethis::ui_oops("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
+    }else{
+      usethis::ui_done(motivational_message(3))
       return(table_reservoir)
     }
 

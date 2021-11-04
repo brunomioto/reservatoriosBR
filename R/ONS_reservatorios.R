@@ -22,9 +22,6 @@ ONS_reservatorios <- function(formato="tabela") {
 
     tabela_ONS$data <- as.Date(tabela_ONS$data)
 
-    tabela_ONS <- tabela_ONS %>%
-      dplyr::rename(data_medicao = data)
-
     if (formato == "tabela") {
 
       tabela_ONS <- dplyr::select(tabela_ONS, -name)
@@ -36,15 +33,14 @@ ONS_reservatorios <- function(formato="tabela") {
     } else{
 
       resumo_ONS <- tabela_ONS %>%
-        dplyr::group_by(data_medicao, subsistema) %>%
+        dplyr::group_by(data, subsistema) %>%
         dplyr::summarise(percentual = max(subsistema_valor_util))
 
       return(dplyr::as_tibble(resumo_ONS))
     }
 
   } else{
-    message(
-      "Você deve escolher formato=\"tabela\" ou formato=\"resumo\" na função.\n\"tabela\" gera um dataframe com diversas variáveis de 39 reservatórios observados pela ONS.\n\"resumo\" gera um relatório dos 4 subsistemas da ONS e a % atual em cada um."
+    usethis::ui_oops("Você deve escolher {usethis::ui_code('formato=\"tabela\"')} ou {usethis::ui_code('formato=\"resumo\"')} na função.\n\"tabela\" gera um dataframe com diversas variáveis de 39 reservatórios observados pela ONS.\n\"resumo\" gera um relatório dos 4 subsistemas da ONS e a % atual em cada um."
     )
   }
 }

@@ -26,17 +26,17 @@ ultima_medicao <- function(codigo_reservatorio){
   colnames(tabela_reservatorio) <- json_reservatorio_df$name
 
   tabela_reservatorio2 <- tabela_reservatorio %>%
-    dplyr::rename(data_medicao = data,
-                  afluencia_m3_s = afluencia,
+    dplyr::rename(afluencia_m3_s = afluencia,
                   defluencia_m3_s = defluencia,
                   cota_m = cota,
                   vazao_transferida = vazaoTransferida,
                   volume_util_percentual = volumeUtil) %>%
-  dplyr::relocate(data_medicao)
+  dplyr::relocate(data)
 
   if(nrow(tabela_reservatorio2) == 0){
-    print("Não foi possivel obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
+    usethis::ui_oops("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
   }else{
-    print(tabela_reservatorio2)
+    usethis::ui_done(motivational_message(3))
+    return(tabela_reservatorio2)
   }
 }
