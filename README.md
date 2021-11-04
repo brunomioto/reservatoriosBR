@@ -8,7 +8,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5496237.svg)](https://doi.org/10.5281/zenodo.5496237)
 [![Twitter
 Follow](https://img.shields.io/twitter/follow/BrunoHMioto?color=%2315202B&label=Seguir%20%40BrunoHMioto&style=social)](https://twitter.com/BrunoHMioto)
-[![R-CMD-check](https://github.com/brunomioto/reservatoriosBR/workflows/R-CMD-check/badge.svg)](https://github.com/brunomioto/reservatoriosBR/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/brunomioto/reservatoriosBR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/brunomioto/reservatoriosBR?branch=main)
 <!-- badges: end -->
@@ -137,7 +136,7 @@ tabela_reservatorios() %>%
   coord_fixed(xlim= c(-73,-35), ylim=c(-35,5))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+<img src="https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/mapa_pontos.png" width="100%" style="display: block; margin: auto;" />
 
 ### A função `tabela_reservatorios_ONS()`
 
@@ -381,16 +380,16 @@ ONS_reservatorios(formato = "tabela")
 #> # A tibble: 39 x 19
 #>    data       subsistema bacia  reservatorio  reservatorio_max reservatorio_ear~
 #>    <date>     <fct>      <fct>  <chr>                    <dbl>             <dbl>
-#>  1 2021-11-01 Norte      AMAZO~ BALBINA                   776.              477.
-#>  2 2021-11-01 Norte      TOCAN~ TUCURUI                  7686.             3916.
-#>  3 2021-11-01 Norte      TOCAN~ SERRA DA MESA            6530.             7238.
-#>  4 2021-11-01 Nordeste   JEQUI~ IRAPE                    1006.              361.
-#>  5 2021-11-01 Nordeste   SAO F~ ITAPARICA                3415.             2812.
-#>  6 2021-11-01 Nordeste   SAO F~ SOBRADINHO              30048.             9808.
-#>  7 2021-11-01 Nordeste   SAO F~ TRÊS MARIAS             16013               674.
-#>  8 2021-11-01 Sul        CAPIV~ G. P. SOUZA               377.              137.
-#>  9 2021-11-01 Sul        IGUACU SANTA CLARA-~             378.              322.
-#> 10 2021-11-01 Sul        IGUACU G. B. MUNHOZ             5934.             3222.
+#>  1 2021-11-03 Norte      AMAZO~ BALBINA                   776.              470.
+#>  2 2021-11-03 Norte      TOCAN~ TUCURUI                  7686.             3781.
+#>  3 2021-11-03 Norte      TOCAN~ SERRA DA MESA            6530.             7238.
+#>  4 2021-11-03 Nordeste   JEQUI~ IRAPE                    1006.              366.
+#>  5 2021-11-03 Nordeste   SAO F~ ITAPARICA                3415.             2617.
+#>  6 2021-11-03 Nordeste   SAO F~ SOBRADINHO              30048.             9923.
+#>  7 2021-11-03 Nordeste   SAO F~ TRÊS MARIAS             16013               675.
+#>  8 2021-11-03 Sul        CAPIV~ G. P. SOUZA               377.              153.
+#>  9 2021-11-03 Sul        IGUACU SANTA CLARA-~             378.              308.
+#> 10 2021-11-03 Sul        IGUACU G. B. MUNHOZ             5934.             3292.
 #> # ... with 29 more rows, and 13 more variables:
 #> #   reservatorio_ear_verificada_porcentagem <dbl>,
 #> #   reservatorio_valor_util <dbl>, reservatorio_porcentagem <dbl>,
@@ -410,10 +409,10 @@ ONS_reservatorios(formato = "resumo")
 #> # A tibble: 4 x 3
 #>   data       subsistema             percentual
 #>   <date>     <chr>                       <dbl>
-#> 1 2021-11-01 Nordeste                     36.4
-#> 2 2021-11-01 Norte                        46.1
-#> 3 2021-11-01 Sudeste / Centro-Oeste       18.4
-#> 4 2021-11-01 Sul                          52.5
+#> 1 2021-11-03 Nordeste                     36.3
+#> 2 2021-11-03 Norte                        45.2
+#> 3 2021-11-03 Sudeste / Centro-Oeste       18.6
+#> 4 2021-11-03 Sul                          52.9
 ```
 
 ### A função `ONS_EAR_subsistemas()`

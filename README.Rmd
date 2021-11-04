@@ -99,7 +99,11 @@ tabela_reservatorios()
 
 Mapa dos reservatórios brasileiros!
 
-```{r, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)
+```
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
 library(tidyverse)
 
 tabela_reservatorios() %>% 
@@ -114,6 +118,10 @@ tabela_reservatorios() %>%
   labs(x = "",
        y = "")+
   coord_fixed(xlim= c(-73,-35), ylim=c(-35,5))
+
+```
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='100%'}
+knitr::include_graphics('https://raw.githubusercontent.com/brunomioto/reservatoriosBR/main/man/figures/mapa_pontos.png')
 ```
 
 ### A função `tabela_reservatorios_ONS()`
