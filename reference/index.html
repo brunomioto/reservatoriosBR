@@ -19,8 +19,8 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Function reference" />
-<meta property="og:image" content="/logo.png" />
+<meta property="og:image" content="http://brunomioto.github.io/reservatoriosBR/logo.png" />
 
 
 
@@ -61,6 +61,16 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7L92HSL0FC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7L92HSL0FC');
+</script>
 
 
   </head>
@@ -129,8 +139,8 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-fun-es-de-busca-de-dados" class="hasAnchor"><a href="#section-fun-es-de-busca-de-dados" class="anchor"></a>Funções de busca de dados</h2>
+          <p class="section-desc"><p>Busque dados de diversas fontes como o SAR-ANA e ONS</p></p>
         </th>
       </tr>
       
@@ -141,21 +151,9 @@
       <tr>
         
         <td>
-          <p><code><a href="ONS_EAR_subsistemas.html">ONS_EAR_subsistemas()</a></code> </p>
+          <p><code><a href="reservatorio_sin.html">reservatorio_sin()</a></code> </p>
         </td>
-        <td><p>Dados históricos de Energia Armazenada (EAR) por subsistema segundo a ONS</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ONS_reservatorios.html">ONS_reservatorios()</a></code> </p>
-        </td>
-        <td><p>Dados atuais dos reservatorios brasileiros observados pela ONS</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="info_reservatoriosBR.html">info_reservatoriosBR()</a></code> </p>
-        </td>
-        <td><p>Informações das funções do pacote reservatoriosBR</p></td>
+        <td><p>Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional</p></td>
       </tr><tr>
         
         <td>
@@ -171,10 +169,35 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="reservatorio_sin.html">reservatorio_sin()</a></code> </p>
+          <p><code><a href="ultima_medicao.html">ultima_medicao()</a></code> </p>
         </td>
-        <td><p>Dados dos principais reservatorios brasileiros pertencentes ao Sistema Interligado Nacional</p></td>
+        <td><p>Ultima medicao dos reservatorios brasileiros</p></td>
       </tr><tr>
+        
+        <td>
+          <p><code><a href="ONS_reservatorios.html">ONS_reservatorios()</a></code> </p>
+        </td>
+        <td><p>Dados atuais dos reservatorios brasileiros observados pela ONS</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ONS_EAR_subsistemas.html">ONS_EAR_subsistemas()</a></code> </p>
+        </td>
+        <td><p>Dados históricos de Energia Armazenada (EAR) por subsistema segundo a ONS</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-fun-es-de-datasets" class="hasAnchor"><a href="#section-fun-es-de-datasets" class="anchor"></a>Funções de datasets</h2>
+          <p class="section-desc"><p>Tabelas para auxílio na busca de dados</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
         
         <td>
           <p><code><a href="tabela_reservatorios.html">tabela_reservatorios()</a></code> </p>
@@ -189,9 +212,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="ultima_medicao.html">ultima_medicao()</a></code> </p>
+          <p><code><a href="info_reservatoriosBR.html">info_reservatoriosBR()</a></code> </p>
         </td>
-        <td><p>Ultima medicao dos reservatorios brasileiros</p></td>
+        <td><p>Informações das funções do pacote reservatoriosBR</p></td>
       </tr>
     </tbody>
     </table>

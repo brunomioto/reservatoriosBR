@@ -2,5 +2,8 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-11-04T18:09Z
+last_built: 2021-11-04T19:57Z
+urls:
+  reference: http://brunomioto.github.io/reservatoriosBR/reference
+  article: http://brunomioto.github.io/reservatoriosBR/articles
 
