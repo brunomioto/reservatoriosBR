@@ -43,7 +43,11 @@ ONS_EAR_subsistemas <- function(ano_inicial=2000, ano_final=format(Sys.Date(), "
 
   historico_ear_clean$data <- as.Date(historico_ear_clean$data)
 
-  return(dplyr::as_tibble(historico_ear_clean))
-
+  if(nrow(historico_ear_clean) == 0){
+    usethis::ui_oops("Não foi possível obter os dados. Verifique se as variáveis estão corretas ou entre em contato!")
+  }else{
+    usethis::ui_done(motivational_message(3))
+    return(dplyr::as_tibble(historico_ear_clean))
+    }
   }
 }
