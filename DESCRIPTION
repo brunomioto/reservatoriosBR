@@ -1,6 +1,6 @@
 Package: reservatoriosBR
 Title: Get Brazilian reservoirs data
-Version: 1.0
+Version: 1.1
 Authors@R: 
     person(given = "Bruno",
            family = "Mioto",
