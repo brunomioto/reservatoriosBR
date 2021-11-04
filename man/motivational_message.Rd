@@ -7,7 +7,7 @@
 motivational_message(msg)
 }
 \arguments{
-\item{msg}{ccodigo para qual message quer.}
+\item{msg}{codigo para qual message quer mostrar.}
 }
 \description{
 motivational messages

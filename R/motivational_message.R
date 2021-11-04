@@ -1,7 +1,7 @@
 #' motivational messages
 #'
 #' @keywords internal
-#' @param msg ccodigo para qual message quer.
+#' @param msg codigo para qual message quer mostrar.
 
 motivational_message <- function(msg){
 
