@@ -9,7 +9,8 @@ Authors@R:
            comment = c(ORCID = "0000-0002-3524-537X"))
 Description: Download all the historic data from Brazilian reservoir.
 License: GPL (>= 3)
-URL: https://github.com/brunomioto/reservatoriosBR
+URL: https://github.com/brunomioto/reservatoriosBR,
+    https://brunomioto.github.io/reservatoriosBR
 BugReports: https://github.com/brunomioto/reservatoriosBR/issues
 Imports:
     glue,
