@@ -29,7 +29,8 @@ reservatorio_sin <- function(codigo_reservatorio, data_inicial = "1980-01-01", d
   #get url
   url <- glue::glue("https://www.ana.gov.br/sar0/MedicaoSin?dropDownListEstados=&dropDownListReservatorios={codigo_reservatorio}&dataInicial={format.Date(data_inicial, \'%d\')}%2F{format.Date(data_inicial, \'%m\')}%2F{format.Date(data_inicial, \'%Y\')}&dataFinal={format.Date(data_final, \'%d\')}%2F{format.Date(data_final, \'%m\')}%2F{format.Date(data_final, \'%Y\')}&button=Buscar")
 
-  nodes_table <- rvest::read_html(url)%>%
+  html_content <- http_get_html(url)
+  nodes_table <- rvest::read_html(html_content) %>%
     rvest::html_nodes("table")
   #motivation msg 2
   message(motivational_message(2))
