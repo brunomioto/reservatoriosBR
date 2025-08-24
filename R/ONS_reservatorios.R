@@ -9,11 +9,7 @@
 
 ONS_reservatorios <- function(formato="tabela") {
   if (formato == "tabela" | formato == "resumo") {
-    json_ONS <-
-     jsonlite::fromJSON(
-        "http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios",
-        simplifyVector = FALSE
-      )
+    json_ONS <- http_get_json("http://tr.ons.org.br/Content/Get/SituacaoDosReservatorios")
 
     tabela_ONS <- json_ONS %>%
       tibble::enframe() %>%

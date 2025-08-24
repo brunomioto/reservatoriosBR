@@ -8,7 +8,7 @@
 ultima_medicao <- function(codigo_reservatorio){
   url <- glue::glue("https://www.ana.gov.br/sar/restportal/api/retornaUltimaMedicaoSIN?codigo={codigo_reservatorio}")
 
-  json_reservatorio <- jsonlite::fromJSON(url, simplifyVector = FALSE)
+  json_reservatorio <- http_get_json(url)
 
   json_reservatorio_df <- json_reservatorio %>%
     tibble::enframe()

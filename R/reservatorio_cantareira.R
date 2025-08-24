@@ -34,7 +34,8 @@ reservatorio_cantareira <-
         "https://www.ana.gov.br/sar0/MedicaoCantareira?dropDownListReservatorios={codigo_reservatorio}&dataInicial={format.Date(data_inicial, \'%d\')}%2F{format.Date(data_inicial, \'%m\')}%2F{format.Date(data_inicial, \'%Y\')}&dataFinal={format.Date(data_final, \'%d\')}%2F{format.Date(data_final, \'%m\')}%2F{format.Date(data_final, \'%Y\')}"
       )
 
-    nodes_table <- rvest::read_html(url) %>%
+    html_content <- http_get_html(url)
+    nodes_table <- rvest::read_html(html_content) %>%
       rvest::html_nodes("table")
     #motivation msg 2
     message(motivational_message(2))
